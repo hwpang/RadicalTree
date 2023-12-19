@@ -2,6 +2,7 @@ import math
 
 from rmgpy.data.thermo import ThermoDatabase, ThermoLibrary, ThermoData
 from rmgpy.species import Species
+from rmgpy.molecule import Molecule
 from rmgpy import constants
 
 def load_thermo_lib_by_path(path: str,
@@ -43,3 +44,6 @@ def generate_thermo(thermo_database, smi, resonance=True):
     thermo = thermo_database.get_thermo_data(spc)
     thermo = thermo.to_thermo_data() if not isinstance(thermo, ThermoData) else thermo
     return thermo.H298.value_si/4184, thermo.S298.value_si/4.184, thermo.Cpdata.value_si/4.184, (thermo.S298.value_si + constants.R * math.log(spc.get_symmetry_number()))/4.184, thermo.comment
+
+def make_mol(smi):
+    return Molecule().from_smiles(smi)
