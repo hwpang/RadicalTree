@@ -1,17 +1,17 @@
-import os
 import codecs
 import logging
+import os
 from copy import deepcopy
 
 logging.getLogger().setLevel(logging.INFO)
 from collections import OrderedDict
-from joblib import Parallel, delayed
 
 import numpy as np
 import rmgpy.molecule.element as elements
+from joblib import Parallel, delayed
 from rmgpy.data.base import (Database, DatabaseError, Entry, LogicOr,
                              remove_comment_from_line)
-from rmgpy.data.thermo import save_entry, add_thermo_data, ThermoData
+from rmgpy.data.thermo import ThermoData, add_thermo_data, save_entry
 from rmgpy.molecule.atomtype import ATOMTYPES
 from rmgpy.molecule.group import Group
 from rmgpy.reaction import same_species_lists
@@ -81,16 +81,16 @@ def average_thermo_data(thermo_data_list=None, weighted=False):
 
                 s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
                 s_weights = [1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list]
-                s_avg = np.average(s_data, weights=h_weights)
-                s_std = np.sqrt(np.cov(s_data, aweights=h_weights, ddof=1))
+                s_avg = np.average(s_data, weights=s_weights)
+                s_std = np.sqrt(np.cov(s_data, aweights=s_weights, ddof=1))
                 averaged_thermo_data.S298.value_si = s_avg
                 averaged_thermo_data.S298.uncertainty_si = 2 * s_std
 
                 for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
                     cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
                     cp_weights = [1/(thermo_data.Cpdata.uncertainty_si[i])**2 for thermo_data in thermo_data_list]
-                    cp_avg = np.average(cp_data, weights=h_weights)
-                    cp_std = np.sqrt(np.cov(cp_data, aweights=h_weights, ddof=1))
+                    cp_avg = np.average(cp_data, weights=cp_weights)
+                    cp_std = np.sqrt(np.cov(cp_data, aweights=cp_weights, ddof=1))
                     averaged_thermo_data.Cpdata.value_si[i] = cp_avg
                     averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
 
@@ -328,7 +328,7 @@ class ThermoGroups(Database):
         else:
             psize = float(len(template_mol_map[root.label]))
             
-        logging.info(psize)
+        logging.info("Number of datapoints: ", psize)
         mult_completed_nodes = []  # nodes containing multiple identical training molecules
         boo = True  # if the for loop doesn't break becomes false and the while loop terminates
         active_procs = []
@@ -340,7 +340,7 @@ class ThermoGroups(Database):
         r = None
 
         while boo:
-            logging.info(len(template_mol_map))
+            logging.info("Tree size: ", len(template_mol_map))
             splitable_entry_num = 0
             for label, items in template_mol_map.items():  # figure out how many splitable objects there are
                 entry = self.entries[label]
@@ -1129,7 +1129,7 @@ class ThermoGroups(Database):
     
     def make_correction(self, corrections):
         if corrections:
-            return average_thermo_data(corrections)
+            return average_thermo_data(corrections, weighted=True)
         else:
             return None
 

@@ -1,9 +1,10 @@
 import math
 
-from rmgpy.data.thermo import ThermoDatabase, ThermoLibrary, ThermoData
-from rmgpy.species import Species
-from rmgpy.molecule import Molecule
 from rmgpy import constants
+from rmgpy.data.thermo import ThermoData, ThermoDatabase, ThermoLibrary
+from rmgpy.molecule import Molecule
+from rmgpy.species import Species
+
 
 def load_thermo_lib_by_path(path: str,
                             thermo_db: ThermoDatabase,
