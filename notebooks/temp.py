@@ -1,24 +1,147 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# # Load thermo libraries
+
+# In[1]:
+
+
+import sys
+
+sys.path.insert(0,"/home/gridsan/hwpang/Software/RMG-Py/")
+sys.path.insert(0,"/home/gridsan/hwpang/Software/easy_rmg_model/")
+
+import random
 import os
-import codecs
-import logging
+import time
+import math
 from copy import deepcopy
-
-logging.getLogger().setLevel(logging.INFO)
-from collections import OrderedDict
 from joblib import Parallel, delayed
+import matplotlib.pyplot as plt
 
-import numpy as np
-import rmgpy.molecule.element as elements
-from rmgpy.data.base import (Database, DatabaseError, Entry, LogicOr,
-                             remove_comment_from_line)
-from rmgpy.data.thermo import save_entry, add_thermo_data, ThermoData
-from rmgpy.molecule.atomtype import ATOMTYPES
-from rmgpy.molecule.group import Group
-from rmgpy.reaction import same_species_lists
-from sklearn.model_selection import KFold
+from rmgpy.data.thermo import ThermoDatabase, ThermoData, remove_thermo_data, add_thermo_data, NASA
+from rmgpy.species import Species
+from rmgpy import settings
+from rmgpy import constants
+
+from easy_rmg_model.rmg2arc.thermo_db import load_thermo_lib_by_path
+
+lib_paths = ["/home/gridsan/hwpang/RMG_shared/data/relax-rotor/Thermo/thermo.py", "/home/gridsan/hwpang/RMG_shared/Projects/ECP/thermo/Bu_methyl_propyl_ether.py"]
+
+thermo_database = ThermoDatabase()
+thermo_database.load_groups(os.path.join(settings["database.directory"], "thermo", "groups"))
+thermo_database.load_libraries(os.path.join(settings["database.directory"], "thermo", "libraries"), ['Klippenstein_Glarborg2016','BurkeH2O2','primaryThermoLibrary','thermo_DFT_CCSDTF12_BAC','CBS_QB3_1dHR','DFT_QCI_thermo'])
+for path in lib_paths:
+    load_thermo_lib_by_path(path, thermo_database)
+    thermo_database.library_order.remove(path)
+thermo_database.library_order = lib_paths + thermo_database.library_order
+
+#load Hand-made library without the training radicals for validation later
+thermo_database0 = ThermoDatabase()
+thermo_database0.load_groups(os.path.join(settings["database.directory"], "thermo", "groups"))
+thermo_database0.load_libraries(os.path.join(settings["database.directory"], "thermo", "libraries"), ['Klippenstein_Glarborg2016','BurkeH2O2','primaryThermoLibrary','thermo_DFT_CCSDTF12_BAC','CBS_QB3_1dHR','DFT_QCI_thermo'])
+for path in lib_paths:
+    load_thermo_lib_by_path(path, thermo_database0)
+    thermo_database0.library_order.remove(path)
+thermo_database0.library_order = lib_paths + thermo_database0.library_order
 
 
-def average_thermo_data(thermo_data_list=None, weighted=False):
+# # Generate mol and radical correction data pair
+
+# In[3]:
+
+
+Tmin = 100.0
+Tmax = 5000.0
+Tint = 1000.0
+
+
+# ## Collect all radical mols and its thermo data from libraries
+
+# In[4]:
+
+lib_radical_smiles = []
+lib_radicals = []
+lib_radical_data = []
+
+for lib_path in lib_paths:
+    lib = thermo_database.libraries[lib_path]
+    for entry in list(lib.entries.values()):
+        if entry.item.is_radical() and sum(atom.radical_electrons for atom in entry.item.atoms)==1:
+            radical = deepcopy(entry.item)
+            radical_data = deepcopy(entry.data)
+            radical.atoms.sort()
+            if radical.to_smiles() not in lib_radical_smiles:
+                lib_radical_smiles.append(radical.to_smiles())
+                radical_data.comment = f"smiles: {radical.to_smiles()}, Thermo library: {lib_path}"
+                lib_radicals.append(radical)
+                radical_data.Cp0 = (radical.calculate_cp0(), "J/(mol*K)")
+                radical_data.CpInf = (radical.calculate_cpinf(), "J/(mol*K)")
+                if not isinstance(radical_data, ThermoData):
+                    radical_data = radical_data.to_thermo_data()
+                #remove entropy correction
+                radical_data.S298.value_si += constants.R * math.log(radical.get_symmetry_number())
+                lib_radical_data.append(radical_data)
+                del thermo_database0.libraries[lib_path].entries[entry.label]
+print(f"{len(lib_radicals)} radicals from libraries")
+print(f"{len(lib_radical_data)} radical thermo data from libraries")
+
+
+
+# ## Generate radical resonance structure and find corresponding radical corrections
+
+# In[5]:
+
+
+def get_resonance_radical_correction(radical, radical_data):
+    """
+    radical thermo = closed shell thermo with no entropy correction + radicl correction - H thermo - radical entropy correction
+    radical correction = radical thermo with no entropy correction - closed shell thermo with no entropy correction + H thermo
+    """
+    radicals = [r for r in radical.generate_resonance_structures() if sum(atom.radical_electrons for atom in r.atoms)==1]
+    closed_shells = [deepcopy(radical) for radical in radicals]
+    for radical, closed_shell in zip(radicals, closed_shells):
+        closed_shell.saturate_radicals()
+        closed_shell.reactive = True
+        radical.reactive = True
+    radical_thermos = [radical_data for radicala in radicals]
+    #not using resonance for the closed shell species because we want to use the exact closed shell structure
+    closed_shell_thermos = [thermo_database.get_thermo_data(Species(molecule=[closed_shell])) for closed_shell in closed_shells]
+    closed_shell_thermos = [closed_shell_thermo.to_thermo_data() if not isinstance(closed_shell_thermo, ThermoData) else closed_shell_thermo for closed_shell_thermo in closed_shell_thermos]
+    for closed_shell_thermo in closed_shell_thermos:
+        #remove entropy correction
+        closed_shell_thermo.S298.value_si += constants.R * math.log(closed_shell.get_symmetry_number())
+    radical_corrections = [remove_thermo_data(deepcopy(radical_data), closed_shell_thermo) for closed_shell_thermo in closed_shell_thermos]
+    for radical_correction, closed_shell_thermo, closed_shell in zip(radical_corrections, closed_shell_thermos, closed_shells):
+        #add back H atom enthalpy
+        radical_correction.H298.value_si += 52.103 * 1000 * 4.184
+        radical_correction.comment += "\n"
+        radical_correction.comment += f"smiles: {closed_shell.to_smiles()}, {closed_shell_thermo.comment}"
+    radical_corrections = [radical_correction.to_nasa(Tmin=Tmin, Tmax=Tmax, Tint=Tint) for radical_correction in radical_corrections]
+    
+    radical_corrections0 = [thermo_database0._add_group_thermo_data(None, thermo_database0.groups["radical"], radical, {'*': [atom for atom in radical.atoms if atom.radical_electrons==1][0]})[0] for radical in radicals]
+    spc = Species(molecule=[radical])
+    spc.generate_resonance_structures()
+    radical_thermos0 = [thermo_database0.get_thermo_data(spc) for radical in radicals]
+    return radicals, radical_thermos, radical_corrections, closed_shells, closed_shell_thermos, radical_corrections0, radical_thermos0
+
+results = Parallel(n_jobs=8, verbose=5, backend='multiprocessing')(delayed(get_resonance_radical_correction)(radical, radical_data) for radical, radical_data in zip(lib_radicals, lib_radical_data))
+
+resonance_radicals = [r for result in results for r in result[0]]
+resonance_radical_thermos = [r for result in results for r in result[1]]
+resonance_corrections = [r for result in results for r in result[2]]
+resonance_closed_shells = [r for result in results for r in result[3]]
+resonance_closed_shell_thermos = [r for result in results for r in result[4]]
+resonance_corrections0 = [r for result in results for r in result[5]]
+resonance_radical_thermos0 = [r for result in results for r in result[6]]
+
+
+# ## Radical correction ATG
+
+# In[16]:
+
+
+def average_thermo_data(thermo_data_list=None):
     """
     Average a list of ThermoData values together.
     Sets uncertainty values to be the approximately the 95% confidence interval, equivalent to
@@ -39,62 +162,65 @@ def average_thermo_data(thermo_data_list=None, weighted=False):
     else:
         logging.debug('Averaging thermo data over {0} value(s).'.format(num_values))
 
-        if not weighted:
-            if num_values == 1:
-                return deepcopy(thermo_data_list[0])
+        if num_values == 1:
+            return deepcopy(thermo_data_list[0])
 
-            else:
-                averaged_thermo_data = deepcopy(thermo_data_list[0])
-                for thermo_data in thermo_data_list[1:]:
-                    averaged_thermo_data = add_thermo_data(averaged_thermo_data, thermo_data)
-
-                for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
-                    averaged_thermo_data.Cpdata.value_si[i] /= num_values
-
-                    cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
-                    averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * np.std(cp_data, ddof=1)
-
-                h_data = [thermo_data.H298.value_si for thermo_data in thermo_data_list]
-                averaged_thermo_data.H298.value_si /= num_values
-                averaged_thermo_data.H298.uncertainty_si = 2 * np.std(h_data, ddof=1)
-
-                s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
-                averaged_thermo_data.S298.value_si /= num_values
-                averaged_thermo_data.S298.uncertainty_si = 2 * np.std(s_data, ddof=1)
-                return averaged_thermo_data
-            
         else:
             averaged_thermo_data = deepcopy(thermo_data_list[0])
-            
-            if num_values == 1:
-                averaged_thermo_data.H298.uncertainty
-                return averaged_thermo_data
+            for thermo_data in thermo_data_list[1:]:
+                averaged_thermo_data = add_thermo_data(averaged_thermo_data, thermo_data)
 
-            else:
-            
-                h_data = [thermo_data.H298.value_si for thermo_data in thermo_data_list]
-                h_weights = [1/(thermo_data.H298.uncertainty_si)**2 for thermo_data in thermo_data_list]
-                h_avg = np.average(h_data, weights=h_weights)
-                h_std = np.sqrt(np.cov(h_data, aweights=h_weights, ddof=1))
-                averaged_thermo_data.H298.value_si = h_avg
-                averaged_thermo_data.H298.uncertainty_si = 2 * h_std
+            for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
+                averaged_thermo_data.Cpdata.value_si[i] /= num_values
 
-                s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
-                s_weights = [1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list]
-                s_avg = np.average(s_data, weights=h_weights)
-                s_std = np.sqrt(np.cov(s_data, aweights=h_weights, ddof=1))
-                averaged_thermo_data.S298.value_si = s_avg
-                averaged_thermo_data.S298.uncertainty_si = 2 * s_std
+                cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
+                averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * np.std(cp_data, ddof=1)
 
-                for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
-                    cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
-                    cp_weights = [1/(thermo_data.Cpdata.uncertainty_si[i])**2 for thermo_data in thermo_data_list]
-                    cp_avg = np.average(cp_data, weights=h_weights)
-                    cp_std = np.sqrt(np.cov(cp_data, aweights=h_weights, ddof=1))
-                    averaged_thermo_data.Cpdata.value_si[i] = cp_avg
-                    averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
+            h_data = [thermo_data.H298.value_si for thermo_data in thermo_data_list]
+            averaged_thermo_data.H298.value_si /= num_values
+            averaged_thermo_data.H298.uncertainty_si = 2 * np.std(h_data, ddof=1)
 
-                return averaged_thermo_data
+            s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
+            averaged_thermo_data.S298.value_si /= num_values
+            averaged_thermo_data.S298.uncertainty_si = 2 * np.std(s_data, ddof=1)
+            return averaged_thermo_data
+
+
+# In[ ]:
+
+
+
+
+# import gc
+# import pandas as pd
+# import os
+import codecs
+# import csv
+# import yaml
+# import re
+import logging
+logging.getLogger().setLevel(logging.INFO)
+# import psutil
+import numpy as np
+from sklearn.model_selection import KFold
+
+from collections import OrderedDict
+
+# from rdkit import Chem
+# from memory_profiler import profile
+# from joblib import Parallel, delayed
+
+# from rdmc.external.rmg import from_rdkit_mol
+from rmgpy.molecule.atomtype import ATOMTYPES
+import rmgpy.molecule.element as elements
+# from rmgpy.molecule.molecule import Atom, Bond, Molecule
+from rmgpy.molecule.group import GroupAtom, Group, GroupBond
+from rmgpy import constants
+# from rmgpy.data.thermo import ThermoGroups
+from rmgpy.data.base import Entry, LogicOr, Database, remove_comment_from_line, DatabaseError
+# from rmgpy.kinetics.uncertainties import RateUncertainty
+from rmgpy.data.thermo import save_entry
+from rmgpy.reaction import same_species_lists
 
 class ThermoGroups(Database):
     """
@@ -831,121 +957,121 @@ class ThermoGroups(Database):
             string += self.generate_old_tree(entry.children, level + 1)
         return string
 
-#     def load(self, path, local_context=None, global_context=None):
-#         """
-#         Load an RMG-style database from the file at location `path` on disk.
-#         The parameters `local_context` and `global_context` are used to
-#         provide specialized mapping of identifiers in the input file to
-#         corresponding functions to evaluate. This method will automatically add
-#         a few identifiers required by all data entries, so you don't need to
-#         provide these.
-#         """
+    def load(self, path, local_context=None, global_context=None):
+        """
+        Load an RMG-style database from the file at location `path` on disk.
+        The parameters `local_context` and `global_context` are used to
+        provide specialized mapping of identifiers in the input file to
+        corresponding functions to evaluate. This method will automatically add
+        a few identifiers required by all data entries, so you don't need to
+        provide these.
+        """
 
-#         # Clear any previously-loaded data
-#         self.entries = OrderedDict()
-#         self.top = []
+        # Clear any previously-loaded data
+        self.entries = OrderedDict()
+        self.top = []
 
-#         # Set up global and local context
-#         if global_context is None: global_context = {}
-#         global_context['__builtins__'] = None
-#         global_context['True'] = True
-#         global_context['False'] = False
-#         if local_context is None: local_context = {}
-#         local_context['__builtins__'] = None
-#         local_context['entry'] = self.load_entry
-#         def f(tree):
-#             _load_tree(self,tree)
-#         local_context['tree'] = f
-#         local_context['name'] = self.name
-#         local_context['solvent'] = self.solvent
-#         local_context['shortDesc'] = self.short_desc
-#         local_context['longDesc'] = self.long_desc
-#         local_context['RateUncertainty'] = RateUncertainty
-#         local_context['metal'] = self.metal
-#         local_context['site'] = self.site
-#         local_context['facet'] = self.facet
-#         # add in anything from the Class level dictionary.
-#         for key, value in Database.local_context.items():
-#             local_context[key] = value
+        # Set up global and local context
+        if global_context is None: global_context = {}
+        global_context['__builtins__'] = None
+        global_context['True'] = True
+        global_context['False'] = False
+        if local_context is None: local_context = {}
+        local_context['__builtins__'] = None
+        local_context['entry'] = self.load_entry
+        def f(tree):
+            _load_tree(self,tree)
+        local_context['tree'] = f
+        local_context['name'] = self.name
+        local_context['solvent'] = self.solvent
+        local_context['shortDesc'] = self.short_desc
+        local_context['longDesc'] = self.long_desc
+        local_context['RateUncertainty'] = RateUncertainty
+        local_context['metal'] = self.metal
+        local_context['site'] = self.site
+        local_context['facet'] = self.facet
+        # add in anything from the Class level dictionary.
+        for key, value in Database.local_context.items():
+            local_context[key] = value
 
-#         # Process the file
-#         f = open(path, 'r')
-#         try:
-#             exec(f.read(), global_context, local_context)
-#         except Exception:
-#             logging.error('Error while reading database {0!r}.'.format(path))
-#             raise
-#         f.close()
+        # Process the file
+        f = open(path, 'r')
+        try:
+            exec(f.read(), global_context, local_context)
+        except Exception:
+            logging.error('Error while reading database {0!r}.'.format(path))
+            raise
+        f.close()
 
-#         # Extract the database metadata
-#         self.name = local_context['name']
-#         self.solvent = local_context['solvent']
-#         self.short_desc = local_context['shortDesc']
-#         self.long_desc = local_context['longDesc'].strip()
-#         self.metal = local_context['metal']
-#         self.site = local_context['site']
-#         self.facet = local_context['facet']
+        # Extract the database metadata
+        self.name = local_context['name']
+        self.solvent = local_context['solvent']
+        self.short_desc = local_context['shortDesc']
+        self.long_desc = local_context['longDesc'].strip()
+        self.metal = local_context['metal']
+        self.site = local_context['site']
+        self.facet = local_context['facet']
 
-#         # Return the loaded database (to allow for Database().load() syntax)
-#         return self
+        # Return the loaded database (to allow for Database().load() syntax)
+        return self
 
-#     def _load_tree(self,tree):
-#         """
-#         Parse an group tree located at `tree`. An RMG tree is an n-ary
-#         tree representing the hierarchy of items in the dictionary.
-#         """
+    def _load_tree(self,tree):
+        """
+        Parse an group tree located at `tree`. An RMG tree is an n-ary
+        tree representing the hierarchy of items in the dictionary.
+        """
 
-#         if len(self.entries) == 0:
-#             raise DatabaseError("Load the dictionary before you load the tree.")
+        if len(self.entries) == 0:
+            raise DatabaseError("Load the dictionary before you load the tree.")
 
-#         # should match '  L3 : foo_bar '  and 'L3:foo_bar'
-#         parser = re.compile('^\s*L(?P<level>\d+)\s*:\s*(?P<label>\S+)')
+        # should match '  L3 : foo_bar '  and 'L3:foo_bar'
+        parser = re.compile('^\s*L(?P<level>\d+)\s*:\s*(?P<label>\S+)')
 
-#         parents = [None]
-#         for line in tree.splitlines():
-#             line = remove_comment_from_line(line).strip()
-#             if len(line) > 0:
-#                 # Extract level
-#                 match = parser.match(line)
-#                 if not match:
-#                     raise DatabaseError("Couldn't parse line '{0}'".format(line.strip()))
-#                 level = int(match.group('level'))
-#                 label = match.group('label')
-#                 data_count = int(match.group('data_count'))
+        parents = [None]
+        for line in tree.splitlines():
+            line = remove_comment_from_line(line).strip()
+            if len(line) > 0:
+                # Extract level
+                match = parser.match(line)
+                if not match:
+                    raise DatabaseError("Couldn't parse line '{0}'".format(line.strip()))
+                level = int(match.group('level'))
+                label = match.group('label')
+                data_count = int(match.group('data_count'))
 
-#                 # Find immediate parent of the new node
-#                 parent = None
-#                 if len(parents) < level:
-#                     raise DatabaseError("Invalid level specified in line '{0}'".format(line.strip()))
-#                 else:
-#                     while len(parents) > level:
-#                         parents.remove(parents[-1])
-#                     if len(parents) > 0:
-#                         parent = parents[level - 1]
-#                 if parent is not None: parent = self.entries[parent]
-#                 try:
-#                     entry = self.entries[label]
-#                     entry.data_count = data_count
-#                 except KeyError:
-#                     raise DatabaseError('Unable to find entry "{0}" from tree in dictionary.'.format(label))
+                # Find immediate parent of the new node
+                parent = None
+                if len(parents) < level:
+                    raise DatabaseError("Invalid level specified in line '{0}'".format(line.strip()))
+                else:
+                    while len(parents) > level:
+                        parents.remove(parents[-1])
+                    if len(parents) > 0:
+                        parent = parents[level - 1]
+                if parent is not None: parent = self.entries[parent]
+                try:
+                    entry = self.entries[label]
+                    entry.data_count = data_count
+                except KeyError:
+                    raise DatabaseError('Unable to find entry "{0}" from tree in dictionary.'.format(label))
 
-#                 if isinstance(parent, str):
-#                     raise DatabaseError('Unable to find parent entry "{0}" of entry "{1}" in tree.'.format(parent,
-#                                                                                                            label))
+                if isinstance(parent, str):
+                    raise DatabaseError('Unable to find parent entry "{0}" of entry "{1}" in tree.'.format(parent,
+                                                                                                           label))
 
-#                 # Update the parent and children of the nodes accordingly
-#                 if parent is not None:
-#                     entry.parent = parent
-#                     parent.children.append(entry)
-#                 else:
-#                     entry.parent = None
-#                     self.top.append(entry)
+                # Update the parent and children of the nodes accordingly
+                if parent is not None:
+                    entry.parent = parent
+                    parent.children.append(entry)
+                else:
+                    entry.parent = None
+                    self.top.append(entry)
 
-#                 # Save the level of the tree into the entry
-#                 entry.level = level
+                # Save the level of the tree into the entry
+                entry.level = level
 
-#                 # Add node to list of parents for subsequent iterationation
-#                 parents.append(label)
+                # Add node to list of parents for subsequent iterationation
+                parents.append(label)
                 
     def prune_tree(self, mols_corrections, newmols_corrections, new_fraction_threshold_to_reopt_node=0.25,
                    exact_matches_only=True, n_jobs=1):
@@ -1136,7 +1262,7 @@ class ThermoGroups(Database):
     def make_corrections_from_template_mol_map(self, template_mol_map, nprocs=1, n_jobs=1):
 
         entries = list(self.entries.values())
-        correction_lists = [[correction for _, correction in template_mol_map[entry.label]] for entry in entries]
+        correction_lists = [[correction.to_thermo_data() for _, correction in template_mol_map[entry.label]] for entry in entries]
         
         average_corrections = Parallel(n_jobs=n_jobs, verbose=5, backend='multiprocessing')(delayed(self.make_correction)(corrections) for corrections in correction_lists)
 
@@ -1149,7 +1275,7 @@ class ThermoGroups(Database):
             else:
                 long_desc = "Derived using the following species:\n"
                 for mol, correction in template_mol_map[entry.label]:
-                    long_desc += f"{mol.to_smiles()} from {correction.comment}"
+                    long_desc += f"smiles: {mol.to_smiles()}, {correction.comment}"
                     long_desc += "\n"
             self.entries[entry.label].long_desc = long_desc
             
@@ -1216,7 +1342,7 @@ class ThermoGroups(Database):
                 
                 if not ascend:
                     corrections_list = list(set(template_mol_map[entry.label]) - set(mols_corrections_test))
-                    corrections_list = [correction for _, correction in corrections_list]
+                    corrections_list = [correction.to_thermo_data() for _, correction in corrections_list]
                     if corrections_list != []:
                         new_correction = self.make_correction(corrections_list)
                         errors[mol] = [
@@ -1234,7 +1360,7 @@ class ThermoGroups(Database):
                 else:
                     boo = True
                     corrections_list = list(set(template_mol_map[entry.label]) - set(mols_corrections_test))
-                    corrections_list = [correction for _, correction in corrections_list]
+                    corrections_list = [correction.to_thermo_data() for _, correction in corrections_list]
                     new_correction = self.make_correction(corrections_list)
                     logging.info("determining fold rate")
                     c = 1
@@ -1243,7 +1369,7 @@ class ThermoGroups(Database):
                         if parent is None:
                             break
                         corrections_list_parent = list(set(template_mol_map[parent.label]) - set(mols_corrections_test))
-                        corrections_list_parent = [correction for _, correction in corrections_list_parent]
+                        corrections_list_parent = [correction.to_thermo_data() for _, correction in corrections_list_parent]
                         new_correction_parent = self.make_correction(corrections_list_parents)
                         err_parent = abs(new_correction_parent.H298.value_si - new_correction.H298.value_si) + np.sqrt(new_correction_parent.H298.uncertainty.value_si/np.pi)                                    + abs(new_correction_parent.S298.value_si - new_correction.S298.value_si) + np.sqrt(new_correction_parent.S298.uncertainty.value_si/np.pi)                                    + sum(abs(new_correction_parent.Cpdata.value_si - new_correction.Cpdata.value_si) + np.sqrt(new_correction_parent.Cpdata.uncertainty.value_si/np.pi))
                 
@@ -1445,7 +1571,7 @@ class ThermoGroups(Database):
             max_mols_corrections_to_reopt_node: Nodes with more matching molecules than this will not be pruned
         """
         if Ts is None:
-            Ts = [300, 400, 500, 600, 800, 1000, 1500]
+            Ts = [300, 400, 500, 600, 800, 1000, 1500, 2000]
         if mols_corrections is None:
             mols_corrections = self.get_training_set()
 
@@ -1515,8 +1641,241 @@ def get_objective_function(mols_corrections_1, mols_corrections_2, obj=informati
     Error using mean: Err_1 + Err_2
     Split: abs(N1-N2)
     """
-    corrections1 = [correction for mol, correction in mols_corrections_1]
-    corrections2 = [correction for mol, correction in mols_corrections_2]
+    corrections1 = [correction.to_thermo_data() for mol, correction in mols_corrections_1]
+    corrections2 = [correction.to_thermo_data() for mol, correction in mols_corrections_2]
     N1 = len(corrections1)
 
     return obj(corrections1, corrections2, Ts=Ts), N1 == 0
+
+
+mols_corrections = [(radical, correction) for radical, correction in zip(resonance_radicals, resonance_corrections)]
+data = resonance_radicals, resonance_corrections0
+logging.info(f"{len(mols_corrections)} of radical corrections to generate radical decision tree...")
+
+################################################
+n_jobs = int(sys.argv[1])
+save_name = sys.argv[2]
+
+# n_jobs = 8
+# save_name = "test"
+# mols_corrections = random.sample(mols_corrections, 100)
+# mols_corrections = deepcopy(mols_corrections0)
+################################################
+min_mols_corrections_to_split = 1
+
+
+def train_tree():
+    #clean tree
+    tree = ThermoGroups(label="radical",
+                        name="Radical Corrections")
+
+    tree.entries["Root"] = Entry(
+        index = 0,
+        label = "Root",
+        item = Group().from_adjacency_list(f"""1 * R u[1,2,3,4]"""),
+        data = None,
+        data_count = 0,
+        parent = None,
+    )
+    tree.entries["RJ1"] = Entry(
+        index = 0,
+        label = "RJ1",
+        item = Group().from_adjacency_list(f"""1 * R u1"""),
+        data = None,
+        data_count = 0,
+        parent = tree.entries["Root"],
+    )
+    
+    tree.entries["Root"].children = [tree.entries["RJ1"]]
+    tree.top = [tree.entries["Root"]]
+
+    min_mols_corrections_to_split = 1
+
+    start = time.time()
+    template_mol_map_exact = tree.generate_tree(mols_corrections=mols_corrections, obj=None, Ts=None, nprocs=1, min_splitable_entry_num=2,
+                                              min_mols_corrections_to_spawn=20, max_batch_size=np.inf, outlier_fraction=0.02, stratum_num=8,
+                                              new_fraction_threshold_to_reopt_node=0.25, extension_iteration_max=2, extension_iteration_item_cap=100, 
+                                                min_mols_corrections_to_split=min_mols_corrections_to_split, n_jobs=n_jobs)
+    end = time.time()
+    print("Tree generation:")
+    print(end-start)
+
+    tree.check_tree()
+
+    start = time.time()
+    template_mol_map = tree.get_molecule_matches(mols_corrections=mols_corrections,
+                                                         exact_matches_only=False, n_jobs=n_jobs)
+    # template_mol_map = deepcopy(template_mol_map_exact)
+    # data_entries = [entry for entry in tree.entries.values() if template_mol_map[entry.label]]
+    # for entry in data_entries:
+    #     parent = entry.parent
+    #     while parent is not None:
+    #         template_mol_map[parent.label] += template_mol_map[entry.label]
+    #         parent = parent.parent
+    end = time.time()
+    print("Mol mapping:")
+    print(end-start)
+
+    tree.regularize(template_mol_map)
+
+    start = time.time()
+    tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs)
+    end = time.time()
+    print("Make corrections:")
+    print(end-start)
+
+    tree.check_tree()
+
+    start = time.time()
+    errors, handmade_errors, uncertainties = tree.soft_cross_validate(template_mol_map, data, iterations=0, random_state=5, folds=0, ascend=False)
+    end = time.time()
+    print("LOO validation:")
+    print(end-start)
+    
+    def add_children(old_node, new_node):
+        for old_child in old_node.children:
+            tree.entries[old_child.label] = deepcopy(old_child)
+            tree.entries[old_child.label].parent = new_node
+            new_node.children.append(tree.entries[old_child.label])
+            add_children(old_child, tree.entries[old_child.label])
+    tree.entries["RJ2_triplet"] = deepcopy(thermo_database.groups["radical"].entries["RJ2_triplet"])
+    tree.entries["RJ2_triplet"].parent = tree.entries["Root"]
+    tree.entries["Root"].children.append(tree.entries["RJ2_triplet"])
+    add_children(thermo_database.groups["radical"].entries["RJ2_triplet"], tree.entries["RJ2_triplet"])
+    
+    tree.entries["RJ3"] = deepcopy(thermo_database.groups["radical"].entries["RJ3"])
+    tree.entries["RJ3"].parent = tree.entries["Root"]
+    tree.entries["Root"].children.append(tree.entries["RJ3"])
+    add_children(thermo_database.groups["radical"].entries["RJ3"], tree.entries["RJ3"])
+
+    tree.save(f"./output/{save_name}.py")
+
+    # In[ ]:
+
+
+
+    
+
+    plt.figure(figsize=(6,4), dpi=300)
+    ys1 = np.array([error[0] for error in errors.values()])
+    RMSE1 = round(np.sqrt(np.mean((ys1)**2)), 1)
+    MAE1 = round(np.sqrt(np.mean(np.abs(ys1))), 1)
+    ys2 = np.array([error[0] for error in handmade_errors.values()])
+    RMSE2 = round(np.sqrt(np.mean((ys2)**2)), 1)
+    MAE2 = round(np.sqrt(np.mean(np.abs(ys2))), 1)
+    bin_min = min(min(ys1), min(ys2))
+    bin_max = max(max(ys1), max(ys2))
+    bins = np.arange(bin_min, bin_max, int(bin_max-bin_min)/30)
+
+    plt.hist(ys1, bins=bins, density=True, label=f"Decision Tree Estimator\nRMSE {RMSE1} MAE {MAE1}", alpha=0.5)
+    plt.hist(ys2, bins=bins, density=True, label=f"Hand-made Tree Estimator\nRMSE {RMSE2} MAE {MAE2}", alpha=0.5)
+    plt.title('Leave-one-out cross validation')
+    plt.ylabel('Probability density')
+    plt.xlabel(r'$correction_{G298,est}-correction_{G298,lib}\, (kcal/mol)$')
+    plt.legend()
+    plt.savefig(f"./output/{save_name}_LOO_G298.pdf")
+
+    plt.figure(figsize=(6,4), dpi=300)
+    ys1 = np.array([error[1] for error in errors.values()])
+    RMSE1 = round(np.sqrt(np.mean((ys1)**2)), 1)
+    MAE1 = round(np.sqrt(np.mean(np.abs(ys1))), 1)
+    ys2 = np.array([error[1] for error in handmade_errors.values()])
+    RMSE2 = round(np.sqrt(np.mean((ys2)**2)), 1)
+    MAE2 = round(np.sqrt(np.mean(np.abs(ys2))), 1)
+    bin_min = min(min(ys1), min(ys2))
+    bin_max = max(max(ys1), max(ys2))
+    bins = np.arange(bin_min, bin_max, int(bin_max-bin_min)/30)
+
+    plt.hist(ys1, bins=bins, density=True, label=f"Decision Tree Estimator\nRMSE {RMSE1} MAE {MAE1}", alpha=0.5)
+    plt.hist(ys2, bins=bins, density=True, label=f"Hand-made Tree Estimator\nRMSE {RMSE2} MAE {MAE2}", alpha=0.5)
+    plt.title('Leave-one-out cross validation')
+    plt.ylabel('Probability density')
+    plt.xlabel(r'$correction_{H298,est}-correction_{H298,lib}\, (kcal/mol)$')
+    plt.legend()
+    plt.savefig(f"./output/{save_name}_LOO_H298.pdf")
+
+    plt.figure(figsize=(6,4), dpi=300)
+    ys1 = np.array([error[2] for error in errors.values()])
+    RMSE1 = round(np.sqrt(np.mean((ys1)**2)), 1)
+    MAE1 = round(np.sqrt(np.mean(np.abs(ys1))), 1)
+    ys2 = np.array([error[2] for error in handmade_errors.values()])
+    RMSE2 = round(np.sqrt(np.mean((ys2)**2)), 1)
+    MAE2 = round(np.sqrt(np.mean(np.abs(ys2))), 1)
+    bin_min = min(min(ys1), min(ys2))
+    bin_max = max(max(ys1), max(ys2))
+    bins = np.arange(bin_min, bin_max, int(bin_max-bin_min)/30)
+
+    plt.hist(ys1, bins=bins, density=True, label=f"Decision Tree Estimator\nRMSE {RMSE1} MAE {MAE1}", alpha=0.5)
+    plt.hist(ys2, bins=bins, density=True, label=f"Hand-made Tree Estimator\nRMSE {RMSE2} MAE {MAE2}", alpha=0.5)
+    plt.title('Leave-one-out cross validation')
+    plt.ylabel('Probability density')
+    plt.xlabel(r'$correction_{S298,est}-correction_{S298,lib}\, (cal/(mol*K))$')
+    plt.legend()
+    plt.savefig(f"./output/{save_name}_LOO_S298.pdf")
+
+def hard_cross_validate():
+    tree = ThermoGroups(label="radical",
+                        name="Radical Corrections")
+    errors, handmade_errors = tree.hard_cross_validate(mols_corrections, thermo_database, data, folds=5, random_state=1, obj=None, Ts=None, nprocs=1, min_splitable_entry_num=2,
+                               min_mols_corrections_to_spawn=20, max_batch_size=np.inf, outlier_fraction=0.02, stratum_num=8,
+                               new_fraction_threshold_to_reopt_node=0.25, extension_iteration_max=2, extension_iteration_item_cap=100, 
+                               min_mols_corrections_to_split=min_mols_corrections_to_split, n_jobs=n_jobs)
+
+    plt.figure(figsize=(6,4), dpi=300)
+    ys1 = np.array([error[0] for error in errors.values()])
+    RMSE1 = round(np.sqrt(np.mean((ys1)**2)), 1)
+    MAE1 = round(np.sqrt(np.mean(np.abs(ys1))), 1)
+    ys2 = np.array([error[0] for error in handmade_errors.values()])
+    RMSE2 = round(np.sqrt(np.mean((ys2)**2)), 1)
+    MAE2 = round(np.sqrt(np.mean(np.abs(ys2))), 1)
+    bin_min = min(min(ys1), min(ys2))
+    bin_max = max(max(ys1), max(ys2))
+    bins = np.arange(bin_min, bin_max, int(bin_max-bin_min)/30)
+
+    plt.hist(ys1, bins=bins, density=True, label=f"Decision Tree Estimator\nRMSE {RMSE1} MAE {MAE1}", alpha=0.5)
+    plt.hist(ys2, bins=bins, density=True, label=f"Hand-made Tree Estimator\nRMSE {RMSE2} MAE {MAE2}", alpha=0.5)
+    plt.title('Five-fold cross validation')
+    plt.ylabel('Probability density')
+    plt.xlabel(r'$correction_{G298,est}-correction_{G298,lib}\, (kcal/mol)$')
+    plt.legend()
+    plt.savefig(f"./output/{save_name}_5F_G298.pdf")
+
+    plt.figure(figsize=(6,4), dpi=300)
+    ys1 = np.array([error[1] for error in errors.values()])
+    RMSE1 = round(np.sqrt(np.mean((ys1)**2)), 1)
+    MAE1 = round(np.sqrt(np.mean(np.abs(ys1))), 1)
+    ys2 = np.array([error[1] for error in handmade_errors.values()])
+    RMSE2 = round(np.sqrt(np.mean((ys2)**2)), 1)
+    MAE2 = round(np.sqrt(np.mean(np.abs(ys2))), 1)
+    bin_min = min(min(ys1), min(ys2))
+    bin_max = max(max(ys1), max(ys2))
+    bins = np.arange(bin_min, bin_max, int(bin_max-bin_min)/30)
+
+    plt.hist(ys1, bins=bins, density=True, label=f"Decision Tree Estimator\nRMSE {RMSE1} MAE {MAE1}", alpha=0.5)
+    plt.hist(ys2, bins=bins, density=True, label=f"Hand-made Tree Estimator\nRMSE {RMSE2} MAE {MAE2}", alpha=0.5)
+    plt.title('Five-fold cross validation')
+    plt.ylabel('Probability density')
+    plt.xlabel(r'$correction_{H298,est}-correction_{H298,lib}\, (kcal/mol)$')
+    plt.legend()
+    plt.savefig(f"./output/{save_name}_5F_H298.pdf")
+
+    plt.figure(figsize=(6,4), dpi=300)
+    ys1 = np.array([error[2] for error in errors.values()])
+    RMSE1 = round(np.sqrt(np.mean((ys1)**2)), 1)
+    MAE1 = round(np.sqrt(np.mean(np.abs(ys1))), 1)
+    ys2 = np.array([error[2] for error in handmade_errors.values()])
+    RMSE2 = round(np.sqrt(np.mean((ys2)**2)), 1)
+    MAE2 = round(np.sqrt(np.mean(np.abs(ys2))), 1)
+    bin_min = min(min(ys1), min(ys2))
+    bin_max = max(max(ys1), max(ys2))
+    bins = np.arange(bin_min, bin_max, int(bin_max-bin_min)/30)
+
+    plt.hist(ys1, bins=bins, density=True, label=f"Decision Tree Estimator\nRMSE {RMSE1} MAE {MAE1}", alpha=0.5)
+    plt.hist(ys2, bins=bins, density=True, label=f"Hand-made Tree Estimator\nRMSE {RMSE2} MAE {MAE2}", alpha=0.5)
+    plt.title('Five-fold cross validation')
+    plt.ylabel('Probability density')
+    plt.xlabel(r'$correction_{S298,est}-correction_{S298,lib}\, (cal/(mol*K))$')
+    plt.legend()
+    plt.savefig(f"./output/{save_name}_5F_S298.pdf")
+train_tree()
+hard_cross_validate()
