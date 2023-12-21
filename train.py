@@ -23,6 +23,8 @@ parser.add_argument("--n_jobs", type=int, default=1)
 parser.add_argument("--save_dir", type=str)
 parser.add_argument("--data_path", type=str)
 parser.add_argument("--split_path", type=str)
+parser.add_argument("--fraction_of_training_data", type=float, default=1.0)
+parser.add_argument("--random_state", type=int, default=0)
 
 args = parser.parse_args()
 
@@ -35,6 +37,8 @@ save_dir = args.save_dir
 save_dir.mkdir(exist_ok=True)
 data_path = args.data_path
 split_path = args.split_path
+fraction_of_training_data = args.fraction_of_training_data
+random_state = args.random_state
 
 
 # Get data
@@ -49,9 +53,10 @@ with open(split_path, "r") as f:
 
 
 train_df = hbi_unc_df.loc[train_inds, :]
+train_df = train_df.sample(frac=fraction_of_training_data, random_state=random_state)
 
 
-mols = train_df["radical_resonance_smiles"].apply(make_mol)
+mols = train_df["resonance_radical_smiles"].apply(lambda x: make_mol(x, label=True))
 mols = mols.to_list()
 
 
@@ -65,7 +70,7 @@ HBI_corrections = train_df.apply(lambda x: ThermoData(
 HBI_corrections = HBI_corrections.to_list()
 
 
-mols_corrections_all = list(zip(mols, HBI_corrections))
+mols_corrections = list(zip(mols, HBI_corrections))
 
 
 # Generate tree
@@ -112,14 +117,14 @@ tree.check_tree()
 
 start = time.time()
 template_mol_map = tree.get_molecule_matches(mols_corrections=mols_corrections,
-                                                     exact_matches_only=False, n_jobs=n_jobs)
+                                                     exact_matches_only=False, n_jobs=1)
 end = time.time()
 print("Mol mapping took ", end-start, " seconds")
 
 tree.regularize(template_mol_map)
 
 start = time.time()
-tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs)
+tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=1)
 end = time.time()
 print("Make corrections took ", end-start, " seconds")
 
