@@ -117,14 +117,14 @@ tree.check_tree()
 
 start = time.time()
 template_mol_map = tree.get_molecule_matches(mols_corrections=mols_corrections,
-                                                     exact_matches_only=False, n_jobs=1)
+                                                     exact_matches_only=False, n_jobs=n_jobs)
 end = time.time()
 print("Mol mapping took ", end-start, " seconds")
 
 tree.regularize(template_mol_map)
 
 start = time.time()
-tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=1)
+tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs)
 end = time.time()
 print("Make corrections took ", end-start, " seconds")
 

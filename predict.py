@@ -23,6 +23,7 @@ parser.add_argument("--n_jobs", type=int, default=1)
 parser.add_argument("--save_dir", type=str)
 parser.add_argument("--data_path", type=str)
 parser.add_argument("--split_path", type=str)
+parser.add_argument("--model_path", type=str)
 
 args = parser.parse_args()
 
@@ -52,7 +53,7 @@ test_df = hbi_unc_df.loc[test_inds, :]
 test_df
 
 
-mols = test_df["radical_resonance_smiles"].apply(make_mol)
+mols = test_df["resonance_radical_smiles"].apply(make_mol)
 mols = mols.to_list()
 
 
@@ -76,7 +77,7 @@ sidt_tree = SIDTThermoGroups().load(model_path, thermo_database.local_context, t
 thermos = [make_prediction(thermo_database, sidt_tree, mol) for mol in tqdm(mols)]
 
 
-test_result_df = test_df[["radical_resonance_smiles"]]
+test_result_df = test_df[["resonance_radical_smiles"]]
 test_result_df["HBI_H298 (kcal/mol)"] = [thermo.H298.value_si/4184 for thermo in thermos]
 test_result_df["unc_HBI_H298 (kcal/mol)"] = [thermo.H298.uncertainty_si/4184 for thermo in thermos]
 test_result_df["HBI_Sint298 (cal/mol/K)"] = [thermo.S298.value_si/4.184 for thermo in thermos]
