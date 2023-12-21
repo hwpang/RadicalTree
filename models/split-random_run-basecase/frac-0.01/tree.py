@@ -205,7 +205,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[CH2]C1=CCC=C1 from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1=CCC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 
@@ -230,7 +230,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[O]C1=CCOOC1 from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1=CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -255,7 +255,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=CC([O])=CO from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC([O])=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -302,7 +302,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=CC(C)OOC1C=C[CH]C1 from Radical thermo from pang.py and closed shell thermo from GAV
+C=CC(C)OOC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
 """,
 )
 
@@ -326,7 +326,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[CH2]C=CCOO from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -350,7 +350,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[O]C=CCCOO from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]C=CCCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 
@@ -374,7 +374,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=[C]C=C=CC from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=[C]C=C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 
@@ -397,7 +397,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=C[C](C=O)OO from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C](C=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -445,7 +445,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=C(C)COC(=C)[O] from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)COC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -471,7 +471,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=C([O])OC=C(C)C from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([O])OC=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -563,7 +563,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-O=CC1[CH]OCOO1 from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=CC1[CH]OCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -587,7 +587,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[CH2]C(O)OO from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 
@@ -611,7 +611,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[CH2]C(C)CC from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -704,7 +704,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-O=C1CO[CH]CCO1 from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1CO[CH]CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -728,7 +728,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-CC[CH]COO from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -752,7 +752,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[O]OC(O)C(=O)C(O)=CO from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC(O)C(=O)C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -880,7 +880,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=C1COOCC1(C)O[O] from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C1COOCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 
@@ -908,7 +908,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=C(CO[O])CC(C)=O from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(CO[O])CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -923,7 +923,7 @@ entry(
 4   C                      ux {3,[S,D,T,B,Q]} {5,S}
 5   R!H                    ux {4,S} {6,[S,D,T,B,Q]}
 6   R!H                    ux {5,[S,D,T,B,Q]} {7,S}
-7   [Cl,C,Si,S,N,P,F,I,Br] u0 {6,S}
+7   [F,I,Br,Cl,C,Si,P,S,N] u0 {6,S}
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
@@ -935,7 +935,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-CC(C)(OO)C1(O[O])COOC1 from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)(OO)C1(O[O])COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -960,7 +960,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-C=CC(O)=CCO[O] from Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(O)=CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -1005,7 +1005,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-[CH]=C(O)CC from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]=C(O)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 
@@ -1051,7 +1051,7 @@ entry(
     longDesc = 
 """
 Derived using the following species:
-CC=[C]O from Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC=[C]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: dong_pio_liang.py
 """,
 )
 

@@ -18,7 +18,7 @@ from rmgpy.reaction import same_species_lists
 from sklearn.model_selection import KFold
 
 
-def average_thermo_data(thermo_data_list=None, weighted=False):
+def average_thermo_data(thermo_data_list=None, weighted=False, upper_bound=False):
     """
     Average a list of ThermoData values together.
     Sets uncertainty values to be the approximately the 95% confidence interval, equivalent to
@@ -78,6 +78,9 @@ def average_thermo_data(thermo_data_list=None, weighted=False):
                 h_std = np.sqrt(np.cov(h_data, aweights=h_weights, ddof=1))
                 averaged_thermo_data.H298.value_si = h_avg
                 averaged_thermo_data.H298.uncertainty_si = 2 * h_std
+                if upper_bound:
+                    max_h_unc = max(thermo_data.H298.uncertainty_si for thermo_data in thermo_data_list)
+                    averaged_thermo_data.H298.uncertainty_si = max(averaged_thermo_data.H298.uncertainty_si, max_h_unc)
 
                 s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
                 s_weights = [1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list]
@@ -85,6 +88,9 @@ def average_thermo_data(thermo_data_list=None, weighted=False):
                 s_std = np.sqrt(np.cov(s_data, aweights=s_weights, ddof=1))
                 averaged_thermo_data.S298.value_si = s_avg
                 averaged_thermo_data.S298.uncertainty_si = 2 * s_std
+                if upper_bound:
+                    max_s_unc = max(thermo_data.S298.uncertainty_si for thermo_data in thermo_data_list)
+                    averaged_thermo_data.S298.uncertainty_si = max(averaged_thermo_data.S298.uncertainty_si, max_s_unc)
 
                 for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
                     cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
@@ -93,6 +99,9 @@ def average_thermo_data(thermo_data_list=None, weighted=False):
                     cp_std = np.sqrt(np.cov(cp_data, aweights=cp_weights, ddof=1))
                     averaged_thermo_data.Cpdata.value_si[i] = cp_avg
                     averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
+                    if upper_bound:
+                        max_cp_unc = max(thermo_data.Cpdata.uncertainty_si[i] for thermo_data in thermo_data_list)
+                        averaged_thermo_data.Cpdata.uncertainty_si[i] = max(averaged_thermo_data.Cpdata.uncertainty_si[i], max_cp_unc)
 
                 return averaged_thermo_data
 
@@ -301,7 +310,9 @@ class ThermoGroups(Database):
         pass
     
     def make_tree_nodes(self, template_mol_map=None, obj=None, Ts=None, nprocs=0, depth=0, min_splitable_entry_num=2,
-                        min_mols_corrections_to_spawn=20, extension_iteration_max=np.inf, extension_iteration_item_cap=np.inf, min_mols_corrections_to_split=1, n_jobs=1):
+                        min_mols_corrections_to_spawn=20, extension_iteration_max=np.inf, extension_iteration_item_cap=np.inf, min_mols_corrections_to_split=1, n_jobs=1,
+                        use_aleatoric_prepruning=False, aleatoric_prepruning_function=min,
+                        use_model_variance_prepruning=False, model_variance_prepruning_threshold=0.05,):
 
         if depth > 0:
             root = self.entries[list(template_mol_map.keys())[0]]
@@ -330,6 +341,7 @@ class ThermoGroups(Database):
             
         logging.info(f"Number of datapoints: {psize}")
         mult_completed_nodes = []  # nodes containing multiple identical training molecules
+        prepruned_nodes = []
         boo = True  # if the for loop doesn't break becomes false and the while loop terminates
         active_procs = []
         active_conns = []
@@ -353,7 +365,26 @@ class ThermoGroups(Database):
                     continue
                 if len(template_mol_map[label]) == 0:
                     continue
-                if entry.index != -1 and len(template_mol_map[entry.label]) > min_mols_corrections_to_split and entry not in mult_completed_nodes:
+                if use_aleatoric_prepruning:
+                    if entry in prepruned_nodes:
+                        continue
+                    if len(template_mol_map[label]) > 1:
+                        corrections = [x[1] for x in template_mol_map[label]]
+                        averaged_correction = average_thermo_data(corrections, weighted=True)
+                        h_data_unc = aleatoric_prepruning_function(correction.H298.uncertainty_si for correction in corrections)
+                        h_pred_unc = averaged_correction.H298.uncertainty_si
+                        s_data_unc = aleatoric_prepruning_function(correction.S298.uncertainty_si for correction in corrections)
+                        s_pred_unc = averaged_correction.S298.uncertainty_si
+                        cp_data_uncs = np.array([aleatoric_prepruning_function(correction.Cpdata.uncertainty_si[i] for correction in corrections) for i in range(averaged_correction.Tdata.value_si.shape[0])])
+                        cp_pred_uncs = averaged_correction.Cpdata.uncertainty_si
+                        # logging.info(f"Data uncertainty: {h_data_unc}, {s_data_unc}, {cp_data_uncs}")
+                        # logging.info(f"Pred uncertainty: {h_pred_unc}, {s_pred_unc}, {cp_pred_uncs}")
+                        if h_data_unc > h_pred_unc and s_data_unc > s_pred_unc and all(cp_data_uncs > cp_pred_uncs):
+                            logging.info(f"Prepruning {label} due to aleatoric uncertainty")
+                            prepruned_nodes.append(entry)
+                            continue
+
+                if entry.index != -1 and len(template_mol_map[entry.label]) > min_mols_corrections_to_split and entry not in mult_completed_nodes and entry not in prepruned_nodes:
                     boo2, r = self.extend_node(entry, template_mol_map, obj=obj, Ts=Ts, r=r, iteration_max=extension_iteration_max, iteration_item_cap=extension_iteration_item_cap)
                     if boo2:  # extended node so restart while loop
                         break
@@ -1127,18 +1158,18 @@ class ThermoGroups(Database):
         else:
             regularization(self, self.top[0], template_mol_map)
     
-    def make_correction(self, corrections):
+    def make_correction(self, corrections, weighted=True, upper_bound=True):
         if corrections:
-            return average_thermo_data(corrections, weighted=True)
+            return average_thermo_data(corrections, weighted=weighted, upper_bound=upper_bound)
         else:
             return None
 
-    def make_corrections_from_template_mol_map(self, template_mol_map, nprocs=1, n_jobs=1):
+    def make_corrections_from_template_mol_map(self, template_mol_map, n_jobs=1, weighted=True, upper_bound=True):
 
         entries = list(self.entries.values())
         correction_lists = [[correction for _, correction in template_mol_map[entry.label]] for entry in entries]
         
-        average_corrections = Parallel(n_jobs=n_jobs, verbose=5, backend='multiprocessing')(delayed(self.make_correction)(corrections) for corrections in correction_lists)
+        average_corrections = Parallel(n_jobs=n_jobs, verbose=5, backend='multiprocessing')(delayed(self.make_correction)(corrections, weighted=weighted, upper_bound=upper_bound) for corrections in correction_lists)
 
         for ind, correction in enumerate(average_corrections):
             entry = entries[ind]
@@ -1149,7 +1180,7 @@ class ThermoGroups(Database):
             else:
                 long_desc = "Derived using the following species:\n"
                 for mol, correction in template_mol_map[entry.label]:
-                    long_desc += f"{mol.to_smiles()} from {correction.comment}"
+                    long_desc += f"{mol.to_smiles()} - {correction.comment}"
                     long_desc += "\n"
             self.entries[entry.label].long_desc = long_desc
             
@@ -1415,7 +1446,10 @@ class ThermoGroups(Database):
     def generate_tree(self, mols_corrections=None, obj=None, Ts=None, nprocs=1, min_splitable_entry_num=2,
                       min_mols_corrections_to_spawn=20, max_batch_size=800, outlier_fraction=0.02, stratum_num=8,
                       new_fraction_threshold_to_reopt_node=0.25, extension_iteration_max=np.inf, extension_iteration_item_cap=np.inf,
-                      min_mols_corrections_to_split=1, n_jobs=1):
+                      min_mols_corrections_to_split=1, n_jobs=1,
+                      use_aleatoric_prepruning=False, aleatoric_prepruning_function=min,
+                      use_model_variance_prepruning=False, model_variance_prepruning_threshold=0.05,
+                      ):
         """
         Generate a tree by greedy optimization based on the objective function obj
         the optimization is done by iterationating through every group and if the group has
@@ -1453,11 +1487,13 @@ class ThermoGroups(Database):
             template_mol_map = self.get_molecule_matches(mols_corrections=mols_corrections, exact_matches_only=True, n_jobs=n_jobs)
             self.make_tree_nodes(template_mol_map=template_mol_map, obj=obj, Ts=Ts, nprocs=nprocs - 1, depth=0,
                                  min_splitable_entry_num=min_splitable_entry_num, min_mols_corrections_to_spawn=min_mols_corrections_to_spawn, extension_iteration_max=extension_iteration_max,
-                                 min_mols_corrections_to_split=min_mols_corrections_to_split, n_jobs=n_jobs)
+                                 min_mols_corrections_to_split=min_mols_corrections_to_split, n_jobs=n_jobs,
+                                 use_aleatoric_prepruning=use_aleatoric_prepruning, aleatoric_prepruning_function=aleatoric_prepruning_function,
+                                 use_model_variance_prepruning=use_model_variance_prepruning, model_variance_prepruning_threshold=model_variance_prepruning_threshold)
         else:
             def molkey(mol):
                 return len(mol.atoms)
-            mols_correctionsoreted = sorted(mols_corrections, key=molkey)
+            mols_correctionsorted = sorted(mols_corrections, key=molkey)
             batches = [mols_correctionsorted[i * max_batch_size:(i + 1) * max_batch_size] for i in range((len(mols_correctionsorted) + max_batch_size - 1) // max_batch_size )]
             for i, batch in enumerate(batches):
                 if i == 0:

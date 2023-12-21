@@ -25,6 +25,8 @@ parser.add_argument("--data_path", type=str)
 parser.add_argument("--split_path", type=str)
 parser.add_argument("--fraction_training_data", type=float, default=1.0)
 parser.add_argument("--random_state", type=int, default=0)
+parser.add_argument("--use_aleatoric_prepruning", action="store_true")
+parser.add_argument("--use_upper_bound_uncertainty", action="store_true")
 
 args = parser.parse_args()
 
@@ -39,6 +41,8 @@ data_path = args.data_path
 split_path = args.split_path
 fraction_training_data = args.fraction_training_data
 random_state = args.random_state
+use_aleatoric_prepruning = args.use_aleatoric_prepruning
+use_upper_bound_uncertainty = args.use_upper_bound_uncertainty
 
 
 # Get data
@@ -65,7 +69,7 @@ HBI_corrections = train_df.apply(lambda x: ThermoData(
     S298=(x["HBI_Sint298 (cal/mol/K)"], "cal/mol/K", "+|-", x["unc_HBI_Sint298 (cal/mol/K)"]),
     Cpdata=([x[f"HBI_Cp{T} (cal/mol/K)"] for T in Ts], "cal/mol/K", "+|-", [x[f"unc_HBI_Cp{T} (cal/mol/K)"] for T in Ts]),
     Tdata=(Ts, "K"),
-    comment=f"Radical thermo from {x['radical_source']} and closed shell thermo from {x['closed_shell_thermo_source']}"
+    comment=f"Radical thermo from {x['radical_source']} and closed shell thermo from {x['closed_shell_thermo_source'].replace('Thermo library: ../data/', '')}"
 ), axis=1)
 HBI_corrections = HBI_corrections.to_list()
 
@@ -109,7 +113,7 @@ start = time.time()
 template_mol_map_exact = tree.generate_tree(mols_corrections=mols_corrections, obj=None, Ts=None, nprocs=1, min_splitable_entry_num=2,
                                           min_mols_corrections_to_spawn=20, max_batch_size=np.inf, outlier_fraction=0.02, stratum_num=8,
                                           new_fraction_threshold_to_reopt_node=0.25, extension_iteration_max=2, extension_iteration_item_cap=100, 
-                                            min_mols_corrections_to_split=1, n_jobs=n_jobs)
+                                            min_mols_corrections_to_split=1, n_jobs=n_jobs, use_aleatoric_prepruning=use_aleatoric_prepruning)
 end = time.time()
 print("Tree generation took ", end-start, " seconds")
 
@@ -124,7 +128,7 @@ print("Mol mapping took ", end-start, " seconds")
 tree.regularize(template_mol_map)
 
 start = time.time()
-tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs)
+tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs, upper_bound=use_upper_bound_uncertainty)
 end = time.time()
 print("Make corrections took ", end-start, " seconds")
 
