@@ -328,7 +328,7 @@ class ThermoGroups(Database):
         else:
             psize = float(len(template_mol_map[root.label]))
             
-        logging.info("Number of datapoints: ", psize)
+        logging.info(f"Number of datapoints: {psize}")
         mult_completed_nodes = []  # nodes containing multiple identical training molecules
         boo = True  # if the for loop doesn't break becomes false and the while loop terminates
         active_procs = []
@@ -340,7 +340,7 @@ class ThermoGroups(Database):
         r = None
 
         while boo:
-            logging.info("Tree size: ", len(template_mol_map))
+            logging.info(f"Tree size: {len(template_mol_map)}")
             splitable_entry_num = 0
             for label, items in template_mol_map.items():  # figure out how many splitable objects there are
                 entry = self.entries[label]
