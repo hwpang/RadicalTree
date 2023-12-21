@@ -46,5 +46,12 @@ def generate_thermo(thermo_database, smi, resonance=True):
     thermo = thermo.to_thermo_data() if not isinstance(thermo, ThermoData) else thermo
     return thermo.H298.value_si/4184, thermo.S298.value_si/4.184, thermo.Cpdata.value_si/4.184, (thermo.S298.value_si + constants.R * math.log(spc.get_symmetry_number()))/4.184, thermo.comment
 
-def make_mol(smi):
-    return Molecule().from_smiles(smi)
+def make_mol(smi, label=False):
+    mol = Molecule().from_smiles(smi)
+    if label:
+        for atom in mol.atoms:
+            if atom.radical_electrons > 0:
+                atom.label = "*"
+        return mol
+    else:
+        return mol
