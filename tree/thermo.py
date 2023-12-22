@@ -385,7 +385,7 @@ class ThermoGroups(Database):
                             continue
 
                 if entry.index != -1 and len(template_mol_map[entry.label]) > min_mols_corrections_to_split and entry not in mult_completed_nodes and entry not in prepruned_nodes:
-                    boo2, r = self.extend_node(entry, template_mol_map, obj=obj, Ts=Ts, r=r, iteration_max=extension_iteration_max, iteration_item_cap=extension_iteration_item_cap)
+                    boo2, r = self.extend_node(entry, template_mol_map, obj=obj, Ts=Ts, r=r, iteration_max=extension_iteration_max, iteration_item_cap=extension_iteration_item_cap, use_model_variance_prepruning=use_model_variance_prepruning, model_variance_prepruning_threshold=model_variance_prepruning_threshold)
                     if boo2:  # extended node so restart while loop
                         break
                     else:  # no extensions could be generated since all molecules were identical
@@ -411,7 +411,7 @@ class ThermoGroups(Database):
 
         return
     
-    def extend_node(self, parent, template_mol_map, obj=None, Ts=None, r=None, iteration_max=np.inf, iteration_item_cap=np.inf):
+    def extend_node(self, parent, template_mol_map, obj=None, Ts=None, r=None, iteration_max=np.inf, iteration_item_cap=np.inf, use_model_variance_prepruning=False, model_variance_prepruning_threshold=0.05):
         """
         Constructs an extension to the group parent based on evaluation 
         of the objective function obj
@@ -485,6 +485,21 @@ class ThermoGroups(Database):
         min_ind = vals.index(min_val)
 
         ext = exts[min_ind]
+
+        if use_model_variance_prepruning:
+            grp, grpc, name, typ, einds = ext
+
+            mols_corrections = template_mol_map[parent.label]
+            new, old, new_inds = self._split_molecules(mols_corrections, grp)
+            if obj:
+                parent_ob, boo = get_objective_function(mols_corrections, [], obj, Ts=Ts)
+            else:
+                parent_ob, boo = get_objective_function(mols_corrections, [], Ts=Ts)
+            if (parent_ob - min_val) / parent_ob < model_variance_prepruning_threshold:
+                logging.info(f"Parent objective function value: {parent_ob}")
+                logging.info(f"New split objective function value: {min_val}")
+                logging.info(f"Prepruning {name} due to small information gain quantified by model variance {(parent_ob - min_val) / parent_ob:.2e} < {model_variance_prepruning_threshold}")
+                return (False, None)
 
         extname = ext[2]
 
@@ -580,7 +595,7 @@ class ThermoGroups(Database):
             template_mol_map[parent.label] = comp_entries
         return (True, None)
     
-    def get_extension_edge(self, parent, template_mol_map, obj, Ts, r=None, iteration_max=np.inf, iteration_item_cap=np.inf):
+    def get_extension_edge(self, parent, template_mol_map, obj, Ts, r=None, iteration_max=np.inf, iteration_item_cap=np.inf, use_model_variance_prepruning=False, model_variance_prepruning_threshold=0.05):
         """
         finds the set of all extension groups to parent such that
         1) the extension group divides the set of molecules under parent
@@ -862,122 +877,6 @@ class ThermoGroups(Database):
             string += self.generate_old_tree(entry.children, level + 1)
         return string
 
-#     def load(self, path, local_context=None, global_context=None):
-#         """
-#         Load an RMG-style database from the file at location `path` on disk.
-#         The parameters `local_context` and `global_context` are used to
-#         provide specialized mapping of identifiers in the input file to
-#         corresponding functions to evaluate. This method will automatically add
-#         a few identifiers required by all data entries, so you don't need to
-#         provide these.
-#         """
-
-#         # Clear any previously-loaded data
-#         self.entries = OrderedDict()
-#         self.top = []
-
-#         # Set up global and local context
-#         if global_context is None: global_context = {}
-#         global_context['__builtins__'] = None
-#         global_context['True'] = True
-#         global_context['False'] = False
-#         if local_context is None: local_context = {}
-#         local_context['__builtins__'] = None
-#         local_context['entry'] = self.load_entry
-#         def f(tree):
-#             _load_tree(self,tree)
-#         local_context['tree'] = f
-#         local_context['name'] = self.name
-#         local_context['solvent'] = self.solvent
-#         local_context['shortDesc'] = self.short_desc
-#         local_context['longDesc'] = self.long_desc
-#         local_context['RateUncertainty'] = RateUncertainty
-#         local_context['metal'] = self.metal
-#         local_context['site'] = self.site
-#         local_context['facet'] = self.facet
-#         # add in anything from the Class level dictionary.
-#         for key, value in Database.local_context.items():
-#             local_context[key] = value
-
-#         # Process the file
-#         f = open(path, 'r')
-#         try:
-#             exec(f.read(), global_context, local_context)
-#         except Exception:
-#             logging.error('Error while reading database {0!r}.'.format(path))
-#             raise
-#         f.close()
-
-#         # Extract the database metadata
-#         self.name = local_context['name']
-#         self.solvent = local_context['solvent']
-#         self.short_desc = local_context['shortDesc']
-#         self.long_desc = local_context['longDesc'].strip()
-#         self.metal = local_context['metal']
-#         self.site = local_context['site']
-#         self.facet = local_context['facet']
-
-#         # Return the loaded database (to allow for Database().load() syntax)
-#         return self
-
-#     def _load_tree(self,tree):
-#         """
-#         Parse an group tree located at `tree`. An RMG tree is an n-ary
-#         tree representing the hierarchy of items in the dictionary.
-#         """
-
-#         if len(self.entries) == 0:
-#             raise DatabaseError("Load the dictionary before you load the tree.")
-
-#         # should match '  L3 : foo_bar '  and 'L3:foo_bar'
-#         parser = re.compile('^\s*L(?P<level>\d+)\s*:\s*(?P<label>\S+)')
-
-#         parents = [None]
-#         for line in tree.splitlines():
-#             line = remove_comment_from_line(line).strip()
-#             if len(line) > 0:
-#                 # Extract level
-#                 match = parser.match(line)
-#                 if not match:
-#                     raise DatabaseError("Couldn't parse line '{0}'".format(line.strip()))
-#                 level = int(match.group('level'))
-#                 label = match.group('label')
-#                 data_count = int(match.group('data_count'))
-
-#                 # Find immediate parent of the new node
-#                 parent = None
-#                 if len(parents) < level:
-#                     raise DatabaseError("Invalid level specified in line '{0}'".format(line.strip()))
-#                 else:
-#                     while len(parents) > level:
-#                         parents.remove(parents[-1])
-#                     if len(parents) > 0:
-#                         parent = parents[level - 1]
-#                 if parent is not None: parent = self.entries[parent]
-#                 try:
-#                     entry = self.entries[label]
-#                     entry.data_count = data_count
-#                 except KeyError:
-#                     raise DatabaseError('Unable to find entry "{0}" from tree in dictionary.'.format(label))
-
-#                 if isinstance(parent, str):
-#                     raise DatabaseError('Unable to find parent entry "{0}" of entry "{1}" in tree.'.format(parent,
-#                                                                                                            label))
-
-#                 # Update the parent and children of the nodes accordingly
-#                 if parent is not None:
-#                     entry.parent = parent
-#                     parent.children.append(entry)
-#                 else:
-#                     entry.parent = None
-#                     self.top.append(entry)
-
-#                 # Save the level of the tree into the entry
-#                 entry.level = level
-
-#                 # Add node to list of parents for subsequent iterationation
-#                 parents.append(label)
-                
     def prune_tree(self, mols_corrections, newmols_corrections, new_fraction_threshold_to_reopt_node=0.25,
                    exact_matches_only=True, n_jobs=1):
         """
@@ -1537,10 +1436,15 @@ def information_gain(corrections1, corrections2, Ts):
     calculates the information gain as the sum of the products of the standard deviations at each
     node and the number of reactions at that node
     """
-    Gs1_Ts = [np.array([correction.get_free_energy(T) for correction in corrections1]) for T in Ts]
-    Gs2_Ts = [np.array([correction.get_free_energy(T) for correction in corrections2]) for T in Ts]
-    
-    return len(corrections1) * sum(np.std(Gs_T) for Gs_T in Gs1_Ts) + len(corrections2) * sum(np.std(Gs_T) for Gs_T in Gs2_Ts)
+
+    if corrections2:
+        Gs1_Ts = [np.array([correction.get_free_energy(T) for correction in corrections1]) for T in Ts]
+        Gs2_Ts = [np.array([correction.get_free_energy(T) for correction in corrections2]) for T in Ts]
+        
+        return len(corrections1) * sum(np.std(Gs_T) for Gs_T in Gs1_Ts) + len(corrections2) * sum(np.std(Gs_T) for Gs_T in Gs2_Ts)
+    else:
+        Gs1_Ts = [np.array([correction.get_free_energy(T) for correction in corrections1]) for T in Ts]
+        return len(corrections1) * sum(np.std(Gs_T) for Gs_T in Gs1_Ts)
 
 
 def get_objective_function(mols_corrections_1, mols_corrections_2, obj=information_gain, Ts=None):

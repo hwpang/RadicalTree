@@ -27,6 +27,8 @@ parser.add_argument("--fraction_training_data", type=float, default=1.0)
 parser.add_argument("--random_state", type=int, default=0)
 parser.add_argument("--use_aleatoric_prepruning", action="store_true")
 parser.add_argument("--use_upper_bound_uncertainty", action="store_true")
+parser.add_argument("--use_model_variance_prepruning", action="store_true")
+parser.add_argument("--model_variance_prepruning_threshold", type=float, default=0.05)
 
 args = parser.parse_args()
 
@@ -43,6 +45,8 @@ fraction_training_data = args.fraction_training_data
 random_state = args.random_state
 use_aleatoric_prepruning = args.use_aleatoric_prepruning
 use_upper_bound_uncertainty = args.use_upper_bound_uncertainty
+use_model_variance_prepruning = args.use_model_variance_prepruning
+model_variance_prepruning_threshold = args.model_variance_prepruning_threshold
 
 
 # Get data
@@ -113,7 +117,8 @@ start = time.time()
 template_mol_map_exact = tree.generate_tree(mols_corrections=mols_corrections, obj=None, Ts=None, nprocs=1, min_splitable_entry_num=2,
                                           min_mols_corrections_to_spawn=20, max_batch_size=np.inf, outlier_fraction=0.02, stratum_num=8,
                                           new_fraction_threshold_to_reopt_node=0.25, extension_iteration_max=2, extension_iteration_item_cap=100, 
-                                            min_mols_corrections_to_split=1, n_jobs=n_jobs, use_aleatoric_prepruning=use_aleatoric_prepruning)
+                                            min_mols_corrections_to_split=1, n_jobs=n_jobs,
+                                            use_aleatoric_prepruning=use_aleatoric_prepruning, use_model_variance_prepruning=use_model_variance_prepruning, model_variance_prepruning_threshold=model_variance_prepruning_threshold)
 end = time.time()
 print("Tree generation took ", end-start, " seconds")
 

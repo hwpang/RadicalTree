@@ -1,0 +1,561 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+name = "HBI correction"
+shortDesc = ""
+longDesc = """
+
+"""
+entry(
+    index = 0,
+    label = "Root",
+    group = 
+"""
+1 * R u[1,2,3,4]
+""",
+    thermo = ThermoData(
+        Tdata = ([300,400,500,600,800,1000,1500],'K'),
+        Cpdata = ([-0.580207,-1.59117,-2.32619,-2.75459,-3.20106,-3.59334,-4.40346],'cal/mol/K','+|-',[3.99439,4.69841,4.92365,4.75455,4.14844,3.78988,3.85407]),
+        H298 = (94.0158,'kcal/mol','+|-',26.9104),
+        S298 = (0.22968,'cal/mol/K','+|-',9.30978),
+    ),
+    shortDesc = """Radical correction fitted to 506 radicals""",
+    longDesc = 
+"""
+Averaged from children nodes
+""",
+)
+
+entry(
+    index = 1,
+    label = "RJ1",
+    group = 
+"""
+1 * R u1
+""",
+    thermo = ThermoData(
+        Tdata = ([300,400,500,600,800,1000,1500],'K'),
+        Cpdata = ([-0.580207,-1.59117,-2.32619,-2.75459,-3.20106,-3.59334,-4.40346],'cal/mol/K','+|-',[3.99439,4.69841,4.92365,4.75455,4.14844,3.78988,3.85407]),
+        H298 = (94.0158,'kcal/mol','+|-',26.9104),
+        S298 = (0.22968,'cal/mol/K','+|-',9.30978),
+    ),
+    shortDesc = """Radical correction fitted to 506 radicals""",
+    longDesc = 
+"""
+Derived using the following species:
+[CH2]C=CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1=CCC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C1COOCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC(O)C(=O)C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=CC1[CH]OCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C=CCCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CC(O)=CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=[C]C=C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=C(O)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=[C]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C)COC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=C(CO)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(CO[O])CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(C)OOC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
+O=C1CO[CH]CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC([O])=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C](C=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C1=CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([O])OC=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)(OO)C1(O[O])COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(COCOO)O[O] - Radical thermo from johnson_g4.py and closed shell thermo from johnson_g4.py
+[CH2]C(=C=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C12OC1(O)O2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1C=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCCO[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1[CH]CCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C)CC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=C(C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]CC(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(C)=C1CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[C]1OC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[CH]C - Radical thermo from pang.py and closed shell thermo from dong_pio_liang.py
+[O]C1=COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]1CCC2C3C=CC(C3)C12 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C=[C]C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C=CC1=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(C)(COOCC(=O)O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(CO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C=CC[C](C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]OCC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from johnson_g4.py
+C=C(C=O)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC1C=C([O])OC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCC(C)(C)[CH]CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC=C(O)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC=CCC1=CC=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from pang.py
+O=C(OO)[C]1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=CCC1C=CC2C3C=CC(C3)C12 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C(=O)OC(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(CC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1COOC1(C)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)CC1[CH]C(C)=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+COOC(C)(C)[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C(O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[CH]C#CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OCC1CCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1(C)CC(OO)C(=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C](OC(C)=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CCC1C1C=CC=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C[C](C=O)C1(C)OCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]COOCO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=C=CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=C1C=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1CO[CH]OC(=O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#CC(=CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1[CH]OC(O)C1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C([O])CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1(C=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCN(OC1=C[CH]CC=C1)CC - Radical thermo from pang.py and closed shell thermo from GAV
+CC[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OC(C)(C)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1C=CC(O[O])C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1[CH]CO1 - Radical thermo from johnson_g4.py and closed shell thermo from dong_pio_liang.py
+C=C(C)COC1C=C[C](C)CC1OO - Radical thermo from pang.py and closed shell thermo from GAV
+C=C(COO)C(C)(C)OOC(C)(C)[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[C]1CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1=CCC=C[CH]1 - Radical thermo from pang.py and closed shell thermo from pang.py
+[O]CC1(O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CC1([CH]C=O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C=O)=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC[CH]C(CC)OOC1C=CCC(C)=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C([O])C1(OO)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]COC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(C)=CCC(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CO[CH]C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(OO)C(O)=C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCC(CO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]C(CC)OOC1C=CC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH]=C=CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(COO)=C(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(=O)[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([O])C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C=C(C)C(C)(C)[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+COOC[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC1(C)OOCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)=[C]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC#CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CO[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)C[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C=O)=C(C)C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)=CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C)(C)C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CO[CH]CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O[C]1OC(O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+OOC[C]1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=CC=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CCCC([O])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)[CH]CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]OC(C)=C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[CH]CC1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C1CC(C)(O[O])CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C(C)(CO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC([O])O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C=C(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCC(CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1C=C(O)C(O)=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1[CH]C=CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC=CCCC1=CCC(C)[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
+[O]OCC(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]1C=CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]1OCCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC1(C[O])COCC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C#CCC[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C([O])OC(=CC)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)[CH]C(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=[C]C(OO)OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OCC1(O)[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]1COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=[C]COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+O=CC(O)=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C=CC1OCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=C1CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=CCC1=C[CH]C=C(CC=CC)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+O=C[CH]CC=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]C(CC)OOC1C=CC(C2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+C[C](C)C(C)(C)CC(=O)C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C](COO)COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)C1CC(C)([O])OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C[C]1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]OCCCO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[CH]CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C1(O)OC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C(C)(CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CO[CH]CCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([C]=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC1=[C]CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+O=C1OOC[C]1COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC(O)(O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OOC[C]1CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1=CCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C1=CC2[C](C1)C1C=CC2C1 - Radical thermo from pang.py and closed shell thermo from pang.py
+C[C](C)C(C)(C)OOC(C)(C)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O[C]1OCCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(C=O)O[O] - Radical thermo from johnson_g4.py and closed shell thermo from GAV
+C=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1[CH]COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)C(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1[CH]C=CCC1 - Radical thermo from pang.py and closed shell thermo from pang.py
+O=C=C1[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C=C(CC=CC)CCC=CCCC=CC - Radical thermo from pang.py and closed shell thermo from GAV
+C=C(O)C(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)=[C]C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([CH]O)C(C)(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)CC1(O[O])COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC=CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=CC(O)C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCC(COO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1C[CH]CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CC2CC2C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)OCC(CC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[C]1C(=O)OC=C1C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=[C]C1=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC(OO)C([O])=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]OCC(C)OO - Radical thermo from johnson_g4.py and closed shell thermo from johnson_g4.py
+[CH2]C=CCC1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from pang.py
+C=C(C)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)=C(C)C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=CCC#C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1CCOC(=O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1OOCC1OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1[CH]C=CC2CC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C](C)C(CO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+COC=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC([O])COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(=O)C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=[C]C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CC(OO)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1(C(=O)O)CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[C]#CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC1[CH]C(=O)OC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C](CC=CC)CC(C)C=C - Radical thermo from pang.py and closed shell thermo from pang.py
+CC(=O)OC1OC1(C)C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=CCC1C=CCC1C1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from pang.py
+C[CH]CCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+O=C[CH]C=CCC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CCC1OOC1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C1(C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1OOC(O)C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OCC=CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1=CCCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O[CH]C(CCOO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1(CO)OO[CH]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CC(C2=CC=CCC2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+C[CH]C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]CCC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCC[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)O[C]=C(C)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=C=CCC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1CO[C](C)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OC[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1(COC(C)=O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CC(C)OOC1[CH]CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC=C1[C]=COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)OCC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=C1OOC(C)C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=C=O)C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCC(C[O])CO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C(=CO)C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1(C)OOCC1(COO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCC(O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[CH]C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C#CC=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1CCC=CCC1CC1=CC=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=CC(O[O])C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C[C]1CC(O)=CC1OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)C(C)([O])C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C#C[C]1CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC(=O)C(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC([O])=C1COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+COC[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C=O)C(C)(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C)COOC1[CH]C(C)=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C[CH]CCC(C)C - Radical thermo from pang.py and closed shell thermo from GAV
+C=C=C=CCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CC(=C)[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]COC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(O[O])C(=O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=[C]CCCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=[C]C1=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C1=C(COO)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC[CH]C(CC)OOC1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C[C](O)C=C1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C]1C=COC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=CO)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(N(CC)O)C[CH]C=C - Radical thermo from pang.py and closed shell thermo from pang.py
+[O]OCC(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[CH]COOCC(C)C - Radical thermo from pang.py and closed shell thermo from GAV
+C[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[CH]OO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]OCC(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=[C]C=CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OOC[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#C[C](O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCCCO[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC=C(C=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C(=C)[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCN(OC1=CC=C[CH]C1)CC - Radical thermo from pang.py and closed shell thermo from GAV
+C#CC(C)(O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[C]1=COC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC#C[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=[C]COC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=COC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]CC1COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(=C)C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(C)C(C)C(CO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C([CH]O)C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC(C)(O[O])C(O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1[CH]OC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=C[O])C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC1OOC(O)[C]1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)CC1CCC=C[C]1C - Radical thermo from pang.py and closed shell thermo from GAV
+C=CC(O)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O[CH]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C=O)C[C](C=O)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)OC(C=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC(OO)C(C)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C=[C]C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1C=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]CCOC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC=CC=[C]C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1C[CH]COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=COC(C)=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C)[C](C)CCC(=C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC([C]=O)OO - Radical thermo from johnson_g4.py and closed shell thermo from GAV
+[CH]1CC=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+OC[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=CC(=C)C[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]OCC1=CC=CC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C=C=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]OCC(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1(C)CC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(C)C1(C)OOCC1O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[CH]C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OCC(=O)CC(=O)OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC1([CH]O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(CO[O])C(C)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=C(C=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C=C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]OC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(C)[C]1OCC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)CC1(C)[CH]C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C=COC - Radical thermo from johnson_g4.py and closed shell thermo from GAV
+CC(C)CO[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C]1CC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C=COC=C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+OOC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+OOCC1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]OCC1=CCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C[O])CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C(CO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C1[CH]C=CCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC[C]1COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C=C=C[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC=C(CO[O])COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from pang.py
+C[C](C)C(C)=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1([O])CCCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCN(OC1C[CH]C=C1)CC - Radical thermo from pang.py and closed shell thermo from pang.py
+C=CC(CO[O])OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([O])CCC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1=C(O)C(O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=C1C=COC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC=C([O])O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC(OO)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(O)[C]=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]OC(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1CC(C)=C1C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C=CCCC=CCC1=CC=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C(O)=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC#CC[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OCC=C=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(O[O])C(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1OC[C](C)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1=CC=CC=C1 - Radical thermo from pang.py and closed shell thermo from pang.py
+CC(C)=C(C)OCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)O[C]=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C1OO[CH]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(OC(C)=O)C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC=C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=CCC1=C[CH]C=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C(C=CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(=O)OC(=O)C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#C[C]=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[CH]C1=CC=CC=C1 - Radical thermo from pang.py and closed shell thermo from pang.py
+[CH2]C1=CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from dong_pio_liang.py
+[O]OC1C=CCCC1C1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC=C([O])COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[CH]CC1CC(C)=CCC1C - Radical thermo from pang.py and closed shell thermo from GAV
+C=C=[C]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)[C]1COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CC(C2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C1CC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(O[O])C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OC1[CH]OCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[C](C)C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C]1CCC(=O)OOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1CC=CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C=CC=CCC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)C(O)=C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1(O)OOC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#CC[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=C=CCCC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]=C(C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OC=C(C)OCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C[CH]C(O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1CC(C)(CO[O])OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OCC1OCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]COOC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=C=C1[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OC(CC(C)O[O])OO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)C(C)(O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1CC1C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C]1OCC=C(C)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OCC1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=C(O)C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C1CC(=O)CC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CO[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[CH]C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)C[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[C](O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1=CC=CCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from pang.py
+[O]OCCCC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]=C=C(O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CCOCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(C)(C)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#CC(O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC1O[CH]C=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C([O])C=COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1C(=O)OOC1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(N(CC)O)C(C=C)[CH2] - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C#CC=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1=COC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=C=C[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC([O])C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(C)=C(C)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[CH]CC1C=CC=CC1 - Radical thermo from pang.py and closed shell thermo from pang.py
+CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(O[O])C(CO)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)[CH]CC - Radical thermo from pang.py and closed shell thermo from dong_pio_liang.py
+[CH]1C=C(C2=CC=CC2)CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C([CH]OC(C)=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C#C[C]=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)(OO)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC1=C[CH]OC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OC([O])=C(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC([O])C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C#CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C=C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C[C]=COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C(=C=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=C[O])C(C)(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OC1=C[CH]C=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]OC(C)=COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OCC(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C=C=C[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C](C=O)C1(C)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C)=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]C(=CO)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(OO)C(=O)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C=CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C[CH]C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=[C]CC(=O)COC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)OC(O[O])OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C)(C=C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C(C=O)[C]1CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C](O)C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1=CC=CC=C1 - Radical thermo from pang.py and closed shell thermo from pang.py
+[O]C(O)(O)OC(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1CCOCO1 - Radical thermo from johnson_cbs-qb3.py and closed shell thermo from GAV
+[CH2]C=CC#CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OCC(=O)CC[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]CC1(C=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)OC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC(=O)OC1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C[CH]OO - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH]1CCC=CC1OOC1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+[H] - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC=C(C)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CCOC(=O)CO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[C]#C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1(C)OC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC1OOCC(O[O])C1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=[C]CC1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)[C](C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+CC([O])C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[CH2]C1=CC(CC(=C)C)CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC1(O[O])COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(=O)OC1[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[C]=COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+C=C[CH]CC1C=CC(C2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C=C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C=CCCC(C)C - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C1(C(C)C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C)OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C=O)=C(C)OCO[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+[O]OC1C=COCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OCC1[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from dong_pio_liang.py
+O=[C]OC(O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]OC1C=CC(O)=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC([O])CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+""",
+)
+
+tree(
+"""
+L1: Root
+    L2: RJ1
+"""
+)
+
