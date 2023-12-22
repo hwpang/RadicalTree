@@ -7,6 +7,7 @@ import json
 import os
 import time as time
 from pathlib import Path
+import logging
 
 import numpy as np
 import pandas as pd
@@ -48,6 +49,17 @@ use_upper_bound_uncertainty = args.use_upper_bound_uncertainty
 use_model_variance_prepruning = args.use_model_variance_prepruning
 model_variance_prepruning_threshold = args.model_variance_prepruning_threshold
 
+logging.basicConfig(filename=save_dir / "train.log", level=logging.INFO)
+logging.info("n_jobs: ", n_jobs)
+logging.info("save_dir: ", save_dir)
+logging.info("data_path: ", data_path)
+logging.info("split_path: ", split_path)
+logging.info("fraction_training_data: ", fraction_training_data)
+logging.info("random_state: ", random_state)
+logging.info("use_aleatoric_prepruning: ", use_aleatoric_prepruning)
+logging.info("use_upper_bound_uncertainty: ", use_upper_bound_uncertainty)
+logging.info("use_model_variance_prepruning: ", use_model_variance_prepruning)
+logging.info("model_variance_prepruning_threshold: ", model_variance_prepruning_threshold)
 
 # Get data
 
@@ -120,7 +132,7 @@ template_mol_map_exact = tree.generate_tree(mols_corrections=mols_corrections, o
                                             min_mols_corrections_to_split=1, n_jobs=n_jobs,
                                             use_aleatoric_prepruning=use_aleatoric_prepruning, use_model_variance_prepruning=use_model_variance_prepruning, model_variance_prepruning_threshold=model_variance_prepruning_threshold)
 end = time.time()
-print("Tree generation took ", end-start, " seconds")
+logging.info("Tree generation took ", end-start, " seconds")
 
 tree.check_tree()
 
@@ -128,14 +140,14 @@ start = time.time()
 template_mol_map = tree.get_molecule_matches(mols_corrections=mols_corrections,
                                                      exact_matches_only=False, n_jobs=n_jobs)
 end = time.time()
-print("Mol mapping took ", end-start, " seconds")
+logging.info("Mol mapping took ", end-start, " seconds")
 
 tree.regularize(template_mol_map)
 
 start = time.time()
 tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs, upper_bound=use_upper_bound_uncertainty)
 end = time.time()
-print("Make corrections took ", end-start, " seconds")
+logging.info("Make corrections took ", end-start, " seconds")
 
 tree.check_tree()
 

@@ -9,6 +9,7 @@ sys.path.insert(0,"/home/gridsan/hwpang/Software/RMG-Py/")
 import argparse
 import json
 from pathlib import Path
+import logging
 
 import pandas as pd
 from rmgpy.data.thermo import ThermoDatabase, ThermoGroups
@@ -38,6 +39,11 @@ data_path = args.data_path
 split_path = args.split_path
 model_path = args.model_path
 
+logging.basicConfig(filename=save_dir / "predict.log", level=logging.INFO)
+logging.info("n_jobs: ", n_jobs)
+logging.info("save_dir: ", save_dir)
+logging.info("data_path: ", data_path)
+logging.info("split_path: ", split_path)
 
 # Load test data
 
