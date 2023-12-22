@@ -5,6 +5,8 @@ from rmgpy.data.thermo import ThermoData, ThermoDatabase, ThermoLibrary
 from rmgpy.molecule import Molecule
 from rmgpy.species import Species
 
+linestyles = ['-', '--', '-.', ':']
+markers = ['o', 'v', '^', '<', '>', 's', 'p', '*', 'h', 'H', 'D', 'd']
 
 def load_thermo_lib_by_path(path: str,
                             thermo_db: ThermoDatabase,
