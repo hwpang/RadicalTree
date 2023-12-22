@@ -25,6 +25,7 @@ parser.add_argument("--save_dir", type=str)
 parser.add_argument("--data_path", type=str)
 parser.add_argument("--split_path", type=str)
 parser.add_argument("--model_path", type=str)
+parser.add_argument("--validation", action="store_true")
 
 args = parser.parse_args()
 
@@ -38,12 +39,15 @@ save_dir.mkdir(exist_ok=True)
 data_path = args.data_path
 split_path = args.split_path
 model_path = args.model_path
+validation = args.validation
 
-logging.basicConfig(filename=save_dir / "predict.log", level=logging.INFO)
-logging.info("n_jobs: ", n_jobs)
-logging.info("save_dir: ", save_dir)
-logging.info("data_path: ", data_path)
-logging.info("split_path: ", split_path)
+logging.basicConfig(filename=save_dir / "predict.log", level=logging.INFO, filemode='w', force=True)
+logging.info(f"n_jobs: {n_jobs}")
+logging.info(f"save_dir: {save_dir}")
+logging.info(f"data_path: {data_path}")
+logging.info(f"split_path: {split_path}")
+logging.info(f"model_path: {model_path}")
+logging.info(f"validation: {validation}")
 
 # Load test data
 
@@ -52,11 +56,16 @@ hbi_unc_df = pd.read_csv(data_path)
 
 
 with open(split_path, "r") as f:
-    train_inds, test_inds = json.load(f)
+    indss = json.load(f)
+    if len(indss) == 2:
+        train_inds, test_inds = indss
+    elif len(indss) == 3:
+        train_inds, val_inds, test_inds = indss
 
-
-test_df = hbi_unc_df.loc[test_inds, :]
-test_df
+if validation:
+    test_df = hbi_unc_df.loc[val_inds, :]
+else:
+    test_df = hbi_unc_df.loc[test_inds, :]
 
 
 mols = test_df["resonance_radical_smiles"].apply(make_mol)
@@ -93,8 +102,10 @@ for i, T in enumerate(Ts):
     test_result_df[f"unc_HBI_Cp{T} (cal/mol/K)"] = [thermo.Cpdata.uncertainty_si[i]/4.184 for thermo in thermos]
 test_result_df["comment"] = [thermo.comment for thermo in thermos]
 
-
-test_result_df.to_csv(save_dir / "test.csv", index=False)
+if validation:
+    test_result_df.to_csv(save_dir / "validation.csv", index=False)
+else:
+    test_result_df.to_csv(save_dir / "test.csv", index=False)
 
 
 

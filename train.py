@@ -49,17 +49,31 @@ use_upper_bound_uncertainty = args.use_upper_bound_uncertainty
 use_model_variance_prepruning = args.use_model_variance_prepruning
 model_variance_prepruning_threshold = args.model_variance_prepruning_threshold
 
-logging.basicConfig(filename=save_dir / "train.log", level=logging.INFO)
-logging.info("n_jobs: ", n_jobs)
-logging.info("save_dir: ", save_dir)
-logging.info("data_path: ", data_path)
-logging.info("split_path: ", split_path)
-logging.info("fraction_training_data: ", fraction_training_data)
-logging.info("random_state: ", random_state)
-logging.info("use_aleatoric_prepruning: ", use_aleatoric_prepruning)
-logging.info("use_upper_bound_uncertainty: ", use_upper_bound_uncertainty)
-logging.info("use_model_variance_prepruning: ", use_model_variance_prepruning)
-logging.info("model_variance_prepruning_threshold: ", model_variance_prepruning_threshold)
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.INFO)
+
+fh = logging.FileHandler(save_dir / "train.log")
+fh.setLevel(logging.INFO)
+
+while logger.handlers:
+    logger.handlers.pop()
+
+logger.addHandler(ch)
+logger.addHandler(fh)
+
+logging.info(f"n_jobs: {n_jobs}")
+logging.info(f"save_dir: {save_dir}")
+logging.info(f"data_path: {data_path}")
+logging.info(f"split_path: {split_path}")
+logging.info(f"fraction_training_data: {fraction_training_data}")
+logging.info(f"random_state: {random_state}")
+logging.info(f"use_aleatoric_prepruning: {use_aleatoric_prepruning}")
+logging.info(f"use_upper_bound_uncertainty: {use_upper_bound_uncertainty}")
+logging.info(f"use_model_variance_prepruning: {use_model_variance_prepruning}")
+logging.info(f"model_variance_prepruning_threshold: {model_variance_prepruning_threshold}")
 
 # Get data
 
@@ -69,7 +83,11 @@ hbi_unc_df
 
 
 with open(split_path, "r") as f:
-    train_inds, test_inds = json.load(f)
+    indss = json.load(f)
+    if len(indss) == 2:
+        train_inds, test_inds = indss
+    elif len(indss) == 3:
+        train_inds, val_inds, test_inds = indss
 
 
 train_df = hbi_unc_df.loc[train_inds, :]
@@ -132,7 +150,7 @@ template_mol_map_exact = tree.generate_tree(mols_corrections=mols_corrections, o
                                             min_mols_corrections_to_split=1, n_jobs=n_jobs,
                                             use_aleatoric_prepruning=use_aleatoric_prepruning, use_model_variance_prepruning=use_model_variance_prepruning, model_variance_prepruning_threshold=model_variance_prepruning_threshold)
 end = time.time()
-logging.info("Tree generation took ", end-start, " seconds")
+logging.info(f"Generating tree took {end-start} seconds")
 
 tree.check_tree()
 
@@ -140,14 +158,14 @@ start = time.time()
 template_mol_map = tree.get_molecule_matches(mols_corrections=mols_corrections,
                                                      exact_matches_only=False, n_jobs=n_jobs)
 end = time.time()
-logging.info("Mol mapping took ", end-start, " seconds")
+logging.info(f"Getting molecule matches took {end-start} seconds")
 
 tree.regularize(template_mol_map)
 
 start = time.time()
 tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs, upper_bound=use_upper_bound_uncertainty)
 end = time.time()
-logging.info("Make corrections took ", end-start, " seconds")
+logging.info(f"Making corrections took {end-start} seconds")
 
 tree.check_tree()
 

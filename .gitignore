@@ -6,3 +6,7 @@ __pycache__/
 
 # Slurm output
 slurm-*.out
+
+# Training logs
+train.log
+predict.log
