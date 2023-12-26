@@ -41,7 +41,22 @@ split_path = args.split_path
 model_path = args.model_path
 validation = args.validation
 
-logging.basicConfig(filename=save_dir / "predict.log", level=logging.INFO, filemode='w', force=True)
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.INFO)
+
+fh = logging.FileHandler(save_dir / "predict.log")
+fh.setLevel(logging.INFO)
+
+while logger.handlers:
+    logger.handlers.pop()
+
+logger.addHandler(ch)
+logger.addHandler(fh)
+
 logging.info(f"n_jobs: {n_jobs}")
 logging.info(f"save_dir: {save_dir}")
 logging.info(f"data_path: {data_path}")
