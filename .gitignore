@@ -10,3 +10,6 @@ slurm-*.out
 # Training logs
 train.log
 predict.log
+
+# Test results
+models/test-*/

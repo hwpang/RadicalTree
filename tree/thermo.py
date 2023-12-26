@@ -10,7 +10,7 @@ import numpy as np
 import rmgpy.molecule.element as elements
 from joblib import Parallel, delayed
 from rmgpy.data.base import (Database, DatabaseError, Entry, LogicOr,
-                             remove_comment_from_line)
+                             remove_comment_from_line, make_logic_node)
 from rmgpy.data.thermo import ThermoData, add_thermo_data, save_entry
 from rmgpy.molecule.atomtype import ATOMTYPES
 from rmgpy.molecule.group import Group
