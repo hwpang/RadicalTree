@@ -18,7 +18,7 @@ from rmgpy.reaction import same_species_lists
 from sklearn.model_selection import KFold
 
 
-def average_thermo_data(thermo_data_list=None, weighted=False, upper_bound=False):
+def average_thermo_data(thermo_data_list=None, weighted=False, bounded=False):
     """
     Average a list of ThermoData values together.
     Sets uncertainty values to be the approximately the 95% confidence interval, equivalent to
@@ -78,9 +78,9 @@ def average_thermo_data(thermo_data_list=None, weighted=False, upper_bound=False
                 h_std = np.sqrt(np.cov(h_data, aweights=h_weights, ddof=1))
                 averaged_thermo_data.H298.value_si = h_avg
                 averaged_thermo_data.H298.uncertainty_si = 2 * h_std
-                if upper_bound:
+                if bounded:
                     max_h_unc = max(thermo_data.H298.uncertainty_si for thermo_data in thermo_data_list)
-                    averaged_thermo_data.H298.uncertainty_si = max(averaged_thermo_data.H298.uncertainty_si, max_h_unc)
+                    averaged_thermo_data.H298.uncertainty_si = np.sqrt(averaged_thermo_data.H298.uncertainty_si**2 + max_h_unc**2)
 
                 s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
                 s_weights = [1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list]
@@ -88,9 +88,9 @@ def average_thermo_data(thermo_data_list=None, weighted=False, upper_bound=False
                 s_std = np.sqrt(np.cov(s_data, aweights=s_weights, ddof=1))
                 averaged_thermo_data.S298.value_si = s_avg
                 averaged_thermo_data.S298.uncertainty_si = 2 * s_std
-                if upper_bound:
+                if bounded:
                     max_s_unc = max(thermo_data.S298.uncertainty_si for thermo_data in thermo_data_list)
-                    averaged_thermo_data.S298.uncertainty_si = max(averaged_thermo_data.S298.uncertainty_si, max_s_unc)
+                    averaged_thermo_data.S298.uncertainty_si = np.sqrt(averaged_thermo_data.S298.uncertainty_si**2 + max_s_unc**2)
 
                 for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
                     cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
@@ -99,7 +99,7 @@ def average_thermo_data(thermo_data_list=None, weighted=False, upper_bound=False
                     cp_std = np.sqrt(np.cov(cp_data, aweights=cp_weights, ddof=1))
                     averaged_thermo_data.Cpdata.value_si[i] = cp_avg
                     averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
-                    if upper_bound:
+                    if bounded:
                         max_cp_unc = max(thermo_data.Cpdata.uncertainty_si[i] for thermo_data in thermo_data_list)
                         averaged_thermo_data.Cpdata.uncertainty_si[i] = max(averaged_thermo_data.Cpdata.uncertainty_si[i], max_cp_unc)
 
@@ -1057,18 +1057,18 @@ class ThermoGroups(Database):
         else:
             regularization(self, self.top[0], template_mol_map)
     
-    def make_correction(self, corrections, weighted=True, upper_bound=True):
+    def make_correction(self, corrections, weighted=True, bounded=True):
         if corrections:
-            return average_thermo_data(corrections, weighted=weighted, upper_bound=upper_bound)
+            return average_thermo_data(corrections, weighted=weighted, bounded=bounded)
         else:
             return None
 
-    def make_corrections_from_template_mol_map(self, template_mol_map, n_jobs=1, weighted=True, upper_bound=True):
+    def make_corrections_from_template_mol_map(self, template_mol_map, n_jobs=1, weighted=True, bounded=True):
 
         entries = list(self.entries.values())
         correction_lists = [[correction for _, correction in template_mol_map[entry.label]] for entry in entries]
         
-        average_corrections = Parallel(n_jobs=n_jobs, verbose=5, backend='multiprocessing')(delayed(self.make_correction)(corrections, weighted=weighted, upper_bound=upper_bound) for corrections in correction_lists)
+        average_corrections = Parallel(n_jobs=n_jobs, verbose=5, backend='multiprocessing')(delayed(self.make_correction)(corrections, weighted=weighted, bounded=bounded) for corrections in correction_lists)
 
         for ind, correction in enumerate(average_corrections):
             entry = entries[ind]
