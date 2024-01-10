@@ -101,7 +101,7 @@ def average_thermo_data(thermo_data_list=None, weighted=False, bounded=False):
                     averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
                     if bounded:
                         max_cp_unc = max(thermo_data.Cpdata.uncertainty_si[i] for thermo_data in thermo_data_list)
-                        averaged_thermo_data.Cpdata.uncertainty_si[i] = max(averaged_thermo_data.Cpdata.uncertainty_si[i], max_cp_unc)
+                        averaged_thermo_data.Cpdata.uncertainty_si[i] = np.sqrt(averaged_thermo_data.Cpdata.uncertainty_si[i]**2 + max_cp_unc**2)
 
                 return averaged_thermo_data
 

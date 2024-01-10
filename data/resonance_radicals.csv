@@ -2351,8 +2351,8 @@ OC1=CC=[C]C=C1,Oc1cc[c]cc1,True,True,False,True,93.03403978,1,7,1,C
 OC1=CC=[C]C=C1,OC1=CC=[C]C=C1,True,True,False,True,93.03403978,1,7,1,C
 [CH2]C1=CC=CC(C)=C1,[CH2]c1cccc(C)c1,True,True,False,False,105.070425288,1,8,2,C
 [CH2]C1=CC=CC(C)=C1,C=C1[CH]C=CC(C)=C1,True,True,False,False,105.070425288,1,8,1,C
-[CH2]C1=CC=CC(C)=C1,C=C1C=C[CH]C(C)=C1,True,True,False,False,105.070425288,1,8,1,C
 [CH2]C1=CC=CC(C)=C1,C=C1[CH]C(C)=CC=C1,True,True,False,False,105.070425288,1,8,1,C
+[CH2]C1=CC=CC(C)=C1,C=C1C=C[CH]C(C)=C1,True,True,False,False,105.070425288,1,8,1,C
 [CH2]C1=CC=CC(C)=C1,[CH2]C1=CC=CC(C)=C1,True,True,False,False,105.070425288,1,8,2,C
 C=C1CC=CC1O[O],C=C1CC=CC1O[O],True,True,False,True,111.044604464,1,8,1,O
 C=CC[CH]C,C=CC[CH]C,True,True,False,False,69.070425288,0,5,3,C
@@ -2792,9 +2792,6 @@ C1=CC[CH]CCC=1,C1=CC[CH]CCC=1,True,True,False,False,93.070425288,1,7,0,C
 [CH]=C=C=CC=C,[CH]=C=C=CC=C,True,True,False,False,77.03912516,0,6,1,C
 [CH]=C=C=CC=C,C#C[C]=CC=C,True,True,False,False,77.03912516,0,6,1,C
 [C]#C,[C]#C,True,True,False,False,25.007825032,0,2,0,C
-C1=C=CC[CH]C=1,C1=C=CC[CH]C=1,True,True,False,False,77.03912516,1,6,0,C
-C1=C=CC[CH]C=1,[C]1=C=CCC=C1,True,True,False,False,77.03912516,1,6,0,C
-C1=C=CC[CH]C=1,C1#CC=CC[CH]1,True,True,False,False,77.03912516,1,6,0,C
 [CH]=CC=CC#C,[CH]=CC=CC#C,True,True,False,False,77.03912516,0,6,1,C
 C=C1[C]=CC1=C,C=C1[C]=CC1=C,True,True,False,False,77.03912516,1,6,0,C
 C=C1[C]=CC1=C,[CH2]C1=C=CC1=C,True,True,False,False,77.03912516,1,6,1,C
