@@ -27,7 +27,7 @@ parser.add_argument("--split_path", type=str)
 parser.add_argument("--fraction_training_data", type=float, default=1.0)
 parser.add_argument("--random_state", type=int, default=0)
 parser.add_argument("--use_aleatoric_prepruning", action="store_true")
-parser.add_argument("--use_upper_bound_uncertainty", action="store_true")
+parser.add_argument("--use_bounded_uncertainty", action="store_true")
 parser.add_argument("--use_model_variance_prepruning", action="store_true")
 parser.add_argument("--model_variance_prepruning_threshold", type=float, default=0.05)
 
@@ -45,7 +45,7 @@ split_path = args.split_path
 fraction_training_data = args.fraction_training_data
 random_state = args.random_state
 use_aleatoric_prepruning = args.use_aleatoric_prepruning
-use_upper_bound_uncertainty = args.use_upper_bound_uncertainty
+use_bounded_uncertainty = args.use_bounded_uncertainty
 use_model_variance_prepruning = args.use_model_variance_prepruning
 model_variance_prepruning_threshold = args.model_variance_prepruning_threshold
 
@@ -71,7 +71,7 @@ logging.info(f"split_path: {split_path}")
 logging.info(f"fraction_training_data: {fraction_training_data}")
 logging.info(f"random_state: {random_state}")
 logging.info(f"use_aleatoric_prepruning: {use_aleatoric_prepruning}")
-logging.info(f"use_upper_bound_uncertainty: {use_upper_bound_uncertainty}")
+logging.info(f"use_bounded_uncertainty: {use_bounded_uncertainty}")
 logging.info(f"use_model_variance_prepruning: {use_model_variance_prepruning}")
 logging.info(f"model_variance_prepruning_threshold: {model_variance_prepruning_threshold}")
 
@@ -163,7 +163,7 @@ logging.info(f"Getting molecule matches took {end-start} seconds")
 tree.regularize(template_mol_map)
 
 start = time.time()
-tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs, upper_bound=use_upper_bound_uncertainty)
+tree.make_corrections_from_template_mol_map(template_mol_map, n_jobs=n_jobs, bounded=use_bounded_uncertainty)
 end = time.time()
 logging.info(f"Making corrections took {end-start} seconds")
 
