@@ -12,11 +12,11 @@ entry(
     group = "OR{RJ, RJ2_triplet, RJ3}",
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.613842,-1.60862,-2.32653,-2.74462,-3.18024,-3.56575,-4.37794],'cal/mol/K','+|-',[4.0286,4.66323,4.95301,4.90554,4.53532,4.26771,4.22897]),
-        H298 = (94.1973,'kcal/mol','+|-',25.1453),
-        S298 = (0.469617,'cal/mol/K','+|-',10.1985),
+        Cpdata = ([-0.63925,-1.60476,-2.30772,-2.72629,-3.17295,-3.56269,-4.37895],'cal/mol/K','+|-',[4.5983,5.15147,5.40651,5.36356,5.034,4.7945,4.72525]),
+        H298 = (94.3891,'kcal/mol','+|-',25.5132),
+        S298 = (0.525804,'cal/mol/K','+|-',10.3219),
     ),
-    shortDesc = """Radical correction fitted to 2532 radicals""",
+    shortDesc = """Radical correction fitted to 2517 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -32,11 +32,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.613842,-1.60862,-2.32653,-2.74462,-3.18024,-3.56575,-4.37794],'cal/mol/K','+|-',[4.0286,4.66323,4.95301,4.90554,4.53532,4.26771,4.22897]),
-        H298 = (94.1973,'kcal/mol','+|-',25.1453),
-        S298 = (0.469617,'cal/mol/K','+|-',10.1985),
+        Cpdata = ([-0.63925,-1.60476,-2.30772,-2.72629,-3.17295,-3.56269,-4.37895],'cal/mol/K','+|-',[4.5983,5.15147,5.40651,5.36356,5.034,4.7945,4.72525]),
+        H298 = (94.3891,'kcal/mol','+|-',25.5132),
+        S298 = (0.525804,'cal/mol/K','+|-',10.3219),
     ),
-    shortDesc = """Radical correction fitted to 2532 radicals""",
+    shortDesc = """Radical correction fitted to 2517 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -52,11 +52,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.0176389,-0.941863,-1.69721,-2.20132,-2.83552,-3.35244,-4.36988],'cal/mol/K','+|-',[3.2416,3.69152,4.04957,4.10069,3.89481,3.71476,3.82174]),
-        H298 = (95.1963,'kcal/mol','+|-',24.5712),
-        S298 = (0.977067,'cal/mol/K','+|-',9.77206),
+        Cpdata = ([-0.0382625,-0.927515,-1.66671,-2.1704,-2.81592,-3.338,-4.36904],'cal/mol/K','+|-',[3.89534,4.25536,4.56125,4.61121,4.44612,4.29366,4.36086]),
+        H298 = (95.4207,'kcal/mol','+|-',24.9708),
+        S298 = (1.02228,'cal/mol/K','+|-',9.90184),
     ),
-    shortDesc = """Radical correction fitted to 1634 radicals""",
+    shortDesc = """Radical correction fitted to 1608 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -72,11 +72,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.00264645,-0.941442,-1.70467,-2.19387,-2.78385,-3.28489,-4.33924],'cal/mol/K','+|-',[3.38681,3.88574,4.27498,4.32344,4.06842,3.8485,4.00562]),
-        H298 = (92.6034,'kcal/mol','+|-',22.5613),
-        S298 = (0.626789,'cal/mol/K','+|-',10.2017),
+        Cpdata = ([-0.0261233,-0.92536,-1.66951,-2.15651,-2.75569,-3.26122,-4.32885],'cal/mol/K','+|-',[4.01441,4.42021,4.76005,4.81017,4.59892,4.40894,4.51775]),
+        H298 = (92.6265,'kcal/mol','+|-',22.7412),
+        S298 = (0.695348,'cal/mol/K','+|-',10.3558),
     ),
-    shortDesc = """Radical correction fitted to 1359 radicals""",
+    shortDesc = """Radical correction fitted to 1337 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -16712,15 +16712,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.777907,0.509594,-0.01576,-0.685716,-1.91546,-2.8603,-4.2962],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (105.5,'kcal/mol','+|-',2.4),
-        S298 = (0.69084,'cal/mol/K','+|-',2),
+        Cpdata = ([0.777907,0.509594,-0.01576,-0.685716,-1.91546,-2.8603,-4.2962],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (105.5,'kcal/mol','+|-',1.69706),
+        S298 = (0.69084,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[CH3] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH3] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -16736,11 +16736,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.167343,-0.508445,-1.15328,-1.6412,-2.31451,-2.89054,-4.09853],'cal/mol/K','+|-',[3.20208,3.40788,3.67797,3.70007,3.43571,3.24553,3.36662]),
-        H298 = (94.8902,'kcal/mol','+|-',17.4922),
-        S298 = (0.0690168,'cal/mol/K','+|-',9.14823),
+        Cpdata = ([0.136884,-0.494761,-1.11617,-1.59596,-2.27954,-2.86456,-4.07642],'cal/mol/K','+|-',[3.85282,4.01722,4.22789,4.24554,4.0345,3.88928,3.97336]),
+        H298 = (94.9556,'kcal/mol','+|-',17.6464),
+        S298 = (0.123088,'cal/mol/K','+|-',9.23882),
     ),
-    shortDesc = """Radical correction fitted to 454 radicals""",
+    shortDesc = """Radical correction fitted to 443 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -16760,11 +16760,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.576557,-0.355206,-1.20783,-1.78775,-2.53983,-3.18702,-4.66207],'cal/mol/K','+|-',[3.05902,3.80242,4.43424,4.53734,4.12021,3.72216,3.63201]),
-        H298 = (100.339,'kcal/mol','+|-',13.6024),
-        S298 = (0.500994,'cal/mol/K','+|-',8.52583),
+        Cpdata = ([0.553742,-0.310092,-1.12436,-1.69513,-2.46043,-3.12277,-4.58154],'cal/mol/K','+|-',[3.70992,4.31651,4.83986,4.92058,4.56867,4.24495,4.1689]),
+        H298 = (100.06,'kcal/mol','+|-',13.9361),
+        S298 = (0.3845,'cal/mol/K','+|-',8.89484),
     ),
-    shortDesc = """Radical correction fitted to 150 radicals""",
+    shortDesc = """Radical correction fitted to 148 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -16785,28 +16785,29 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.644825,-1.15143,-1.42984,-1.62271,-2.06602,-2.51313,-3.52579],'cal/mol/K','+|-',[3,3.43603,3.59776,3.14499,3,3,3]),
-        H298 = (86.4489,'kcal/mol','+|-',20.1929),
-        S298 = (-1.20478,'cal/mol/K','+|-',6.97194),
+        Cpdata = ([-0.584025,-0.990407,-1.25521,-1.47802,-1.97122,-2.45782,-3.50955],'cal/mol/K','+|-',[3.03381,3.98091,4.12281,3.76034,3.18453,2.82946,2.46947]),
+        H298 = (86.6543,'kcal/mol','+|-',18.2122),
+        S298 = (-1.25607,'cal/mol/K','+|-',6.93407),
     ),
-    shortDesc = """Radical correction fitted to 17 radicals""",
+    shortDesc = """Radical correction fitted to 18 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]C(O)=C(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(=C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(=C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(O)=COC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(O)=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(O)=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(O)=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(O)=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(O)=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(O)=CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(O)=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=CC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=C(C)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=CCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(O)=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(=C=C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1=CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(O)=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(=C=C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=C=COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=C=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -16827,11 +16828,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.258633,-1.35006,-2.61269,-3.30549,-3.91247,-4.39881,-5.81142],'cal/mol/K','+|-',[3.14864,3.94828,4.8642,5.0432,4.51455,4.15907,4.25601]),
-        H298 = (103.295,'kcal/mol','+|-',10.4026),
-        S298 = (2.26615,'cal/mol/K','+|-',8.71227),
+        Cpdata = ([0.265262,-1.2571,-2.46601,-3.14257,-3.77522,-4.29153,-5.67356],'cal/mol/K','+|-',[3.80537,4.46458,5.26596,5.42778,4.97304,4.6693,4.77721]),
+        H298 = (103.18,'kcal/mol','+|-',10.5403),
+        S298 = (1.97804,'cal/mol/K','+|-',9.60278),
     ),
-    shortDesc = """Radical correction fitted to 63 radicals""",
+    shortDesc = """Radical correction fitted to 62 radicals""",
     longDesc = 
 """
 Derived using the following species:
@@ -16846,13 +16847,13 @@ Derived using the following species:
 [CH2]C1(COO)CCC(=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(CO)OOCC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1OOC(O)C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C)(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1(C)CCC(=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C=COC(C)=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(CO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(O)OOC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(OC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(CO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(O)OOC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(OC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1(C)OOCC1(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]COOC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(CC=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -16860,44 +16861,43 @@ Derived using the following species:
 [CH2]C1(C)OOCC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(CO)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C12COOC1(C)COO2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1OOC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1OOCC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1OOC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1OOCC1OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C(C)=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)CC(C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(CC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1(OO)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1(OO)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]COOCC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)CCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C(=C)O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1(C)OOC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(C=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C=C)OOCC(C)C - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C1(C)OOC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(C)(OO)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]COOC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]COOC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1CCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C(C)C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(CC)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)CC(=C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C=C)OO - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1OOC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(C)OOCC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C=C)OO - Radical thermo from pang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1OOC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1(C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1(C)OOCC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1CC(=C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(CC(=C)C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C2OO2)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C=C)OOC1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH2]C(C=C)OOC(C)C=C - Radical thermo from pang.py and closed shell thermo from GAV
-[CH2]C1COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1OOCC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C(=C)C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C=C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C=C)OOC1C=CC=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH2]C(C=C)OOC1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
-C#CC1([CH2])OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -16916,11 +16916,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.729445,-0.167636,-0.98238,-1.55535,-2.26295,-2.88912,-4.59588],'cal/mol/K','+|-',[3.11748,3,3.37378,3.61771,3.88539,3.67166,3.84534]),
-        H298 = (102.389,'kcal/mol','+|-',7.18863),
-        S298 = (1.39691,'cal/mol/K','+|-',8.66302),
+        Cpdata = ([0.601464,-0.212801,-0.982873,-1.54014,-2.21778,-2.84237,-4.55651],'cal/mol/K','+|-',[3.71271,3.84048,4.19828,4.39517,4.58858,4.38597,4.53795]),
+        H298 = (102.115,'kcal/mol','+|-',7.69298),
+        S298 = (1.57171,'cal/mol/K','+|-',9.2155),
     ),
-    shortDesc = """Radical correction fitted to 20 radicals""",
+    shortDesc = """Radical correction fitted to 18 radicals""",
     longDesc = 
 """
 Derived using the following species:
@@ -16928,22 +16928,20 @@ Derived using the following species:
 [CH2]C(C)(C)OC(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C)(COO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(COO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1(C)OC1OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(OC(C)=O)OC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)(C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(COC(C)=O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1(C)OC1OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1(OC(C)=O)OC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)(C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1(COC(C)=O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)CC(=O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(CC(C)=O)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C)OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)(OC1=COC=C1C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(C)OC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)(OC(=C)C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C)(OC1=COC=C1C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1(C)OC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(C)(OC(=C)C1OO1)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)CC(=C)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C)(OC(=C)C(=C)C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1(C)OCC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1(C)OCC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -16962,9 +16960,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.862566,-0.0382751,-0.85651,-1.50105,-2.06708,-2.83123,-4.70526],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (102.223,'kcal/mol','+|-',5.2),
-        S298 = (-0.870627,'cal/mol/K','+|-',3),
+        Cpdata = ([0.862566,-0.0382751,-0.85651,-1.50105,-2.06708,-2.83123,-4.70526],'cal/mol/K','+|-',[2.46271,2.29263,2.29771,2.35558,2.45565,2.2796,2.26635]),
+        H298 = (102.223,'kcal/mol','+|-',4.31608),
+        S298 = (-0.870627,'cal/mol/K','+|-',3.1106),
     ),
     shortDesc = """Radical correction fitted to 2 radicals""",
     longDesc = 
@@ -17055,9 +17053,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.301452,0.393801,-0.112732,-0.781755,-1.91743,-2.81177,-4.21963],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (102.257,'kcal/mol','+|-',2.4),
-        S298 = (0.71044,'cal/mol/K','+|-',2),
+        Cpdata = ([0.301452,0.393801,-0.112732,-0.781755,-1.91743,-2.81177,-4.21963],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (102.257,'kcal/mol','+|-',1.69706),
+        S298 = (0.71044,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -17396,11 +17394,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.33495,0.0643596,-0.386453,-0.820473,-1.61338,-2.30798,-3.49506],'cal/mol/K','+|-',[3,3.04429,3,3,3,3,3]),
-        H298 = (96.0993,'kcal/mol','+|-',13.1094),
-        S298 = (-0.5123,'cal/mol/K','+|-',5.92975),
+        Cpdata = ([0.258435,0.00283478,-0.440184,-0.879917,-1.68123,-2.34978,-3.5196],'cal/mol/K','+|-',[3.41737,3.6444,3.45229,3.27039,3.15367,3.18839,3.35168]),
+        H298 = (96.0727,'kcal/mol','+|-',13.1492),
+        S298 = (-0.381927,'cal/mol/K','+|-',6.09377),
     ),
-    shortDesc = """Radical correction fitted to 25 radicals""",
+    shortDesc = """Radical correction fitted to 24 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -17423,9 +17421,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.824009,0.304763,-0.350109,-0.951655,-2.00144,-2.85924,-4.27876],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (99.3886,'kcal/mol','+|-',2.4),
-        S298 = (2.50774,'cal/mol/K','+|-',2),
+        Cpdata = ([0.824009,0.304763,-0.350109,-0.951655,-2.00144,-2.85924,-4.27876],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (99.3886,'kcal/mol','+|-',1.69706),
+        S298 = (2.50774,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -17519,9 +17517,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.95648,1.50446,0.597867,-0.196759,-1.52129,-2.65494,-4.3358],'cal/mol/K','+|-',[4.68822,5.37189,4.54838,3.60594,3,3,3]),
-        H298 = (100.803,'kcal/mol','+|-',5.2),
-        S298 = (-0.0557069,'cal/mol/K','+|-',6.82397),
+        Cpdata = ([1.86319,1.40901,0.5248,-0.254984,-1.5627,-2.67762,-4.33628],'cal/mol/K','+|-',[5.12989,5.73615,4.99492,4.18857,3.36638,2.65315,2.32142]),
+        H298 = (100.804,'kcal/mol','+|-',6.05339),
+        S298 = (0.0445357,'cal/mol/K','+|-',7.04561),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
@@ -17529,8 +17527,8 @@ entry(
 Derived using the following species:
 [CH2]C(C=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1C(=O)C=CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -17549,25 +17547,24 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.0247121,-0.0938827,-0.384049,-0.666842,-1.22219,-1.70819,-2.61049],'cal/mol/K','+|-',[3,3.13039,3.33874,3.3275,3.26671,3.36716,3.49792]),
-        H298 = (88.6599,'kcal/mol','+|-',9.20013),
-        S298 = (-2.11594,'cal/mol/K','+|-',6.35894),
+        Cpdata = ([-0.184051,-0.211538,-0.492253,-0.797083,-1.38074,-1.8064,-2.67614],'cal/mol/K','+|-',[2.95755,3.61037,3.85634,3.90321,3.93091,3.99025,4.0337]),
+        H298 = (89.1961,'kcal/mol','+|-',8.74373),
+        S298 = (-1.81612,'cal/mol/K','+|-',6.46583),
     ),
-    shortDesc = """Radical correction fitted to 11 radicals""",
+    shortDesc = """Radical correction fitted to 10 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]C(=CO)C(=O)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(=C)C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(=CO)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(=C)C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(=CO)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(=C=O)C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C=O)=COC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=C=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C=O)=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(=C)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C=O)=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C=O)=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C=O)=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(C=O)=C1CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1=CC=CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -17802,11 +17799,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.393716,-0.52708,-1.36992,-2.04741,-2.94773,-3.59862,-4.81082],'cal/mol/K','+|-',[3.19342,3,3,3,3,3,3]),
-        H298 = (102.295,'kcal/mol','+|-',8.66976),
-        S298 = (2.81848,'cal/mol/K','+|-',6.46264),
+        Cpdata = ([0.306827,-0.580979,-1.39873,-2.06187,-2.9492,-3.60038,-4.80317],'cal/mol/K','+|-',[3.87565,3.24893,2.93701,2.94631,3.0498,3.19433,3.43082]),
+        H298 = (102.399,'kcal/mol','+|-',9.70244),
+        S298 = (2.80887,'cal/mol/K','+|-',6.93994),
     ),
-    shortDesc = """Radical correction fitted to 74 radicals""",
+    shortDesc = """Radical correction fitted to 75 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -17828,15 +17825,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.221225,-0.669004,-1.18457,-1.7071,-2.61403,-3.31452,-4.42484],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (101.577,'kcal/mol','+|-',2.4),
-        S298 = (2.20543,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.221225,-0.669004,-1.18457,-1.7071,-2.61403,-3.31452,-4.42484],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (101.577,'kcal/mol','+|-',1.69706),
+        S298 = (2.20543,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -17855,44 +17852,45 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.129648,-0.798111,-1.57202,-2.23737,-3.14004,-3.78818,-4.86047],'cal/mol/K','+|-',[3.42116,3,3,3,3,3,3]),
-        H298 = (103.305,'kcal/mol','+|-',11.7726),
-        S298 = (3.50661,'cal/mol/K','+|-',7.82666),
+        Cpdata = ([0.0867137,-0.823885,-1.58505,-2.23842,-3.13213,-3.7765,-4.85295],'cal/mol/K','+|-',[4.10411,3.22105,2.82317,2.76381,2.86749,3.02011,3.01172]),
+        H298 = (103.359,'kcal/mol','+|-',12.5561),
+        S298 = (3.67935,'cal/mol/K','+|-',8.14962),
     ),
-    shortDesc = """Radical correction fitted to 32 radicals""",
+    shortDesc = """Radical correction fitted to 33 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]CC(C)(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CCC(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CC(COC(C)=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CC(C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CCCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]CCC(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CC(COC(C)=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CC(C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CCCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]CCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CC(CO)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]CC(CO)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]CCOC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CC(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]CC(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]CC(CO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CC(C=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]CC(C=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]CCCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]CC(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CC(OC)OO - Radical thermo from johnson_g4.py and closed shell thermo from Thermo library: ../data/johnson_cbs-qb3.py
+[CH2]CC(OC)OO - Radical thermo from johnson_g4.py and closed shell thermo from data/johnson_cbs-qb3.py
 [CH2]CC(CC)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CCOC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/johnson_g4.py
+[CH2]CCOC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/johnson_g4.py
 [CH2]CC(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]CCCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CCC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/johnson_g4.py
-[CH2]CC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]CCC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/johnson_g4.py
+[CH2]CC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CCC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]CC(=C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CC(C)=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
 [CH2]CC=COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]CC1=C(C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CC=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]CC(=C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]CC(C)(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CC=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]CC(=C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C#CC[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]CC#CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
@@ -17913,9 +17911,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.876092,-0.251208,-1.41805,-2.33973,-3.29652,-3.94484,-5.25032],'cal/mol/K','+|-',[3,3,3,3,3,3,4.37161]),
-        H298 = (100.733,'kcal/mol','+|-',5.2),
-        S298 = (2.26594,'cal/mol/K','+|-',6.96665),
+        Cpdata = ([0.760781,-0.467526,-1.73692,-2.71603,-3.66702,-4.32187,-5.52868],'cal/mol/K','+|-',[3.21916,3.18439,3.31389,3.58138,3.62832,3.7649,5.04086]),
+        H298 = (100.9,'kcal/mol','+|-',6.19825),
+        S298 = (2.50446,'cal/mol/K','+|-',7.89999),
     ),
     shortDesc = """Radical correction fitted to 10 radicals""",
     longDesc = 
@@ -17927,10 +17925,10 @@ Derived using the following species:
 [CH2]C(C)(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C)(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1(C)CC(=O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)(C=C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(C)CC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1(C=C)CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1(C)CC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C)(C=C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C12COOC1(C)C2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C1(C)CC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1(C)CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -17949,42 +17947,42 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.618015,-0.269974,-1.13577,-1.77819,-2.66722,-3.31833,-4.66312],'cal/mol/K','+|-',[3.24687,3,3,3,3,3,3]),
-        H298 = (101.451,'kcal/mol','+|-',5.2),
-        S298 = (2.23557,'cal/mol/K','+|-',4.55084),
+        Cpdata = ([0.504627,-0.302511,-1.10822,-1.72334,-2.5937,-3.24816,-4.59669],'cal/mol/K','+|-',[3.87087,3.34633,2.97327,2.90836,3.01973,3.19202,3.48907]),
+        H298 = (101.502,'kcal/mol','+|-',5.43784),
+        S298 = (1.90972,'cal/mol/K','+|-',4.86217),
     ),
     shortDesc = """Radical correction fitted to 30 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[CH2]C(COO)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(COO)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1CC(=O)OC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1COC(=O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1CC1(C)CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/pang.py
+[CH2]C(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/pang.py
 [CH2]C(C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)C - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
+[CH2]C(C)C - Radical thermo from pang.py and closed shell thermo from data/pang.py
 CC(N(CC)O)C(C=C)[CH2] - Radical thermo from pang.py and closed shell thermo from GAV
 [CH2]C(C=C)CC(C)C - Radical thermo from pang.py and closed shell thermo from GAV
-[CH2]C1C(C)C1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1CC1(C)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C)C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1C=C(O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1CC=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1CC12COOC2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
-[CH2]C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1CC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1CC(C)=C1C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1C=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/pang.py
+[CH2]C1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from data/pang.py
+[CH2]C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1CC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C=C)CC(=C)C - Radical thermo from pang.py and closed shell thermo from GAV
+[CH2]C1CC(C)=C1C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1C=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/pang.py
+[CH2]C1C=CCC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1CC(=C)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1C=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C1C=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1CC1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1C=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
@@ -18566,11 +18564,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.420374,-0.846464,-1.25824,-1.56864,-2.04083,-2.48782,-3.42942],'cal/mol/K','+|-',[3.17499,3.53594,3.75737,3.66558,3.29468,3.11085,3.05048]),
-        H298 = (86.36,'kcal/mol','+|-',9.35152),
-        S298 = (-1.25099,'cal/mol/K','+|-',9.85622),
+        Cpdata = ([-0.467585,-0.850216,-1.23618,-1.52855,-2.00338,-2.45324,-3.41389],'cal/mol/K','+|-',[3.85673,4.16184,4.34995,4.28042,3.97302,3.81339,3.76262]),
+        H298 = (86.3268,'kcal/mol','+|-',9.78846),
+        S298 = (-1.06491,'cal/mol/K','+|-',9.83521),
     ),
-    shortDesc = """Radical correction fitted to 172 radicals""",
+    shortDesc = """Radical correction fitted to 161 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -18591,11 +18589,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.820342,-1.02477,-1.27573,-1.50024,-1.85072,-2.1789,-3.21667],'cal/mol/K','+|-',[3,4.11384,4.61214,4.60919,4.29293,3.97794,3.58522]),
-        H298 = (82.0596,'kcal/mol','+|-',12.3452),
-        S298 = (-0.864514,'cal/mol/K','+|-',13.9299),
+        Cpdata = ([-0.970574,-1.19178,-1.41635,-1.59862,-1.87433,-2.13559,-3.13167],'cal/mol/K','+|-',[3.5786,4.80151,5.34985,5.40463,5.14153,4.84512,4.4549]),
+        H298 = (80.6143,'kcal/mol','+|-',10.9312),
+        S298 = (-0.270353,'cal/mol/K','+|-',14.7249),
     ),
-    shortDesc = """Radical correction fitted to 24 radicals""",
+    shortDesc = """Radical correction fitted to 21 radicals""",
     longDesc = 
 """
 Derived using the following species:
@@ -18605,23 +18603,20 @@ Derived using the following species:
 [CH2]C(C)=CC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C=C(O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C=CC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C=C(C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)=C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C=C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C=CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C=C(C)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)=C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C=C(C)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C=CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1=CC(C)=CC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=CC=CC(C)=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1=CC=CCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/pang.py
-[CH2]C=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C1=CC=CC=C1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
-[CH2]C1=CC=CC=C1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
-[CH2]C1=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C1=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C=CC=CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=CC=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C1=CC=CC2CC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(C)=CC=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C=CC1=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C=CC1=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C1=CC1=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -18640,17 +18635,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.395141,0.133498,-0.115868,-1.07887,-1.85586,-2.45397,-3.36085],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (81.7456,'kcal/mol','+|-',5.2),
-        S298 = (-0.910359,'cal/mol/K','+|-',5.08408),
+        Cpdata = ([0.699341,1.08234,0.529326,-0.0847871,-1.10424,-1.88812,-3.11659],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (80.88,'kcal/mol','+|-',1.69706),
+        S298 = (-2.7666,'cal/mol/K','+|-',1.41421),
     ),
-    shortDesc = """Radical correction fitted to 3 radicals""",
+    shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C#CC(O)=C[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C=CC#CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C1=CC#CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#CC(O)=C[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -18668,20 +18661,19 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.328886,-0.120736,-0.693972,-1.26891,-2.14287,-2.98935,-4.41266],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (90.1828,'kcal/mol','+|-',5.2),
-        S298 = (-0.326823,'cal/mol/K','+|-',3.28048),
+        Cpdata = ([0.209863,-0.267756,-0.804355,-1.34612,-2.1714,-2.98866,-4.36427],'cal/mol/K','+|-',[3.49908,3.38031,3.20196,3.13247,2.80258,2.87122,3.02974]),
+        H298 = (90.3916,'kcal/mol','+|-',4.59633),
+        S298 = (0.160342,'cal/mol/K','+|-',2.79635),
     ),
-    shortDesc = """Radical correction fitted to 6 radicals""",
+    shortDesc = """Radical correction fitted to 5 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]C(=C=O)C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=C=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=C=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(C)=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(=C=O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(C)=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -18757,21 +18749,21 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.637083,0.0360516,-0.448349,-1.2925,-2.1938,-2.84987,-4.48277],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (90.7944,'kcal/mol','+|-',5.2),
-        S298 = (1.26897,'cal/mol/K','+|-',12.6253),
+        Cpdata = ([0.620744,0.0334937,-0.457551,-1.28636,-2.19528,-2.86118,-4.47357],'cal/mol/K','+|-',[2.53253,2.42822,2.48127,2.47536,2.47357,2.56242,2.6944]),
+        H298 = (90.8513,'kcal/mol','+|-',5.45),
+        S298 = (1.18997,'cal/mol/K','+|-',12.5952),
     ),
     shortDesc = """Radical correction fitted to 10 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]C#CCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C#CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C#CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C#CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C#CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C#CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C#CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C#CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C#CC=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C#C[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C#C[CH2] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C#CC=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C#CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C#CC=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -18791,11 +18783,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.799196,0.252132,-0.412349,-0.887845,-1.52249,-2.17436,-3.48227],'cal/mol/K','+|-',[3.0023,3,3.25824,3.61169,3.42202,3,3]),
-        H298 = (96.8548,'kcal/mol','+|-',5.39775),
-        S298 = (-2.47064,'cal/mol/K','+|-',7.25371),
+        Cpdata = ([0.807901,0.316168,-0.327259,-0.810751,-1.49341,-2.17177,-3.48637],'cal/mol/K','+|-',[3.5945,3.46851,3.78801,4.04582,3.88248,3.45244,3.53775]),
+        H298 = (96.6338,'kcal/mol','+|-',6.32978),
+        S298 = (-2.4182,'cal/mol/K','+|-',7.10654),
     ),
-    shortDesc = """Radical correction fitted to 23 radicals""",
+    shortDesc = """Radical correction fitted to 25 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -18816,11 +18808,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.884067,0.300597,-0.399671,-0.889744,-1.52505,-2.17877,-3.48485],'cal/mol/K','+|-',[3.05627,3,3.38788,3.75687,3.55956,3,3.07813]),
-        H298 = (97.0172,'kcal/mol','+|-',5.61909),
-        S298 = (-2.54924,'cal/mol/K','+|-',7.52189),
+        Cpdata = ([0.889287,0.367119,-0.308753,-0.806717,-1.49363,-2.17577,-3.48913],'cal/mol/K','+|-',[3.62515,3.5247,3.88041,4.15383,3.98237,3.52959,3.61957]),
+        H298 = (96.7651,'kcal/mol','+|-',6.47952),
+        S298 = (-2.48899,'cal/mol/K','+|-',7.33154),
     ),
-    shortDesc = """Radical correction fitted to 22 radicals""",
+    shortDesc = """Radical correction fitted to 24 radicals""",
     longDesc = 
 """
 Derived using the following species:
@@ -18833,19 +18825,21 @@ Derived using the following species:
 [CH2]C(=O)CCC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)C1(OO)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(=O)COC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)C(OO)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)C1(C=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(=O)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH2]C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(=O)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH2]C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(=O)C(C=C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)C=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]C(=O)C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(=O)C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]C(=O)CC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]C(=O)C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C#CC([CH2])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]C(=O)C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH2]C(=O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C#CC([CH2])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -18861,11 +18855,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.0890949,-1.09841,-1.92523,-2.39195,-2.93787,-3.41366,-4.2994],'cal/mol/K','+|-',[3.30554,3.83732,4.10233,3.99476,3.68002,3.45585,3.47155]),
-        H298 = (88.7609,'kcal/mol','+|-',29.514),
-        S298 = (0.234872,'cal/mol/K','+|-',9.80777),
+        Cpdata = ([0.0444303,-1.0861,-1.88601,-2.35332,-2.9058,-3.38858,-4.29974],'cal/mol/K','+|-',[3.91217,4.33796,4.57767,4.50038,4.25918,4.077,4.08691]),
+        H298 = (88.7832,'kcal/mol','+|-',30.318),
+        S298 = (0.419599,'cal/mol/K','+|-',9.89181),
     ),
-    shortDesc = """Radical correction fitted to 381 radicals""",
+    shortDesc = """Radical correction fitted to 369 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -18885,9 +18879,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.122154,-1.20789,-2.14347,-2.63631,-3.21046,-3.78753,-4.78938],'cal/mol/K','+|-',[3.56871,4.96721,5.38316,5.1927,4.65178,4.11502,3.82448]),
-        H298 = (95.8442,'kcal/mol','+|-',19.4746),
-        S298 = (0.211553,'cal/mol/K','+|-',10.7954),
+        Cpdata = ([0.15929,-1.12033,-2.04367,-2.56088,-3.1835,-3.78435,-4.82993],'cal/mol/K','+|-',[4.11224,5.28605,5.63526,5.46959,5.01149,4.5424,4.25305]),
+        H298 = (96.054,'kcal/mol','+|-',20.3936),
+        S298 = (0.616645,'cal/mol/K','+|-',10.6439),
     ),
     shortDesc = """Radical correction fitted to 148 radicals""",
     longDesc = 
@@ -18910,9 +18904,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.0846205,-1.9451,-2.79942,-3.12752,-3.42817,-3.81212,-4.25602],'cal/mol/K','+|-',[3.65214,4.98967,4.95614,4.53817,3.67167,3.2894,3]),
-        H298 = (84.6109,'kcal/mol','+|-',8.47618),
-        S298 = (-0.965959,'cal/mol/K','+|-',9.92875),
+        Cpdata = ([0.0207868,-1.76571,-2.5456,-2.88687,-3.26644,-3.68695,-4.26431],'cal/mol/K','+|-',[4.16314,5.29017,5.26498,4.87638,4.16727,3.85192,3.06556]),
+        H298 = (84.4508,'kcal/mol','+|-',10.3006),
+        S298 = (-0.576136,'cal/mol/K','+|-',9.5504),
     ),
     shortDesc = """Radical correction fitted to 41 radicals""",
     longDesc = 
@@ -18937,9 +18931,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([2.1895,-2.26548,-2.99762,-3.03034,-3.32189,-3.61672,-3.89101],'cal/mol/K','+|-',[5.38446,6.7768,6.1121,5.51651,5.45086,5.54543,3]),
-        H298 = (85.2271,'kcal/mol','+|-',8.65108),
-        S298 = (-2.00559,'cal/mol/K','+|-',7.92778),
+        Cpdata = ([2.1895,-2.26548,-2.99762,-3.03034,-3.32189,-3.61672,-3.89101],'cal/mol/K','+|-',[5.8303,7.13618,6.50828,5.95247,5.89168,5.97928,3.64617]),
+        H298 = (85.2271,'kcal/mol','+|-',9.60631),
+        S298 = (-2.00559,'cal/mol/K','+|-',8.2371),
     ),
     shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
@@ -18965,11 +18959,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.25495,-1.12709,-2.27871,-2.81145,-3.3885,-4.05254,-5.20941],'cal/mol/K','+|-',[3.58219,5.41648,6.19075,5.98279,5.42469,4.60814,4.71401]),
-        H298 = (100.877,'kcal/mol','+|-',13.393),
-        S298 = (-0.000559961,'cal/mol/K','+|-',12.7126),
+        Cpdata = ([0.357194,-0.97926,-2.11227,-2.68273,-3.32612,-4.02595,-5.29298],'cal/mol/K','+|-',[4.0212,5.6057,6.32613,6.18651,5.70938,4.9696,4.91029]),
+        H298 = (101.524,'kcal/mol','+|-',14.4921),
+        S298 = (0.629775,'cal/mol/K','+|-',12.4596),
     ),
-    shortDesc = """Radical correction fitted to 58 radicals""",
+    shortDesc = """Radical correction fitted to 59 radicals""",
     longDesc = 
 """
 Derived using the following species:
@@ -18982,43 +18976,44 @@ CC(=O)OC1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell therm
 O=C(O)C1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C1C[CH]COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)([CH]CO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[CH]C(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]C(O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1(C)[CH]C(O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 COC([CH]COO)OO - Radical thermo from johnson_g4.py and closed shell thermo from GAV
-OC[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C[CH]C(OC)OO - Radical thermo from johnson_g4.py and closed shell thermo from Thermo library: ../data/johnson_cbs-qb3.py
+OC[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C[CH]C(OC)OO - Radical thermo from johnson_g4.py and closed shell thermo from data/johnson_cbs-qb3.py
 CC1([CH]CO)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[CH]C1OOC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]C1OOC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CCC1(C)C[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1OOC[CH]C1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC[CH]C(CC)OOC1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 CC(C)C1(C)[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC(C)OOC([CH]CC)CC - Radical thermo from pang.py and closed shell thermo from GAV
+C[CH]C(C)OO - Radical thermo from pang.py and closed shell thermo from GAV
 OOC1[CH]COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 OOC1[CH]CCCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CCC1(C)[CH]COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[CH]C(C)OOC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1=CC(OOCC(C)C)[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
-OOCC1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+OOCC1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC=CCOOC([CH]CC)CC - Radical thermo from pang.py and closed shell thermo from GAV
 CC[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-OOC1[CH]CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]C1(C=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+OOC1[CH]CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC[CH]C(CC)OOC1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
-C[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/johnson_g4.py
+C[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/johnson_g4.py
 CC[CH]C(CC)OOC1CC=CC=C1C - Radical thermo from pang.py and closed shell thermo from GAV
 CC[CH]C(CC)OOC1C=CCC(C)=C1 - Radical thermo from pang.py and closed shell thermo from GAV
 CC(C)COOC1[CH]CC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
 C[CH]C1(C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1[CH]COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH]1CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-OOC1[CH]CCC=C1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
+[CH]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+OOC1[CH]CCC=C1 - Radical thermo from pang.py and closed shell thermo from data/pang.py
 [CH]1COOC12COO2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]1C2CCC1C1CCC=CC1OO2 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
-C[CH]C(C)OOC1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
-C[CH]C1COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]1C2CCC1C1CCC=CC1OO2 - Radical thermo from pang.py and closed shell thermo from data/pang.py
+C[CH]C1COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC[CH]C(CC)OOC1C=CC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
-CC[CH]C(CC)OOC1C=CC(C2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+OOC1[CH]CC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC[CH]C(CC)OOC1C=CCC1C1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1CCC=CC1OOC1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=CC(C)OOC1[CH]CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C2CC=CC1OOC2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -19027,7 +19022,7 @@ C=CC(C)OOC1[CH]CCC=C1 - Radical thermo from pang.py and closed shell thermo from
 C=CC(C)OOC1[CH]CC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1CCC=CC1OOC1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1CC=CC1OOC1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
-[CH]1CCC=CC1OOC1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
+OOC1[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]1CC=CC1OOC1C=CC=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1CC=CC1OOC1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from GAV
 C#CC1([CH]C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -20494,27 +20489,26 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.378673,-0.673224,-1.23387,-1.79104,-2.57689,-3.24544,-4.43061],'cal/mol/K','+|-',[3.15775,3,3,3,3,3,3.31389]),
-        H298 = (95.3783,'kcal/mol','+|-',20.4773),
-        S298 = (0.896814,'cal/mol/K','+|-',5.79423),
+        Cpdata = ([-0.568345,-0.839686,-1.37276,-1.9077,-2.65817,-3.28818,-4.44217],'cal/mol/K','+|-',[3.4604,3.01183,2.76332,2.84879,3.34733,3.68435,3.99483]),
+        H298 = (96.3511,'kcal/mol','+|-',19.886),
+        S298 = (1.24903,'cal/mol/K','+|-',5.66601),
     ),
-    shortDesc = """Radical correction fitted to 14 radicals""",
+    shortDesc = """Radical correction fitted to 13 radicals""",
     longDesc = 
 """
 Derived using the following species:
 CC(=O)[CH]CC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[CH]C(C=O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]C(C=O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C1C[CH]CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)[CH]CC(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C1C[CH]C=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[CH]C1COC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=CC=C[CH]CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C(O)C1[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C[CH]C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C[CH]CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C(O)C1[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C[CH]C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C[CH]CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C([CH]C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C1C=C[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C1[CH]C=CC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O=C1C=C[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C1C=C=C[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -20552,11 +20546,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.048257,-1.48837,-2.27931,-2.72593,-3.11308,-3.38332,-4.11487],'cal/mol/K','+|-',[3.71978,3.36443,3.26977,3.1984,3.19872,3.39928,4.19058]),
-        H298 = (94.279,'kcal/mol','+|-',44.15),
-        S298 = (2.38476,'cal/mol/K','+|-',9.74699),
+        Cpdata = ([0.0629298,-1.46274,-2.25028,-2.70067,-3.10195,-3.37357,-4.10198],'cal/mol/K','+|-',[4.34805,4.08226,4.01803,3.96649,3.97558,4.15789,4.87037]),
+        H298 = (93.6613,'kcal/mol','+|-',47.6226),
+        S298 = (2.49815,'cal/mol/K','+|-',10.0467),
     ),
-    shortDesc = """Radical correction fitted to 46 radicals""",
+    shortDesc = """Radical correction fitted to 45 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -20577,11 +20571,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.515679,-0.392112,-1.3409,-1.94473,-2.64016,-3.11485,-4.18802],'cal/mol/K','+|-',[3.37318,3,3,3,3,3,3]),
-        H298 = (97.0491,'kcal/mol','+|-',5.2),
-        S298 = (0.269596,'cal/mol/K','+|-',3),
+        Cpdata = ([1.30909,0.256283,-0.929003,-1.71308,-2.67897,-3.21417,-4.38755],'cal/mol/K','+|-',[3.1185,2.44316,2.65193,2.72082,2.59053,2.3589,2.30572]),
+        H298 = (96.874,'kcal/mol','+|-',4.32528),
+        S298 = (0.104497,'cal/mol/K','+|-',3.11436),
     ),
-    shortDesc = """Radical correction fitted to 5 radicals""",
+    shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -20744,9 +20738,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.172293,-0.207852,-0.779966,-1.42125,-2.3875,-3.11137,-4.28382],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (109.356,'kcal/mol','+|-',2.4),
-        S298 = (2.72631,'cal/mol/K','+|-',2),
+        Cpdata = ([0.172293,-0.207852,-0.779966,-1.42125,-2.3875,-3.11137,-4.28382],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (109.356,'kcal/mol','+|-',1.69706),
+        S298 = (2.72631,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -21400,9 +21394,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.88914,-0.16236,-1.34985,-2.2625,-3.23922,-3.88991,-4.66941],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (97.7341,'kcal/mol','+|-',5.2),
-        S298 = (5.88127,'cal/mol/K','+|-',7.78599),
+        Cpdata = ([0.88914,-0.16236,-1.34985,-2.2625,-3.23922,-3.88991,-4.66941],'cal/mol/K','+|-',[2.81986,2.23609,2.66832,3.0755,3.07046,2.86498,2.31695]),
+        H298 = (97.7341,'kcal/mol','+|-',4.17681),
+        S298 = (5.88127,'cal/mol/K','+|-',8.10072),
     ),
     shortDesc = """Radical correction fitted to 2 radicals""",
     longDesc = 
@@ -21425,9 +21419,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.49655,-0.158732,-1.86462,-3.00905,-3.98318,-4.52317,-4.88396],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (97.7608,'kcal/mol','+|-',5.2),
-        S298 = (8.63403,'cal/mol/K','+|-',3),
+        Cpdata = ([1.49655,-0.158732,-1.86462,-3.00905,-3.98318,-4.52317,-4.88396],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (97.7608,'kcal/mol','+|-',4.17612),
+        S298 = (8.63403,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -22238,9 +22232,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.720635,-0.562883,-1.6158,-2.47208,-3.13205,-3.33914,-4.6103],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (98.4663,'kcal/mol','+|-',5.2),
-        S298 = (5.43699,'cal/mol/K','+|-',3),
+        Cpdata = ([0.720635,-0.562883,-1.6158,-2.47208,-3.13205,-3.33914,-4.6103],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (98.4663,'kcal/mol','+|-',4.17612),
+        S298 = (5.43699,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -22337,15 +22331,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.63914,-2.3385,-2.62863,-2.91965,-3.4279,-3.85152,-4.63244],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (98.7539,'kcal/mol','+|-',2.4),
-        S298 = (10.027,'cal/mol/K','+|-',2),
+        Cpdata = ([-1.63914,-2.3385,-2.62863,-2.91965,-3.4279,-3.85152,-4.63244],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (98.7539,'kcal/mol','+|-',1.69706),
+        S298 = (10.027,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -22367,20 +22361,20 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.68529,-2.44847,-2.89068,-3.2905,-3.83479,-4.26918,-4.95981],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (99.0798,'kcal/mol','+|-',5.2),
-        S298 = (4.11652,'cal/mol/K','+|-',3),
+        Cpdata = ([-1.68406,-2.43208,-2.86763,-3.26357,-3.80905,-4.24282,-4.93492],'cal/mol/K','+|-',[2.47769,2.54617,2.63283,2.68188,2.59607,2.61052,2.55577]),
+        H298 = (99.0976,'kcal/mol','+|-',4.23379),
+        S298 = (4.10247,'cal/mol/K','+|-',3.26985),
     ),
     shortDesc = """Radical correction fitted to 6 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C[CH]CCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]CCOC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C[CH]CCOC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[CH]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[CH]CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C(C)C[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=CC[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C(C)C[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=CC[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -22402,9 +22396,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.0759969,-0.425283,-0.730046,-1.03221,-1.30343,-1.42228,-1.40555],'cal/mol/K','+|-',[3,4.4631,5.72138,7.11273,9.08613,10.3526,12.3467]),
-        H298 = (44.2826,'kcal/mol','+|-',136.715),
-        S298 = (3.43575,'cal/mol/K','+|-',3.79212),
+        Cpdata = ([0.111522,-0.348206,-0.620682,-0.891543,-1.11822,-1.20373,-1.13757],'cal/mol/K','+|-',[3.42089,5.0096,6.18795,7.52387,9.45843,10.7257,12.7272]),
+        H298 = (38.1249,'kcal/mol','+|-',139.399),
+        S298 = (3.3601,'cal/mol/K','+|-',4.43636),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
@@ -22431,15 +22425,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.857553,1.2704,1.67597,2.06254,2.7711,3.3858,4.48995],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (3.31478,'kcal/mol','+|-',2.4),
-        S298 = (1.77151,'cal/mol/K','+|-',2),
+        Cpdata = ([0.857553,1.2704,1.67597,2.06254,2.7711,3.3858,4.48995],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (3.31478,'kcal/mol','+|-',1.69706),
+        S298 = (1.77151,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C=C1C[CH]CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C1C[CH]CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -22462,9 +22456,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.07302,-2.6566,-3.67378,-4.97729,-6.57961,-7.10404,-7.44654],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (98.8828,'kcal/mol','+|-',5.2),
-        S298 = (4.08648,'cal/mol/K','+|-',3),
+        Cpdata = ([-1.07302,-2.6566,-3.67378,-4.97729,-6.57961,-7.10404,-7.44654],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (98.8828,'kcal/mol','+|-',4.17612),
+        S298 = (4.08648,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -23904,11 +23898,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.222829,-0.912385,-1.78999,-2.25542,-2.80961,-3.21603,-4.0209],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (82.1608,'kcal/mol','+|-',28.0616),
-        S298 = (-0.244103,'cal/mol/K','+|-',8.57574),
+        Cpdata = ([0.0778392,-0.997378,-1.81922,-2.25775,-2.76754,-3.16375,-3.9814],'cal/mol/K','+|-',[3.56416,3.3936,3.48316,3.39834,3.26866,3.34335,3.59093]),
+        H298 = (81.3256,'kcal/mol','+|-',28.4217),
+        S298 = (-0.2412,'cal/mol/K','+|-',8.78968),
     ),
-    shortDesc = """Radical correction fitted to 117 radicals""",
+    shortDesc = """Radical correction fitted to 112 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -23930,11 +23924,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.503483,-1.15673,-1.69144,-2.06383,-2.61628,-3.13226,-4.21714],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (74.7087,'kcal/mol','+|-',5.2),
-        S298 = (1.12398,'cal/mol/K','+|-',3.60479),
+        Cpdata = ([-0.604453,-1.10365,-1.5711,-1.94912,-2.60221,-3.19554,-4.32964],'cal/mol/K','+|-',[2.85436,2.47284,2.32429,2.30351,2.35904,2.40549,2.48512]),
+        H298 = (74.7127,'kcal/mol','+|-',4.37603),
+        S298 = (1.45244,'cal/mol/K','+|-',4.0324),
     ),
-    shortDesc = """Radical correction fitted to 9 radicals""",
+    shortDesc = """Radical correction fitted to 7 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -25050,39 +25044,40 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.997385,-0.533932,-1.79741,-2.40066,-3.04565,-3.49261,-4.22439],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (82.8017,'kcal/mol','+|-',5.2),
-        S298 = (-1.30547,'cal/mol/K','+|-',5.43679),
+        Cpdata = ([0.493945,-0.79127,-1.86519,-2.38989,-2.89766,-3.32006,-4.18783],'cal/mol/K','+|-',[3.43246,3.0696,3.22651,3.13254,3.06529,3.1461,2.87343]),
+        H298 = (82.9478,'kcal/mol','+|-',6.10852),
+        S298 = (-0.963853,'cal/mol/K','+|-',6.42527),
     ),
-    shortDesc = """Radical correction fitted to 25 radicals""",
+    shortDesc = """Radical correction fitted to 26 radicals""",
     longDesc = 
 """
 Derived using the following species:
 CC(C)COOC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
-CC(C)CC1[CH]C=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
-CC(C)CC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
 OOC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
 CCN(OC1=C[CH]CC1)CC - Radical thermo from pang.py and closed shell thermo from GAV
-CCN(OC1C[CH]C=C1)CC - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
+CCN(OC1C[CH]C=C1)CC - Radical thermo from pang.py and closed shell thermo from data/pang.py
 [CH]1C=CC(OOC2C=CCCC2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=CC(C)OOC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
-C=C(C)COOC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from GAV
-[CH]1C=CCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/pang.py
+CC1=C[CH]CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1C=CCC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/pang.py
 CC=CCC1=C[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C(C)CC1C=C[CH]C1 - Radical thermo from pang.py and closed shell thermo from data/dong_pio_liang.py
+C=C(C)CC1[CH]C=CC1 - Radical thermo from pang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]1C=CC(=C2C=CCCC2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
-C=C1C=C[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C1C=C[CH]C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]1C=CCC1C1C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CC(C2C=CCC2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CC(OOC2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
-CC=CCC1(C2[CH]C=CC2)C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
-CC=CCC1(C2C=C[CH]C2)C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CC(C2=CC=CCC2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CCC1C1=CC=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
-[CH]1C=CC2C3C=CC(C3)C12 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
+[CH]1C=CC2C3C=CC(C3)C12 - Radical thermo from pang.py and closed shell thermo from data/pang.py
 [CH]1C=CC(C2C=CC=CC2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CCC1C1C=CC=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
-[CH]1C=CCC1C1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
+[CH]1C=CCC1C1C=CCC=C1 - Radical thermo from pang.py and closed shell thermo from data/pang.py
 [CH]1C=CC(C2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC=CCC1=C[CH]C(C2C=CCC=C2)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC=CCC1=CC(C2[CH]C=CC2)C=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
+CC=CCC1=CC(C2C=C[CH]C2)C=CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 """,
 )
 
@@ -25101,43 +25096,43 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.282426,-1.10151,-2.30738,-2.84254,-3.48727,-3.8923,-4.75417],'cal/mol/K','+|-',[3,3.17377,3.25505,3,3,3,3]),
-        H298 = (82.519,'kcal/mol','+|-',9.51815),
-        S298 = (-1.03263,'cal/mol/K','+|-',7.1864),
+        Cpdata = ([0.235414,-1.24781,-2.4707,-2.9939,-3.59193,-3.99696,-4.76452],'cal/mol/K','+|-',[3.37356,3.56179,3.77597,3.53888,3.02548,2.76832,2.69077]),
+        H298 = (82.3293,'kcal/mol','+|-',6.91891),
+        S298 = (-1.16754,'cal/mol/K','+|-',7.56401),
     ),
     shortDesc = """Radical correction fitted to 29 radicals""",
     longDesc = 
 """
 Derived using the following species:
 CC(C)COOC1(C)C=C[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
+CCN(OC1=C[CH]CCC1)CC - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)COOC1(C)C=C[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)COOC1CC[CH]C=C1C - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)COOC1C=C(C)[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)COOCC1=C[CH]CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 CC1=C[CH]CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
-CC1[CH]C=CCC1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
-CC1C=C[CH]CC1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/pang.py
+CC1[CH]C=CCC1 - Radical thermo from pang.py and closed shell thermo from data/pang.py
+CC1C=C[CH]CC1 - Radical thermo from pang.py and closed shell thermo from data/pang.py
+C=C(C)CC1[CH]C=C(C)CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)CC1CC[CH]C=C1C - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)CC1[CH]C(C)=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)CC1C=C(C)[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)CCC1=C[CH]CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=CC1CC2(C=C[CH]CC2)OO1 - Radical thermo from pang.py and closed shell thermo from GAV
-C=C(C)CC1[CH]C=CC(C)C1 - Radical thermo from pang.py and closed shell thermo from GAV
-C=C(C)CC1C=C[CH]C(C)C1 - Radical thermo from pang.py and closed shell thermo from GAV
+C=C(C)CC1[CH]C=CCC1C - Radical thermo from pang.py and closed shell thermo from GAV
+C=C(C)CC1C=C[CH]CC1C - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)CC1(C)[CH]C=CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C(C)CC1(C)C=C[CH]CC1 - Radical thermo from pang.py and closed shell thermo from GAV
-[CH]1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from data/dong_pio_liang.py
 CC=CCC1=C[CH]CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CCCC1C1C=CCCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CC(C2C=CCCC2)CC1 - Radical thermo from pang.py and closed shell thermo from GAV
-C=C1C=C[CH]CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/pang.py
 [CH]1C=C(C2=CC=CC2)CCC1 - Radical thermo from pang.py and closed shell thermo from GAV
 [CH]1C=CCC2CC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH]1C=CC2CC2C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC1CC12[CH]C=CCC2 - Radical thermo from pang.py and closed shell thermo from GAV
 C=CC1CC12C=C[CH]CC2 - Radical thermo from pang.py and closed shell thermo from GAV
 C=C1C=C[CH]C2CC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=CC1CC2=C[CH]C1CC2 - Radical thermo from pang.py and closed shell thermo from GAV
 """,
 )
 
@@ -25153,11 +25148,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.00972439,-0.989739,-1.49738,-1.89706,-2.45809,-2.96251,-4.08999],'cal/mol/K','+|-',[3.16117,3.32433,3.55273,3.62237,3.61616,3.4739,3]),
-        H298 = (74.0012,'kcal/mol','+|-',14.3169),
-        S298 = (-0.437646,'cal/mol/K','+|-',12.1187),
+        Cpdata = ([-0.0784994,-0.91642,-1.37203,-1.74922,-2.30883,-2.82137,-3.95504],'cal/mol/K','+|-',[3.85033,3.91767,4.0612,4.09049,4.04113,3.89744,3.42937]),
+        H298 = (76.9881,'kcal/mol','+|-',19.0933),
+        S298 = (-0.128122,'cal/mol/K','+|-',11.9647),
     ),
-    shortDesc = """Radical correction fitted to 30 radicals""",
+    shortDesc = """Radical correction fitted to 28 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -25179,11 +25174,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.282921,-0.893748,-1.70951,-2.18689,-2.71664,-3.22406,-4.36464],'cal/mol/K','+|-',[3.42785,3,3,3,3,3,3]),
-        H298 = (74.5813,'kcal/mol','+|-',5.2),
-        S298 = (-2.93454,'cal/mol/K','+|-',8.74052),
+        Cpdata = ([0.290816,-0.744857,-1.50084,-1.98355,-2.6081,-3.16547,-4.34242],'cal/mol/K','+|-',[4.17233,2.56179,2.42217,2.65616,2.86431,2.92082,2.85208]),
+        H298 = (74.6111,'kcal/mol','+|-',5.862),
+        S298 = (-2.41008,'cal/mol/K','+|-',9.10028),
     ),
-    shortDesc = """Radical correction fitted to 8 radicals""",
+    shortDesc = """Radical correction fitted to 7 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -25665,8 +25660,13 @@ entry(
 3   Cd u0 {1,S} {2,D}
 4   H  u0 {1,S}
 """,
-    thermo = None,
-    shortDesc = """Radical correction fitted to 0 radicals""",
+    thermo = ThermoData(
+        Tdata = ([300,400,500,600,800,1000,1500],'K'),
+        Cpdata = ([-0.178461,-0.601747,-1.16332,-1.74341,-2.62783,-3.31616,-4.42409],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (101.007,'kcal/mol','+|-',1.69706),
+        S298 = (2.3889,'cal/mol/K','+|-',1.41421),
+    ),
+    shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -25747,16 +25747,17 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.0904424,-0.961947,-1.69414,-2.19482,-2.83315,-3.36023,-4.54681],'cal/mol/K','+|-',[4.91148,5.83834,5.1846,4.17871,3,3,3]),
-        H298 = (85.3697,'kcal/mol','+|-',17.047),
-        S298 = (7.04699,'cal/mol/K','+|-',3.62269),
+        Cpdata = ([-0.651461,-1.20853,-1.7723,-2.2482,-2.87917,-3.36637,-4.34432],'cal/mol/K','+|-',[4.49314,4.35944,3.93265,3.43183,2.66393,2.32455,2.34167]),
+        H298 = (81.7658,'kcal/mol','+|-',12.9743),
+        S298 = (4.64081,'cal/mol/K','+|-',8.02069),
     ),
-    shortDesc = """Radical correction fitted to 2 radicals""",
+    shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
 """
 Derived using the following species:
 OC1=C[CH]C=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]1C=CC=C1 - Radical thermo from pang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+OC1=C[CH]C=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH]1C=CC=C1 - Radical thermo from pang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -25793,11 +25794,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.188578,-1.46959,-2.09056,-2.92577,-3.45125,-3.81171,-5.71622],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (87.819,'kcal/mol','+|-',5.2),
-        S298 = (0.431614,'cal/mol/K','+|-',3.10542),
+        Cpdata = ([0.170622,-1.333,-1.90539,-2.91134,-3.38823,-3.68882,-5.57851],'cal/mol/K','+|-',[2.23702,2.29317,2.25675,2.49262,2.35339,2.26056,2.24039]),
+        H298 = (87.2791,'kcal/mol','+|-',7.43309),
+        S298 = (-0.439615,'cal/mol/K','+|-',2.4638),
     ),
-    shortDesc = """Radical correction fitted to 3 radicals""",
+    shortDesc = """Radical correction fitted to 2 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -26125,9 +26126,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.33391,-1.10537,-1.69618,-2.04822,-2.50249,-2.96039,-3.27737],'cal/mol/K','+|-',[3.61917,3.43485,4.12258,4.37586,4.18144,3.68506,3]),
-        H298 = (87.0647,'kcal/mol','+|-',11.6913),
-        S298 = (-0.886417,'cal/mol/K','+|-',7.58239),
+        Cpdata = ([-0.319696,-0.991035,-1.57826,-1.96335,-2.45863,-2.93146,-3.35519],'cal/mol/K','+|-',[4.02469,4.09426,4.76256,4.96093,4.76176,4.2921,3.3409]),
+        H298 = (87.7249,'kcal/mol','+|-',12.2223),
+        S298 = (-0.971351,'cal/mol/K','+|-',7.73923),
     ),
     shortDesc = """Radical correction fitted to 21 radicals""",
     longDesc = 
@@ -26150,18 +26151,17 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.874801,-2.11033,-2.90767,-3.32464,-3.84492,-4.11355,-4.22839],'cal/mol/K','+|-',[3,3.09335,5.95382,6.84692,6.76767,5.91425,3.16802]),
-        H298 = (91.6625,'kcal/mol','+|-',5.2),
-        S298 = (1.603,'cal/mol/K','+|-',10.231),
+        Cpdata = ([-0.431641,-2.21776,-3.46246,-4.07895,-4.64752,-4.82354,-4.54904],'cal/mol/K','+|-',[3.32471,4.53874,7.6089,8.46244,8.26026,7.28217,4.41645]),
+        H298 = (92.368,'kcal/mol','+|-',6.54105),
+        S298 = (2.48346,'cal/mol/K','+|-',12.7431),
     ),
-    shortDesc = """Radical correction fitted to 4 radicals""",
+    shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
 """
 Derived using the following species:
-O=C[CH]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C[CH]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C[CH]CC=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -26179,15 +26179,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.38007,1.06526,0.746896,0.544292,0.163937,-0.459198,-2.2371],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (88.3646,'kcal/mol','+|-',2.4),
-        S298 = (-5.11532,'cal/mol/K','+|-',2),
+        Cpdata = ([1.38007,1.06526,0.746896,0.544292,0.163937,-0.459198,-2.2371],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (88.3646,'kcal/mol','+|-',1.69706),
+        S298 = (-5.11532,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-O=C[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -26203,11 +26203,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.792419,-2.24039,-3.22376,-3.71236,-4.05495,-4.35669,-5.517],'cal/mol/K','+|-',[3.7041,4.28951,4.70577,4.75546,4.3168,4.06284,4.58953]),
-        H298 = (91.3875,'kcal/mol','+|-',19.2252),
-        S298 = (3.00748,'cal/mol/K','+|-',12.1727),
+        Cpdata = ([-0.757773,-2.2237,-3.22395,-3.71331,-4.05581,-4.34589,-5.51293],'cal/mol/K','+|-',[4.38417,4.85415,5.20881,5.25487,4.87191,4.63295,5.06887]),
+        H298 = (91.5398,'kcal/mol','+|-',19.3331),
+        S298 = (2.9726,'cal/mol/K','+|-',12.4585),
     ),
-    shortDesc = """Radical correction fitted to 167 radicals""",
+    shortDesc = """Radical correction fitted to 168 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -26227,11 +26227,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.82845,-2.59476,-3.78118,-4.32999,-4.60605,-4.9452,-6.58032],'cal/mol/K','+|-',[4.17894,5.12843,5.60256,5.64398,5.15121,4.77031,4.9673]),
-        H298 = (95.5956,'kcal/mol','+|-',14.3213),
-        S298 = (3.43094,'cal/mol/K','+|-',11.5786),
+        Cpdata = ([-0.82995,-2.58552,-3.76868,-4.31674,-4.58216,-4.89991,-6.56163],'cal/mol/K','+|-',[4.83151,5.63282,6.04704,6.07657,5.61844,5.25166,5.41751]),
+        H298 = (95.989,'kcal/mol','+|-',14.6615),
+        S298 = (3.40698,'cal/mol/K','+|-',11.8389),
     ),
-    shortDesc = """Radical correction fitted to 94 radicals""",
+    shortDesc = """Radical correction fitted to 93 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -26252,17 +26252,17 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.760099,-2.71526,-4.03725,-4.73839,-5.11232,-5.50059,-7.80794],'cal/mol/K','+|-',[4.25205,5.3097,5.58907,5.44347,4.87483,4.52723,4.11926]),
-        H298 = (96.5881,'kcal/mol','+|-',8.78347),
-        S298 = (4.10009,'cal/mol/K','+|-',11.705),
+        Cpdata = ([-0.749875,-2.70895,-4.04131,-4.74157,-5.1037,-5.4593,-7.76712],'cal/mol/K','+|-',[4.98169,5.84037,6.04314,5.88862,5.34899,4.99291,4.66281]),
+        H298 = (96.7423,'kcal/mol','+|-',9.43506),
+        S298 = (4.03013,'cal/mol/K','+|-',12.0122),
     ),
     shortDesc = """Radical correction fitted to 48 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C[C](COO)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C[C](C)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C[C](COO)COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[C](COO)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C[C](C)C(OO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C[C](COO)COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C[C](C)COOCC(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1(O)C[C](CO)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](C)C(C)(C)OOC(C)(C)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -26295,10 +26295,11 @@ COOC(C)(C)[C](C)C - Radical thermo from dong_pio_liang.py and closed shell therm
 CC(=O)C[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CCC1(C)OOC[C]1C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](COO)C1(C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[C](C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/pang.py
+C[C](C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/pang.py
 C[C]1COOC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC12COOC[C]1COO2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C[C]1CCC=CC1OOCC(C)C - Radical thermo from pang.py and closed shell thermo from GAV
 C[C]1COOC(C)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+COOC[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 OOC[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1(C)OC2OOC[C]21 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C]1COOC1C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -26307,7 +26308,6 @@ C[C]1CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from
 C[C](C)C1(C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](C)C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C1C[C](C)COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -26323,11 +26323,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.741656,-2.2445,-3.21362,-3.79291,-4.25378,-4.5012,-5.13091],'cal/mol/K','+|-',[3.05423,3.01916,3,3,3,3,3]),
-        H298 = (98.9347,'kcal/mol','+|-',8.59842),
-        S298 = (6.41044,'cal/mol/K','+|-',13.8173),
+        Cpdata = ([-0.902364,-2.38363,-3.33899,-3.90987,-4.35716,-4.60094,-5.19431],'cal/mol/K','+|-',[3.78653,3.83635,3.77036,3.74919,3.40635,3.06661,2.89669]),
+        H298 = (99.1537,'kcal/mol','+|-',9.87511),
+        S298 = (6.668,'cal/mol/K','+|-',13.8249),
     ),
-    shortDesc = """Radical correction fitted to 22 radicals""",
+    shortDesc = """Radical correction fitted to 21 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -26694,9 +26694,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.61678,-3.52639,-3.97326,-4.2814,-4.44267,-4.58826,-5.15875],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (87.3089,'kcal/mol','+|-',5.2),
-        S298 = (8.97256,'cal/mol/K','+|-',3),
+        Cpdata = ([-2.61678,-3.52639,-3.97326,-4.2814,-4.44267,-4.58826,-5.15875],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (87.3089,'kcal/mol','+|-',4.17612),
+        S298 = (8.97256,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -26760,11 +26760,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.753572,-1.73656,-2.44227,-2.7964,-3.19521,-3.44898,-4.06226],'cal/mol/K','+|-',[3.11336,3.03789,3.36548,3.31197,3,3,3.09235]),
-        H298 = (82.624,'kcal/mol','+|-',15.9861),
-        S298 = (0.824204,'cal/mol/K','+|-',11.7256),
+        Cpdata = ([-0.578336,-1.66357,-2.44706,-2.811,-3.22963,-3.47695,-4.08998],'cal/mol/K','+|-',[3.8404,3.68772,3.97431,3.95626,3.72862,3.70876,3.82929]),
+        H298 = (82.0583,'kcal/mol','+|-',13.2779),
+        S298 = (0.630067,'cal/mol/K','+|-',12.0827),
     ),
-    shortDesc = """Radical correction fitted to 40 radicals""",
+    shortDesc = """Radical correction fitted to 42 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -26786,11 +26786,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.36504,-1.61749,-2.51694,-3.06219,-3.56651,-3.95215,-4.72231],'cal/mol/K','+|-',[5.01019,3.36858,3,3,3,3,3]),
-        H298 = (72.2713,'kcal/mol','+|-',5.2),
-        S298 = (1.10082,'cal/mol/K','+|-',4.31142),
+        Cpdata = ([0.46522,-0.758716,-1.71855,-2.42297,-3.3971,-3.93979,-4.76825],'cal/mol/K','+|-',[5.17051,2.56021,2.27971,2.44925,2.50909,2.383,2.34479]),
+        H298 = (72.2885,'kcal/mol','+|-',4.28568),
+        S298 = (0.185441,'cal/mol/K','+|-',3.79831),
     ),
-    shortDesc = """Radical correction fitted to 4 radicals""",
+    shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -26961,9 +26961,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.23965,-2.66112,-3.37235,-3.94908,-4.18307,-4.38328,-5.55377],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (73.0829,'kcal/mol','+|-',5.2),
-        S298 = (1.61268,'cal/mol/K','+|-',3),
+        Cpdata = ([-2.23965,-2.66112,-3.37235,-3.94908,-4.18307,-4.38328,-5.55377],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (73.0829,'kcal/mol','+|-',4.17612),
+        S298 = (1.61268,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -27147,9 +27147,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.51805,-1.50734,-1.4635,-1.42469,-1.53194,-1.67074,-1.94025],'cal/mol/K','+|-',[5.41381,7.94275,8.95519,8.8836,7.00087,5.06876,3.48231]),
-        H298 = (78.4301,'kcal/mol','+|-',5.2),
-        S298 = (-6.5389,'cal/mol/K','+|-',13.3532),
+        Cpdata = ([-1.51211,-1.49405,-1.45173,-1.42419,-1.54883,-1.69948,-1.99594],'cal/mol/K','+|-',[5.78372,8.13953,9.10235,9.03312,7.25282,5.48009,4.13834]),
+        H298 = (78.4347,'kcal/mol','+|-',4.19457),
+        S298 = (-6.31749,'cal/mol/K','+|-',13.5532),
     ),
     shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
@@ -27191,9 +27191,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.816078,-2.26895,-3.14239,-3.66102,-4.24593,-4.59265,-6.45392],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (87.1048,'kcal/mol','+|-',5.2),
-        S298 = (4.57326,'cal/mol/K','+|-',3),
+        Cpdata = ([-0.816078,-2.26895,-3.14239,-3.66102,-4.24593,-4.59265,-6.45392],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (87.1048,'kcal/mol','+|-',4.17612),
+        S298 = (4.57326,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -27217,11 +27217,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.821682,-1.50592,-2.05088,-2.41696,-2.72655,-3.0755,-4.00528],'cal/mol/K','+|-',[4.21256,3.21541,3,3,3,3,3]),
-        H298 = (89.8753,'kcal/mol','+|-',15.0218),
-        S298 = (0.914001,'cal/mol/K','+|-',4.86612),
+        Cpdata = ([-0.655009,-1.39048,-1.96271,-2.33881,-2.67959,-3.05772,-4.01876],'cal/mol/K','+|-',[4.73959,3.8786,3.1042,2.8229,2.73992,2.77432,2.66923]),
+        H298 = (90.2434,'kcal/mol','+|-',16.1651),
+        S298 = (1.12959,'cal/mol/K','+|-',5.25242),
     ),
-    shortDesc = """Radical correction fitted to 8 radicals""",
+    shortDesc = """Radical correction fitted to 9 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -27242,17 +27242,18 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.22055,-1.0718,-1.67098,-2.11242,-2.70829,-3.13403,-3.99754],'cal/mol/K','+|-',[4.21381,3.26628,3,3,3,3,3]),
-        H298 = (89.515,'kcal/mol','+|-',17.2355),
-        S298 = (0.803425,'cal/mol/K','+|-',5.17155),
+        Cpdata = ([-0.0669123,-0.968797,-1.60161,-2.04476,-2.63595,-3.09405,-4.02081],'cal/mol/K','+|-',[4.57789,3.7958,2.94488,2.67949,2.64887,2.55036,2.34935]),
+        H298 = (90.1141,'kcal/mol','+|-',18.274),
+        S298 = (1.17295,'cal/mol/K','+|-',5.38545),
     ),
-    shortDesc = """Radical correction fitted to 4 radicals""",
+    shortDesc = """Radical correction fitted to 5 radicals""",
     longDesc = 
 """
 Derived using the following species:
 C[C](C=O)C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[C](C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[C](C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1(C)C[C]1C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC1C[C]1C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C[C]1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -27269,11 +27270,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.793666,0.160279,-0.523642,-1.12331,-2.12162,-2.91568,-4.16206],'cal/mol/K','+|-',[4.59243,4.58353,4.21101,4.01218,4.2594,4.56446,5.00914]),
-        H298 = (99.6094,'kcal/mol','+|-',11.7902),
-        S298 = (2.80754,'cal/mol/K','+|-',10.6696),
+        Cpdata = ([0.862075,0.240631,-0.45514,-1.07442,-2.11193,-2.93633,-4.22623],'cal/mol/K','+|-',[5.18833,5.08066,4.68183,4.49867,4.78302,5.10712,5.53674]),
+        H298 = (99.6559,'kcal/mol','+|-',12.716),
+        S298 = (2.86893,'cal/mol/K','+|-',11.0524),
     ),
-    shortDesc = """Radical correction fitted to 34 radicals""",
+    shortDesc = """Radical correction fitted to 32 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -27291,17 +27292,11 @@ entry(
 4   H   u0 {1,S}
 5   H   u0 {2,S}
 """,
-    thermo = ThermoData(
-        Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.486492,0.142563,-0.247456,-0.731933,-1.70906,-2.53907,-4.00044],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (97.0944,'kcal/mol','+|-',2.4),
-        S298 = (1.43601,'cal/mol/K','+|-',2),
-    ),
-    shortDesc = """Radical correction fitted to 1 radicals""",
+    thermo = None,
+    shortDesc = """Radical correction fitted to 0 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[CH2]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
 """,
 )
 
@@ -27318,11 +27313,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.806707,0.161032,-0.535367,-1.13993,-2.13913,-2.93166,-4.16892],'cal/mol/K','+|-',[4.68978,4.68253,4.30034,4.09542,4.34782,4.66027,5.11687]),
-        H298 = (99.7313,'kcal/mol','+|-',12.0288),
-        S298 = (2.86577,'cal/mol/K','+|-',10.8842),
+        Cpdata = ([0.862075,0.240631,-0.45514,-1.07442,-2.11193,-2.93633,-4.22623],'cal/mol/K','+|-',[5.18833,5.08066,4.68183,4.49867,4.78302,5.10712,5.53674]),
+        H298 = (99.6559,'kcal/mol','+|-',12.716),
+        S298 = (2.86893,'cal/mol/K','+|-',11.0524),
     ),
-    shortDesc = """Radical correction fitted to 33 radicals""",
+    shortDesc = """Radical correction fitted to 32 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -27342,9 +27337,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.921231,0.369765,-0.382598,-1.12926,-2.38611,-3.3592,-4.845],'cal/mol/K','+|-',[5.01514,3.96981,3,3,3,3.32956,3.79799]),
-        H298 = (98.9607,'kcal/mol','+|-',13.8726),
-        S298 = (2.43468,'cal/mol/K','+|-',11.3632),
+        Cpdata = ([0.924759,0.370037,-0.382037,-1.1326,-2.39886,-3.37379,-4.86261],'cal/mol/K','+|-',[5.5338,4.57524,3.50906,3.07695,3.53604,4.00114,4.41505]),
+        H298 = (99.0235,'kcal/mol','+|-',14.5763),
+        S298 = (2.5341,'cal/mol/K','+|-',11.5056),
     ),
     shortDesc = """Radical correction fitted to 17 radicals""",
     longDesc = 
@@ -27369,15 +27364,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.471365,-0.83147,-1.09737,-1.49467,-2.36628,-3.06604,-4.27394],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (97.1313,'kcal/mol','+|-',2.4),
-        S298 = (2.62196,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.471365,-0.83147,-1.09737,-1.49467,-2.36628,-3.06604,-4.27394],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (97.1313,'kcal/mol','+|-',1.69706),
+        S298 = (2.62196,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[CH2]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -27397,21 +27392,21 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.389775,-0.197191,-0.814686,-1.44747,-2.50538,-3.38286,-4.91598],'cal/mol/K','+|-',[5.08882,3.94243,3,3,3,3,3.02078]),
-        H298 = (96.1075,'kcal/mol','+|-',5.2),
-        S298 = (3.00988,'cal/mol/K','+|-',4.51712),
+        Cpdata = ([0.378108,-0.203107,-0.813558,-1.44414,-2.50378,-3.38486,-4.92088],'cal/mol/K','+|-',[5.61963,4.57142,3.5445,2.87337,2.32744,2.54889,3.79396]),
+        H298 = (96.1104,'kcal/mol','+|-',4.83729),
+        S298 = (3.06744,'cal/mol/K','+|-',5.03736),
     ),
     shortDesc = """Radical correction fitted to 7 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]OCC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]OCC(C)OO - Radical thermo from johnson_g4.py and closed shell thermo from Thermo library: ../data/johnson_g4.py
-[CH2]OCCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OCC(C)OO - Radical thermo from johnson_g4.py and closed shell thermo from data/johnson_g4.py
+[CH2]OCCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]OCC(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]OCCCC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]OCCC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/johnson_g4.py
-[CH2]OCC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OCCC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/johnson_g4.py
+[CH2]OCC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -27431,9 +27426,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.307385,-0.306225,-1.14073,-1.8319,-2.6688,-3.43624,-4.91099],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (94.6077,'kcal/mol','+|-',5.2),
-        S298 = (1.55753,'cal/mol/K','+|-',3),
+        Cpdata = ([0.307385,-0.306225,-1.14073,-1.8319,-2.6688,-3.43624,-4.91099],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (94.6077,'kcal/mol','+|-',4.17612),
+        S298 = (1.55753,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -27478,11 +27473,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.656734,-0.19771,-0.826727,-1.21812,-1.81967,-2.32606,-3.14842],'cal/mol/K','+|-',[4.64707,5.94612,6.25612,6.25031,6.28189,6.32894,6.52438]),
-        H298 = (101.104,'kcal/mol','+|-',8.71205),
-        S298 = (3.67645,'cal/mol/K','+|-',11.0645),
+        Cpdata = ([0.79301,-0.00818984,-0.630312,-1.03743,-1.69488,-2.26165,-3.18852],'cal/mol/K','+|-',[5.07677,6.22685,6.49578,6.49727,6.59258,6.70207,6.94686]),
+        H298 = (100.837,'kcal/mol','+|-',9.20345),
+        S298 = (3.5945,'cal/mol/K','+|-',11.3518),
     ),
-    shortDesc = """Radical correction fitted to 15 radicals""",
+    shortDesc = """Radical correction fitted to 14 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -27503,9 +27498,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([2.87575,2.62347,1.99445,1.3578,0.27964,-0.663694,-2.05311],'cal/mol/K','+|-',[3.83239,5.18634,6.26485,7.18439,8.70401,9.73574,10.8126]),
-        H298 = (98.9835,'kcal/mol','+|-',8.80039),
-        S298 = (1.20866,'cal/mol/K','+|-',3.01361),
+        Cpdata = ([2.83428,2.57905,1.94214,1.29798,0.203081,-0.751782,-2.17565],'cal/mol/K','+|-',[4.36671,5.53793,6.51511,7.3651,8.79352,9.77335,10.8201]),
+        H298 = (99.1886,'kcal/mol','+|-',9.22842),
+        S298 = (1.24757,'cal/mol/K','+|-',3.70593),
     ),
     shortDesc = """Radical correction fitted to 5 radicals""",
     longDesc = 
@@ -27529,15 +27524,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([2.28751,1.86514,1.0358,0.25943,-1.09423,-2.19986,-4.03292],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (100.823,'kcal/mol','+|-',2.4),
-        S298 = (1.80369,'cal/mol/K','+|-',2),
+        Cpdata = ([2.28751,1.86514,1.0358,0.25943,-1.09423,-2.19986,-4.03292],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (100.823,'kcal/mol','+|-',1.69706),
+        S298 = (1.80369,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[CH2]OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -27556,16 +27551,16 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([3.12785,2.94847,2.4053,1.82852,0.868441,-0.00533718,-1.20462],'cal/mol/K','+|-',[4.64103,6.29681,7.58803,8.70222,10.5237,11.7714,12.9391]),
-        H298 = (97.9778,'kcal/mol','+|-',11.4395),
-        S298 = (0.953644,'cal/mol/K','+|-',3.58243),
+        Cpdata = ([3.08281,2.90355,2.35411,1.77005,0.792768,-0.0935655,-1.33143],'cal/mol/K','+|-',[5.11845,6.61929,7.83125,8.89278,10.6502,11.8633,13.0311]),
+        H298 = (98.2133,'kcal/mol','+|-',12.043),
+        S298 = (0.994793,'cal/mol/K','+|-',4.20589),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]OC(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]OC(C)=O - Radical thermo from johnson_g4.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OC(C)=O - Radical thermo from johnson_g4.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]OC(=O)C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]OC(=O)CC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
@@ -27585,23 +27580,22 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.674674,-1.89042,-2.51943,-2.76367,-3.07926,-3.32347,-3.80561],'cal/mol/K','+|-',[3,3.2286,3.21077,3.08259,3,3,3]),
-        H298 = (102.723,'kcal/mol','+|-',8.07242),
-        S298 = (5.15713,'cal/mol/K','+|-',13.1564),
+        Cpdata = ([-0.567833,-1.73301,-2.34528,-2.59437,-2.96019,-3.26823,-3.86377],'cal/mol/K','+|-',[3.44985,3.87299,3.81162,3.69441,3.44615,3.25647,3.21418]),
+        H298 = (102.234,'kcal/mol','+|-',9.21603),
+        S298 = (5.15911,'cal/mol/K','+|-',13.7645),
     ),
-    shortDesc = """Radical correction fitted to 10 radicals""",
+    shortDesc = """Radical correction fitted to 9 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [CH2]OC(C)=COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]OC(=C)COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]OC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OC(=C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]OC(C)=C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]OC(=C)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]OC=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]OC(C)=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH2]OC=CC(=O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH2]OC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH2]OC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH2]OC(C)=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -27677,11 +27671,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.0622517,-0.811679,-1.50027,-2.00655,-2.63192,-3.12698,-4.0722],'cal/mol/K','+|-',[3.28632,3.56483,3.96125,4.23545,4.35786,4.24142,4.31706]),
-        H298 = (91.2238,'kcal/mol','+|-',19.6702),
-        S298 = (0.594647,'cal/mol/K','+|-',9.82319),
+        Cpdata = ([-0.0857662,-0.795834,-1.46169,-1.96615,-2.60665,-3.10658,-4.08637],'cal/mol/K','+|-',[3.91716,4.12352,4.46318,4.71163,4.83308,4.72278,4.69211]),
+        H298 = (91.3062,'kcal/mol','+|-',19.178),
+        S298 = (0.587141,'cal/mol/K','+|-',9.8344),
     ),
-    shortDesc = """Radical correction fitted to 174 radicals""",
+    shortDesc = """Radical correction fitted to 177 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -27701,9 +27695,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.555773,-0.493793,-1.45758,-2.19696,-3.11467,-3.76735,-4.8778],'cal/mol/K','+|-',[3,3.58346,4.37554,4.8869,4.97614,4.57297,4.21719]),
-        H298 = (92.2949,'kcal/mol','+|-',19.4395),
-        S298 = (2.16502,'cal/mol/K','+|-',9.95367),
+        Cpdata = ([0.547206,-0.472555,-1.4234,-2.16548,-3.09752,-3.74787,-4.9105],'cal/mol/K','+|-',[3.61093,4.16865,4.85743,5.33168,5.44533,5.08415,4.57288]),
+        H298 = (92.1588,'kcal/mol','+|-',17.9178),
+        S298 = (2.15067,'cal/mol/K','+|-',10.1245),
     ),
     shortDesc = """Radical correction fitted to 94 radicals""",
     longDesc = 
@@ -27726,44 +27720,44 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.287636,-0.627966,-1.43574,-1.98823,-2.67523,-3.22655,-4.13031],'cal/mol/K','+|-',[3,3.94638,4.46512,4.64038,4.43751,3.83679,3.69097]),
-        H298 = (82.3816,'kcal/mol','+|-',24.1149),
-        S298 = (0.41992,'cal/mol/K','+|-',8.20544),
+        Cpdata = ([0.275219,-0.584645,-1.37182,-1.93008,-2.63042,-3.16464,-4.26633],'cal/mol/K','+|-',[3.54753,4.47591,4.94418,5.13199,4.98479,4.43727,3.74365]),
+        H298 = (81.5664,'kcal/mol','+|-',16.1948),
+        S298 = (0.342308,'cal/mol/K','+|-',8.44752),
     ),
     shortDesc = """Radical correction fitted to 31 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C=C([CH]OC(C)=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C(C)[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CC=C[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C([CH]OC(C)=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C(C)[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC=C[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1=C(C)C(=O)O[CH]1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(O)[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C1C=C[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C1C=C[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 OC1C=C[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CO[CH]C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([CH]OC)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]1C=COCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]1C=COCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CC1=C[CH]OC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 OC1=CCO[CH]C=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C1[CH]OC(O)C1=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C1[CH]OC=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)[CH]OCC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C=C[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C=C[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C([CH]OC)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC1O[CH]C=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C[CH]OC=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C(C)[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC=C[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C[CH]OC - Radical thermo from johnson_g4.py and closed shell thermo from Thermo library: ../data/johnson_cbs-qb3.py
+C=C[CH]OC - Radical thermo from johnson_g4.py and closed shell thermo from data/johnson_cbs-qb3.py
 [CH]1C=COCC=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH]1C=COC=CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)C(=C)[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]1C=CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]1C=CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C1C=C=C[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C1[CH]OC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-OC1=C2[CH]OC1OOC2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1[CH]OC1(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CC(=C)[CH]OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C1[CH]OC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C1[CH]OC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C1=C[CH]OC=1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -27781,9 +27775,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.388202,-0.636812,-1.57749,-2.33637,-3.29334,-3.96626,-5.04221],'cal/mol/K','+|-',[3,3,3.57079,4.05048,3.83345,3.73531,3.88517]),
-        H298 = (94.8342,'kcal/mol','+|-',8.83294),
-        S298 = (1.71506,'cal/mol/K','+|-',5.41546),
+        Cpdata = ([0.370754,-0.622627,-1.54433,-2.29769,-3.26293,-3.93924,-5.00521],'cal/mol/K','+|-',[3.52812,3.60249,4.14153,4.53795,4.36447,4.29068,4.41604]),
+        H298 = (94.7938,'kcal/mol','+|-',9.63722),
+        S298 = (1.7257,'cal/mol/K','+|-',5.78816),
     ),
     shortDesc = """Radical correction fitted to 36 radicals""",
     longDesc = 
@@ -28261,9 +28255,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.05212,-0.165395,-1.31737,-2.21834,-3.31497,-4.04224,-5.40722],'cal/mol/K','+|-',[3,4.08786,5.34549,6.18397,6.68044,6.05978,4.85073]),
-        H298 = (97.7481,'kcal/mol','+|-',11.1096),
-        S298 = (4.52882,'cal/mol/K','+|-',14.0644),
+        Cpdata = ([1.05533,-0.158347,-1.3106,-2.21923,-3.3355,-4.06557,-5.41944],'cal/mol/K','+|-',[3.66752,4.61236,5.7518,6.55595,7.06066,6.47916,5.3159]),
+        H298 = (97.8078,'kcal/mol','+|-',11.8801),
+        S298 = (4.51537,'cal/mol/K','+|-',14.0977),
     ),
     shortDesc = """Radical correction fitted to 27 radicals""",
     longDesc = 
@@ -28286,9 +28280,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.40766,0.110219,-1.13307,-2.12864,-3.40721,-4.26756,-5.74616],'cal/mol/K','+|-',[3,4.27641,5.77564,6.79677,7.38562,6.55332,4.79785]),
-        H298 = (99.192,'kcal/mol','+|-',8.82763),
-        S298 = (4.007,'cal/mol/K','+|-',12.1031),
+        Cpdata = ([1.40347,0.10254,-1.14349,-2.14563,-3.43721,-4.29105,-5.74969],'cal/mol/K','+|-',[3.55655,4.78001,6.14802,7.12904,7.72571,6.9462,5.28693]),
+        H298 = (99.26,'kcal/mol','+|-',9.73782),
+        S298 = (4.0899,'cal/mol/K','+|-',12.327),
     ),
     shortDesc = """Radical correction fitted to 21 radicals""",
     longDesc = 
@@ -28312,16 +28306,16 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.73529,1.29393,0.566969,-0.140542,-1.4158,-2.50524,-4.34132],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (99.2174,'kcal/mol','+|-',5.2),
-        S298 = (2.31206,'cal/mol/K','+|-',5.02226),
+        Cpdata = ([1.70065,1.25586,0.528627,-0.176788,-1.44665,-2.52938,-4.35368],'cal/mol/K','+|-',[3.1571,3.31672,3.32971,3.23101,2.98984,2.72263,2.37323]),
+        H298 = (99.1199,'kcal/mol','+|-',5.82921),
+        S298 = (2.39011,'cal/mol/K','+|-',5.49755),
     ),
     shortDesc = """Radical correction fitted to 2 radicals""",
     longDesc = 
 """
 Derived using the following species:
 O=CO[CH]CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[CH]OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -28340,9 +28334,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.46838,0.000534627,-1.34972,-2.40453,-3.70739,-4.54974,-6.0082],'cal/mol/K','+|-',[3,4.57138,6.17287,7.26551,7.91457,7.01295,5.07307]),
-        H298 = (98.9199,'kcal/mol','+|-',9.52143),
-        S298 = (4.41906,'cal/mol/K','+|-',13.0241),
+        Cpdata = ([1.47032,-0.00368437,-1.35875,-2.42248,-3.74219,-4.57776,-6.01439],'cal/mol/K','+|-',[3.65524,5.04697,6.52552,7.58307,8.24195,7.39146,5.54104]),
+        H298 = (99.0017,'kcal/mol','+|-',10.3909),
+        S298 = (4.51617,'cal/mol/K','+|-',13.2422),
     ),
     shortDesc = """Radical correction fitted to 18 radicals""",
     longDesc = 
@@ -28350,21 +28344,21 @@ entry(
 Derived using the following species:
 CC(=O)O[CH]C(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)O[CH]C1(C)OCOO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(=O)O[CH]C(CCOO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)O[CH]C(CCOO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(=O)O[CH]C1OOCC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CCC([CH]OC(C)=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CC(=O)O[CH]C(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CC(=O)O[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CCC([CH]OC(C)=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC(=O)O[CH]C(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC(=O)O[CH]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(=O)O[CH]CCOO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(=O)O[CH]CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)O[CH]CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(OO)C1[CH]OC(=O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(=O)O[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CC(=O)O[CH]C1(C)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)O[CH]COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC(=O)O[CH]C1(C)CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C1CC(OO)C[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CCC[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CCC[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=CC[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=CC[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CCC(=O)O[CH]C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -28442,16 +28436,16 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.83666,-1.99154,-2.01296,-1.95169,-1.82622,-1.78496,-2.19833],'cal/mol/K','+|-',[3,3,3,3,3,3,3.72267]),
-        H298 = (81.4952,'kcal/mol','+|-',16.5405),
-        S298 = (-2.98483,'cal/mol/K','+|-',8.21343),
+        Cpdata = ([-1.77191,-1.88443,-1.90543,-1.8669,-1.79242,-1.79624,-2.27451],'cal/mol/K','+|-',[3.3307,3.43465,3.30847,3.19197,3.30806,3.53569,4.21998]),
+        H298 = (81.3477,'kcal/mol','+|-',16.5116),
+        S298 = (-2.87367,'cal/mol/K','+|-',8.13689),
     ),
-    shortDesc = """Radical correction fitted to 24 radicals""",
+    shortDesc = """Radical correction fitted to 25 radicals""",
     longDesc = 
 """
 Derived using the following species:
 O=CC(O)=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=CC(O)=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=CC(O)=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O[CH]C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([CH]O)C(C)(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -28459,21 +28453,22 @@ CC(C)=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo 
 CC([CH]O)=C(C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([CH]O)C(=O)CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C([CH]O)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O[CH]C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C([CH]O)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O[CH]C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC([CH]O)=C(C)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=CC=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC=C(O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)=C(C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(C)=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(C)=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C([CH]O)C(=C)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C(C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C(C)C(=C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=CC(=C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C1[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C(C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C(C)C(=C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC=C[CH]ON(CC)CC - Radical thermo from pang.py and closed shell thermo from data/pang.py
+C=CC(=C)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C1[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -28490,9 +28485,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.1087,-1.5937,-2.03435,-2.22714,-2.26167,-2.37501,-2.542],'cal/mol/K','+|-',[3.51183,3.80582,3.92608,3.95291,4.21832,4.5616,4.92328]),
-        H298 = (81.9994,'kcal/mol','+|-',8.98141),
-        S298 = (-3.41261,'cal/mol/K','+|-',9.31252),
+        Cpdata = ([-1.12991,-1.61562,-2.05324,-2.25237,-2.30305,-2.41752,-2.57976],'cal/mol/K','+|-',[4.12057,4.37604,4.48225,4.50453,4.71838,5.00009,5.31564]),
+        H298 = (82.1906,'kcal/mol','+|-',9.90797),
+        S298 = (-3.27443,'cal/mol/K','+|-',9.42349),
     ),
     shortDesc = """Radical correction fitted to 21 radicals""",
     longDesc = 
@@ -28504,20 +28499,20 @@ O=CC(O)C(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell therm
 O=C([CH]O)CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)(OO)C(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(OO)C(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C([CH]O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C([CH]O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C([CH]O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=CC(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=CC(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1(CO)OO[CH]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CCC(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=C1[CH]OOC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O=C[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O=C1[CH]OOC1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1(C)OO[CH]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC(=O)[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1OO[CH]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C[CH]OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=C1[CH]OOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=C1[CH]OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C[CH]OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O=C1[CH]OOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O=C1[CH]OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C1OO[CH]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
@@ -28535,9 +28530,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.223437,-0.348898,-0.934275,-1.36826,-1.96454,-2.56892,-3.84541],'cal/mol/K','+|-',[3,3.86709,4.39509,4.38501,3.8921,3.24643,3]),
-        H298 = (94.1947,'kcal/mol','+|-',6.78517),
-        S298 = (1.00692,'cal/mol/K','+|-',7.45836),
+        Cpdata = ([0.208227,-0.352627,-0.929316,-1.36307,-1.96832,-2.57439,-3.83954],'cal/mol/K','+|-',[3.6864,4.38829,4.84948,4.85149,4.44334,3.91723,2.88877]),
+        H298 = (94.1657,'kcal/mol','+|-',7.80826),
+        S298 = (1.05637,'cal/mol/K','+|-',7.68886),
     ),
     shortDesc = """Radical correction fitted to 24 radicals""",
     longDesc = 
@@ -28757,11 +28752,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.352229,-0.910223,-1.41931,-2.00123,-3.00318,-3.67478,-4.64474],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (96.8428,'kcal/mol','+|-',2.4),
-        S298 = (1.16313,'cal/mol/K','+|-',3.5318),
+        Cpdata = ([-0.620987,-0.879521,-1.15847,-1.60926,-2.50961,-3.18474,-4.32549],'cal/mol/K','+|-',[1.70758,1.70482,2.03277,2.29478,2.50934,2.41336,1.86029]),
+        H298 = (96.6596,'kcal/mol','+|-',1.88748),
+        S298 = (0.276513,'cal/mol/K','+|-',4.20355),
     ),
-    shortDesc = """Radical correction fitted to 2 radicals""",
+    shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -28782,15 +28777,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.462971,-1.38327,-1.99283,-2.59754,-3.58915,-4.16022,-4.88845],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (97.1073,'kcal/mol','+|-',2.4),
-        S298 = (2.41181,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.462971,-1.38327,-1.99283,-2.59754,-3.58915,-4.16022,-4.88845],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (97.1073,'kcal/mol','+|-',1.69706),
+        S298 = (2.41181,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C[CH]OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[CH]OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -28946,11 +28941,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.303879,-1.31608,-2.17566,-2.56865,-2.88001,-3.19285,-4.20103],'cal/mol/K','+|-',[3.58067,4.55623,5.46324,5.82475,5.7081,5.35725,6.14073]),
-        H298 = (91.0226,'kcal/mol','+|-',26.3617),
-        S298 = (-0.495578,'cal/mol/K','+|-',13.1896),
+        Cpdata = ([-0.363777,-1.34395,-2.18654,-2.57345,-2.86787,-3.16208,-4.17158],'cal/mol/K','+|-',[4.26162,5.09251,5.91498,6.24469,6.12136,5.7851,6.51844]),
+        H298 = (89.9646,'kcal/mol','+|-',25.5106),
+        S298 = (-0.568889,'cal/mol/K','+|-',13.3515),
     ),
-    shortDesc = """Radical correction fitted to 91 radicals""",
+    shortDesc = """Radical correction fitted to 89 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -28970,9 +28965,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.328833,-1.18783,-1.86665,-2.05206,-2.2032,-2.38894,-2.87005],'cal/mol/K','+|-',[3.67193,3.97415,4.23609,4.43333,4.6152,4.60911,4.88647]),
-        H298 = (86.9644,'kcal/mol','+|-',28.6433),
-        S298 = (-2.97556,'cal/mol/K','+|-',11.945),
+        Cpdata = ([-0.443898,-1.24284,-1.89481,-2.09792,-2.2703,-2.4529,-2.95998],'cal/mol/K','+|-',[4.2673,4.49384,4.72859,4.91187,5.07534,5.05082,5.28073]),
+        H298 = (85.6232,'kcal/mol','+|-',26.4075),
+        S298 = (-2.77581,'cal/mol/K','+|-',11.8962),
     ),
     shortDesc = """Radical correction fitted to 46 radicals""",
     longDesc = 
@@ -28987,43 +28982,43 @@ O=C[C](O)C(=O)C(O)OO - Radical thermo from dong_pio_liang.py and closed shell th
 O=C[C](O)C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C[C](O)C(O)=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C1OOC(O)[C]1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-OC[C](O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+OC[C](O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(C)(OO)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C=C(O)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C[C](O)C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)[C](O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C[C](O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](O)C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O[C]1COC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O[C]1COC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C[C](O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CC(OO)[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(O)[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(CO)C[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C[C](O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[C](O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[C](O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O=C1CC=C[C]1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O[C]1C=CC=CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](O)C1(C)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C1C=CC[C]1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1OOC[C]1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C[C](O)C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C[C](O)C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 O[C]1C=CC=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](O)C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C1COOC1[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O[C]1COC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O[C]1CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O[C]1COC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O[C]1CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C[C](O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O[C]1C2=COC1OOC2 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+O[C]1C=CC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C[C](O)C=C1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O[C]1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O[C]1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C#C[C](C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C#C[C](O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C#C[C](O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -29040,9 +29035,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.361437,-1.89578,-3.1677,-3.84535,-4.16567,-4.57135,-6.42405],'cal/mol/K','+|-',[4.00763,6.34308,8.24757,8.83281,8.37014,7.22651,7.05902]),
-        H298 = (95.8286,'kcal/mol','+|-',11.0882),
-        S298 = (3.27298,'cal/mol/K','+|-',16.2307),
+        Cpdata = ([-0.370723,-1.88975,-3.15252,-3.82955,-4.15974,-4.5697,-6.40897],'cal/mol/K','+|-',[4.57052,6.68642,8.4952,9.05736,8.60991,7.5189,7.36544]),
+        H298 = (95.9435,'kcal/mol','+|-',11.6982),
+        S298 = (3.30336,'cal/mol/K','+|-',16.3283),
     ),
     shortDesc = """Radical correction fitted to 31 radicals""",
     longDesc = 
@@ -29064,9 +29059,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.1035,-3.33214,-5.05096,-5.77556,-5.8193,-5.81274,-7.67602],'cal/mol/K','+|-',[3.20184,4.73054,5.85521,5.94335,4.59392,3.55733,6.72829]),
-        H298 = (93.5713,'kcal/mol','+|-',11.2996),
-        S298 = (3.66681,'cal/mol/K','+|-',6.26259),
+        Cpdata = ([-1.09409,-3.30267,-5.00834,-5.73126,-5.78606,-5.78746,-7.63687],'cal/mol/K','+|-',[3.89445,5.23582,6.28471,6.36978,5.12169,4.2099,7.09005]),
+        H298 = (93.6323,'kcal/mol','+|-',11.843),
+        S298 = (3.62433,'cal/mol/K','+|-',6.6615),
     ),
     shortDesc = """Radical correction fitted to 18 radicals""",
     longDesc = 
@@ -29089,7 +29084,7 @@ CO[C](C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from G
 C=C(C)[C](C)OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C[C](C)OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C1CO[C](C)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C[C]1CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C[C]1CCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -29106,9 +29101,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.641004,0.0445619,-0.623643,-1.23787,-1.93182,-2.8944,-4.73279],'cal/mol/K','+|-',[4.2342,6.32562,8.47102,9.62256,10.3124,9.50971,6.23736]),
-        H298 = (98.7621,'kcal/mol','+|-',7.9608),
-        S298 = (2.74096,'cal/mol/K','+|-',24.413),
+        Cpdata = ([0.602078,0.0103919,-0.656762,-1.27207,-1.97262,-2.93202,-4.75767],'cal/mol/K','+|-',[4.80116,6.68839,8.71833,9.8268,10.4998,9.72106,6.5958]),
+        H298 = (98.8947,'kcal/mol','+|-',8.8838),
+        S298 = (2.87172,'cal/mol/K','+|-',24.4289),
     ),
     shortDesc = """Radical correction fitted to 13 radicals""",
     longDesc = 
@@ -29131,9 +29126,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.768664,0.557785,0.00732424,-0.612907,-1.40432,-2.57369,-4.77585],'cal/mol/K','+|-',[4.53421,6.24311,8.50084,9.85614,10.8093,10.1615,6.68293]),
-        H298 = (98.1331,'kcal/mol','+|-',7.53978),
-        S298 = (0.0360931,'cal/mol/K','+|-',19.3874),
+        Cpdata = ([0.720957,0.507883,-0.0437129,-0.665086,-1.46221,-2.62375,-4.80385],'cal/mol/K','+|-',[5.0722,6.62542,8.75644,10.0589,10.9864,10.3513,7.00834]),
+        H298 = (98.3355,'kcal/mol','+|-',8.5852),
+        S298 = (0.241874,'cal/mol/K','+|-',19.5987),
     ),
     shortDesc = """Radical correction fitted to 11 radicals""",
     longDesc = 
@@ -29178,9 +29173,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.768664,0.557785,0.00732424,-0.612907,-1.40432,-2.57369,-4.77585],'cal/mol/K','+|-',[4.53421,6.24311,8.50084,9.85614,10.8093,10.1615,6.68293]),
-        H298 = (98.1331,'kcal/mol','+|-',7.53978),
-        S298 = (0.0360931,'cal/mol/K','+|-',19.3874),
+        Cpdata = ([0.720957,0.507883,-0.0437129,-0.665086,-1.46221,-2.62375,-4.80385],'cal/mol/K','+|-',[5.0722,6.62542,8.75644,10.0589,10.9864,10.3513,7.00834]),
+        H298 = (98.3355,'kcal/mol','+|-',8.5852),
+        S298 = (0.241874,'cal/mol/K','+|-',19.5987),
     ),
     shortDesc = """Radical correction fitted to 11 radicals""",
     longDesc = 
@@ -29194,7 +29189,7 @@ C[C](CCOO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell therm
 CC[C](COO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C](COO)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C[C]1COCC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC[C](C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC[C](C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C[C](C)OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)O[C]1COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
@@ -29213,9 +29208,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.26661,-1.86555,-2.09904,-1.89524,-1.90823,-2.22946,-2.0499],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (77.6627,'kcal/mol','+|-',5.2),
-        S298 = (-7.27821,'cal/mol/K','+|-',3),
+        Cpdata = ([-1.26661,-1.86555,-2.09904,-1.89524,-1.90823,-2.22946,-2.0499],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (77.6627,'kcal/mol','+|-',4.17612),
+        S298 = (-7.27821,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -29238,9 +29233,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.26661,-1.86555,-2.09904,-1.89524,-1.90823,-2.22946,-2.0499],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (77.6627,'kcal/mol','+|-',5.2),
-        S298 = (-7.27821,'cal/mol/K','+|-',3),
+        Cpdata = ([-1.26661,-1.86555,-2.09904,-1.89524,-1.90823,-2.22946,-2.0499],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (77.6627,'kcal/mol','+|-',4.17612),
+        S298 = (-7.27821,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -29758,35 +29753,36 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.293855,-1.46714,-2.18498,-2.71321,-3.39395,-3.89305,-4.6646],'cal/mol/K','+|-',[3,3,3.75792,3.82802,3.11402,3,3]),
-        H298 = (98.0424,'kcal/mol','+|-',8.44728),
-        S298 = (1.80989,'cal/mol/K','+|-',4.3608),
+        Cpdata = ([-0.285949,-1.47113,-2.20149,-2.72843,-3.38768,-3.86169,-4.61669],'cal/mol/K','+|-',[3.0541,3.59538,4.34687,4.41116,3.77595,3.32906,2.61394]),
+        H298 = (97.9755,'kcal/mol','+|-',9.25112),
+        S298 = (2.37926,'cal/mol/K','+|-',9.62755),
     ),
-    shortDesc = """Radical correction fitted to 21 radicals""",
+    shortDesc = """Radical correction fitted to 22 radicals""",
     longDesc = 
 """
 Derived using the following species:
-O=C(O)O[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C(O)O[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(=O)O[CH]OC=C(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)C1CC(=O)O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C1CO[CH]OC(=O)C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 O=C1O[CH]OC1OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(C)O[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-OC1CO[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=C1CO[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+OC1CO[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O=C1CO[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CO[CH]OC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-OC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-OCC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CCO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-OOC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]1OCCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]1OCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]1OC=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+OC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+OCC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CCO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+OOC1O[CH]O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH]1OCCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH]1OCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH]1OC=CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C=CO[CH]O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[CH]1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -30208,9 +30204,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.411242,-1.77775,-2.51199,-3.12353,-4.04114,-4.64176,-5.33041],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (95.5584,'kcal/mol','+|-',2.4),
-        S298 = (7.3243,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.411242,-1.77775,-2.51199,-3.12353,-4.04114,-4.64176,-5.33041],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (95.5584,'kcal/mol','+|-',1.69706),
+        S298 = (7.3243,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -30264,11 +30260,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.0538077,-0.922743,-1.65244,-2.22095,-3.0378,-3.62192,-4.49527],'cal/mol/K','+|-',[3,3,3.01364,3.0882,3.11096,3.10532,3.00236]),
-        H298 = (103.477,'kcal/mol','+|-',21.2023),
-        S298 = (2.35928,'cal/mol/K','+|-',7.23764),
+        Cpdata = ([-0.0612286,-0.914214,-1.64006,-2.21396,-3.0468,-3.63751,-4.52975],'cal/mol/K','+|-',[3.3948,3.55368,3.7091,3.7626,3.78735,3.78419,3.7004]),
+        H298 = (104.048,'kcal/mol','+|-',21.4436),
+        S298 = (2.27753,'cal/mol/K','+|-',7.41154),
     ),
-    shortDesc = """Radical correction fitted to 270 radicals""",
+    shortDesc = """Radical correction fitted to 266 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -31597,11 +31593,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.347795,-0.721846,-1.68542,-2.43288,-3.45355,-4.17491,-5.05725],'cal/mol/K','+|-',[3.56321,3.6903,3.72955,3.66797,3.38505,3.07833,3]),
-        H298 = (92.2655,'kcal/mol','+|-',9.6291),
-        S298 = (1.56139,'cal/mol/K','+|-',7.21135),
+        Cpdata = ([0.294514,-0.719954,-1.64777,-2.3825,-3.40992,-4.13578,-5.08164],'cal/mol/K','+|-',[4.21757,4.30747,4.32809,4.27282,4.04233,3.79403,3.40832]),
+        H298 = (92.2365,'kcal/mol','+|-',10.4472),
+        S298 = (1.52644,'cal/mol/K','+|-',7.52431),
     ),
-    shortDesc = """Radical correction fitted to 79 radicals""",
+    shortDesc = """Radical correction fitted to 74 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -31685,11 +31681,17 @@ entry(
 2   O2d u0 {1,D}
 3   H   u0 {1,S}
 """,
-    thermo = None,
-    shortDesc = """Radical correction fitted to 0 radicals""",
+    thermo = ThermoData(
+        Tdata = ([300,400,500,600,800,1000,1500],'K'),
+        Cpdata = ([-0.227702,-0.634113,-1.14122,-1.67025,-2.5701,-3.27681,-4.41022],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (89.1767,'kcal/mol','+|-',1.69706),
+        S298 = (0.00201818,'cal/mol/K','+|-',1.41421),
+    ),
+    shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
+[CH]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -31704,11 +31706,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.383369,-0.751343,-1.73058,-2.47744,-3.47347,-4.17819,-5.01891],'cal/mol/K','+|-',[3.44623,3.50175,3.63195,3.63018,3.43343,3.17429,3]),
-        H298 = (90.8512,'kcal/mol','+|-',7.82497),
-        S298 = (1.70599,'cal/mol/K','+|-',7.63226),
+        Cpdata = ([0.342789,-0.743183,-1.69124,-2.42845,-3.43521,-4.14594,-5.05934],'cal/mol/K','+|-',[4.16794,4.20286,4.29924,4.29233,4.12698,3.90869,3.55139]),
+        H298 = (90.7853,'kcal/mol','+|-',8.71494),
+        S298 = (1.70449,'cal/mol/K','+|-',8.03522),
     ),
-    shortDesc = """Radical correction fitted to 67 radicals""",
+    shortDesc = """Radical correction fitted to 61 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -31728,9 +31730,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.162606,0.121675,-0.208469,-0.62769,-1.34422,-2.19714,-4.1992],'cal/mol/K','+|-',[3.67638,6.05902,7.38365,8.01866,8.41038,7.93289,4.43411]),
-        H298 = (89.3354,'kcal/mol','+|-',5.2),
-        S298 = (-3.13938,'cal/mol/K','+|-',16.05),
+        Cpdata = ([0.0869357,0.0329718,-0.290802,-0.703166,-1.41885,-2.26133,-4.22178],'cal/mol/K','+|-',[4.3406,6.45483,7.67171,8.26067,8.63039,8.16804,4.91813]),
+        H298 = (89.39,'kcal/mol','+|-',4.35762),
+        S298 = (-2.93542,'cal/mol/K','+|-',16.144),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
@@ -31837,9 +31839,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([2.0541,0.629773,-0.569957,-1.37739,-2.26931,-3.07659,-4.73559],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (88.5757,'kcal/mol','+|-',5.2),
-        S298 = (-3.2196,'cal/mol/K','+|-',3),
+        Cpdata = ([2.0541,0.629773,-0.569957,-1.37739,-2.26931,-3.07659,-4.73559],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (88.5757,'kcal/mol','+|-',4.17612),
+        S298 = (-3.2196,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -31881,11 +31883,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.402721,-0.936139,-1.99905,-2.74937,-3.65319,-4.25513,-4.87098],'cal/mol/K','+|-',[3.83557,3.74946,3.77973,3.69015,3.29143,3,3]),
-        H298 = (90.2898,'kcal/mol','+|-',7.53373),
-        S298 = (1.84138,'cal/mol/K','+|-',7.67224),
+        Cpdata = ([0.35429,-0.934384,-1.96103,-2.69712,-3.60404,-4.2014,-4.90475],'cal/mol/K','+|-',[4.58647,4.49702,4.51686,4.43645,4.08613,3.75921,3.34415]),
+        H298 = (90.128,'kcal/mol','+|-',8.64547),
+        S298 = (1.807,'cal/mol/K','+|-',8.24883),
     ),
-    shortDesc = """Radical correction fitted to 46 radicals""",
+    shortDesc = """Radical correction fitted to 40 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -31905,9 +31907,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.60363,-0.486379,-1.41837,-2.05272,-2.83389,-3.34094,-4.25642],'cal/mol/K','+|-',[3,3,3.26171,3.76046,3.95127,3.9755,4.27633]),
-        H298 = (87.9791,'kcal/mol','+|-',13.9365),
-        S298 = (-0.030404,'cal/mol/K','+|-',7.27336),
+        Cpdata = ([0.597655,-0.486003,-1.41491,-2.04921,-2.83379,-3.34443,-4.25058],'cal/mol/K','+|-',[3.1588,3.21042,3.90845,4.32401,4.49458,4.52004,4.76186]),
+        H298 = (87.8334,'kcal/mol','+|-',14.1987),
+        S298 = (-0.053431,'cal/mol/K','+|-',7.60434),
     ),
     shortDesc = """Radical correction fitted to 10 radicals""",
     longDesc = 
@@ -31930,15 +31932,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.974089,-0.636464,-0.528442,-0.565824,-0.817456,-1.15037,-2.03906],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (78.8831,'kcal/mol','+|-',2.4),
-        S298 = (-5.1302,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.974089,-0.636464,-0.528442,-0.565824,-0.817456,-1.15037,-2.03906],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (78.8831,'kcal/mol','+|-',1.69706),
+        S298 = (-5.1302,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-O=[C]C(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=[C]C(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -31955,21 +31957,19 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([1.45164,-0.0582913,-1.48126,-2.52917,-3.84266,-4.59779,-5.1344],'cal/mol/K','+|-',[4.28497,3,3,3,3,3,3]),
-        H298 = (92.218,'kcal/mol','+|-',5.2),
-        S298 = (4.32884,'cal/mol/K','+|-',8.35763),
+        Cpdata = ([1.78117,0.0990312,-1.404,-2.4921,-3.88406,-4.69051,-5.23654],'cal/mol/K','+|-',[5.36835,3.83764,2.93258,2.77013,2.96722,3.18356,3.22847]),
+        H298 = (92.8768,'kcal/mol','+|-',4.82384),
+        S298 = (5.6082,'cal/mol/K','+|-',8.90517),
     ),
-    shortDesc = """Radical correction fitted to 7 radicals""",
+    shortDesc = """Radical correction fitted to 5 radicals""",
     longDesc = 
 """
 Derived using the following species:
-C=C([C]=O)C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C([C]=O)C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C([C]=O)C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([C]=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(C)=C(C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C(C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=CC(=C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=[C]C1=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+CC(C)=C(C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C(C)[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -32164,9 +32164,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.896909,-0.137924,-1.30946,-2.22184,-3.51488,-4.44302,-5.52902],'cal/mol/K','+|-',[3.30612,3,3,3.0125,3.79106,3.79454,3]),
-        H298 = (92.6032,'kcal/mol','+|-',13.2328),
-        S298 = (1.24574,'cal/mol/K','+|-',5.30023),
+        Cpdata = ([0.832682,-0.175282,-1.32348,-2.22521,-3.51032,-4.43309,-5.51905],'cal/mol/K','+|-',[3.96049,3.44691,3.41741,3.74573,4.40532,4.42088,3.53469]),
+        H298 = (92.2564,'kcal/mol','+|-',12.8842),
+        S298 = (1.28469,'cal/mol/K','+|-',5.78675),
     ),
     shortDesc = """Radical correction fitted to 6 radicals""",
     longDesc = 
@@ -32347,9 +32347,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.853923,0.169419,-0.692049,-1.57295,-3.11633,-4.35296,-6.22706],'cal/mol/K','+|-',[2,2,2,2,2,2,3.38084]),
-        H298 = (92.8678,'kcal/mol','+|-',3.84103),
-        S298 = (3.3193,'cal/mol/K','+|-',5.53571),
+        Cpdata = ([0.853923,0.169419,-0.692049,-1.57295,-3.11633,-4.35296,-6.22706],'cal/mol/K','+|-',[2.41403,2.31823,2.14449,1.8312,1.73327,2.26112,3.66471]),
+        H298 = (92.8678,'kcal/mol','+|-',4.19923),
+        S298 = (3.3193,'cal/mol/K','+|-',5.7135),
     ),
     shortDesc = """Radical correction fitted to 5 radicals""",
     longDesc = 
@@ -32428,15 +32428,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.445139,-0.761644,-1.83746,-2.74901,-4.14959,-5.09356,-6.16136],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (92.3547,'kcal/mol','+|-',2.4),
-        S298 = (2.98845,'cal/mol/K','+|-',2),
+        Cpdata = ([0.445139,-0.761644,-1.83746,-2.74901,-4.14959,-5.09356,-6.16136],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (92.3547,'kcal/mol','+|-',1.69706),
+        S298 = (2.98845,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-O=[C]C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=[C]C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -32451,9 +32451,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.166492,-0.571517,-1.45526,-2.20575,-3.35206,-4.15816,-5.25268],'cal/mol/K','+|-',[4.28456,4.73199,4.36215,4.01078,3.27967,3,3]),
-        H298 = (99.0829,'kcal/mol','+|-',5.2),
-        S298 = (0.824422,'cal/mol/K','+|-',4.46473),
+        Cpdata = ([0.125109,-0.620059,-1.49927,-2.24514,-3.38412,-4.18339,-5.26133],'cal/mol/K','+|-',[4.74592,5.11262,4.78279,4.47784,3.87693,3.41302,2.768]),
+        H298 = (99.1739,'kcal/mol','+|-',5.77218),
+        S298 = (0.857017,'cal/mol/K','+|-',4.89606),
     ),
     shortDesc = """Radical correction fitted to 12 radicals""",
     longDesc = 
@@ -32474,15 +32474,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.347359,-0.358706,-1.23293,-2.09293,-3.3724,-4.28376,-5.53814],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (99.0139,'kcal/mol','+|-',2.4),
-        S298 = (1.06773,'cal/mol/K','+|-',2),
+        Cpdata = ([0.347359,-0.358706,-1.23293,-2.09293,-3.3724,-4.28376,-5.53814],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (99.0139,'kcal/mol','+|-',1.69706),
+        S298 = (1.06773,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-O=[C]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=[C]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -32498,9 +32498,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.144494,-0.5974,-1.4823,-2.21947,-3.34959,-4.14289,-5.21796],'cal/mol/K','+|-',[4.55928,5.03507,4.64083,4.26908,3.4916,3,3]),
-        H298 = (99.0927,'kcal/mol','+|-',5.2),
-        S298 = (0.79483,'cal/mol/K','+|-',4.74949),
+        Cpdata = ([0.0973278,-0.652729,-1.53256,-2.26417,-3.38558,-4.17084,-5.22672],'cal/mol/K','+|-',[4.99026,5.38546,5.0288,4.70174,4.05093,3.54355,2.82483]),
+        H298 = (99.1974,'kcal/mol','+|-',5.99523),
+        S298 = (0.830678,'cal/mol/K','+|-',5.15292),
     ),
     shortDesc = """Radical correction fitted to 11 radicals""",
     longDesc = 
@@ -32524,15 +32524,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.323638,-0.879282,-1.73964,-2.50117,-3.70355,-4.55199,-5.62031],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (100.416,'kcal/mol','+|-',2.4),
-        S298 = (1.51713,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.323638,-0.879282,-1.73964,-2.50117,-3.70355,-4.55199,-5.62031],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (100.416,'kcal/mol','+|-',1.69706),
+        S298 = (1.51713,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-CO[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CO[C]=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -32551,9 +32551,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.638633,-1.55804,-2.50636,-3.30037,-4.29133,-4.96003,-6.10756],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (98.3665,'kcal/mol','+|-',5.2),
-        S298 = (2.29725,'cal/mol/K','+|-',3),
+        Cpdata = ([-0.638633,-1.55804,-2.50636,-3.30037,-4.29133,-4.96003,-6.10756],'cal/mol/K','+|-',[2.4709,2.31767,2.2718,2.25909,2.26083,2.27319,2.24179]),
+        H298 = (98.3665,'kcal/mol','+|-',4.21466),
+        S298 = (2.29725,'cal/mol/K','+|-',2.83901),
     ),
     shortDesc = """Radical correction fitted to 3 radicals""",
     longDesc = 
@@ -32635,11 +32635,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.124911,-0.504914,-1.13159,-1.68771,-2.55904,-3.21811,-4.29361],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (107.589,'kcal/mol','+|-',19.1557),
-        S298 = (2.2055,'cal/mol/K','+|-',9.2797),
+        Cpdata = ([0.123347,-0.48427,-1.10844,-1.67763,-2.57269,-3.24543,-4.32342],'cal/mol/K','+|-',[2.88166,2.78382,2.70951,2.64689,2.55217,2.53628,2.52343]),
+        H298 = (108.396,'kcal/mol','+|-',18.4132),
+        S298 = (2.05544,'cal/mol/K','+|-',9.01004),
     ),
-    shortDesc = """Radical correction fitted to 58 radicals""",
+    shortDesc = """Radical correction fitted to 61 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -32658,25 +32658,24 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.446517,-0.465272,-1.19715,-1.74546,-2.49438,-3.02733,-3.96462],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (89.0757,'kcal/mol','+|-',6.35703),
-        S298 = (6.08052,'cal/mol/K','+|-',17.0371),
+        Cpdata = ([0.477269,-0.45872,-1.19332,-1.73842,-2.48471,-3.01453,-3.94678],'cal/mol/K','+|-',[3.00852,3.03274,2.96703,2.80342,2.60692,2.74491,3.1211]),
+        H298 = (88.8324,'kcal/mol','+|-',7.63341),
+        S298 = (6.19824,'cal/mol/K','+|-',17.4914),
     ),
-    shortDesc = """Radical correction fitted to 15 radicals""",
+    shortDesc = """Radical correction fitted to 14 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[CH]=C=C(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]=C=C(C)O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]=C=CCO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]=C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]=C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]=C=COC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH]=C=C(O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]=C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]=C=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]=C=CCC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]=C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH]=C=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]=C=C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[CH]=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[CH]=C=C1CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[CH]=C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[CH]=C=C1CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [CH]=C=C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH]=C=CCCC=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [CH]=C=C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -32998,11 +32997,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.321034,-1.11938,-1.72676,-2.1894,-2.87131,-3.35596,-4.14176],'cal/mol/K','+|-',[3,3,3,3.0244,3.36747,3.54816,3.68765]),
-        H298 = (105.626,'kcal/mol','+|-',18.2972),
-        S298 = (2.80865,'cal/mol/K','+|-',6.22687),
+        Cpdata = ([-0.305041,-1.12826,-1.75734,-2.23703,-2.93905,-3.42683,-4.20728],'cal/mol/K','+|-',[3.03168,3.22728,3.52792,3.74851,4.05422,4.21324,4.31077]),
+        H298 = (106.229,'kcal/mol','+|-',18.3515),
+        S298 = (2.73545,'cal/mol/K','+|-',6.53291),
     ),
-    shortDesc = """Radical correction fitted to 112 radicals""",
+    shortDesc = """Radical correction fitted to 109 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -33021,25 +33020,26 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.167543,-0.611831,-0.945086,-1.25343,-1.87993,-2.38579,-3.01513],'cal/mol/K','+|-',[3.03367,4.47866,5.79602,6.76779,8.31919,9.137,9.33119]),
-        H298 = (108.081,'kcal/mol','+|-',18.459),
-        S298 = (2.07776,'cal/mol/K','+|-',3.95033),
+        Cpdata = ([-0.184547,-0.76744,-1.19484,-1.58962,-2.3065,-2.82152,-3.40004],'cal/mol/K','+|-',[3.64399,4.77493,5.94724,6.91537,8.48448,9.27498,9.34792]),
+        H298 = (108.29,'kcal/mol','+|-',18.8063),
+        S298 = (2.48798,'cal/mol/K','+|-',3.81203),
     ),
-    shortDesc = """Radical correction fitted to 11 radicals""",
+    shortDesc = """Radical correction fitted to 12 radicals""",
     longDesc = 
 """
 Derived using the following species:
 CC=[C]C(=O)OC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=[C]C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 COC=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-O=C[C]=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=CC(O)C=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C[C]=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=CC(O)C=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1OOC=[C]C1=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=CC(=O)[C]=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-O=C1[C]=COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CC=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=[C]C(=O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+O=C1[C]=COO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=[C]C(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+O=C1[C]=COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=[C]C(=O)C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C=[C]C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -33054,11 +33054,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.239711,-1.15305,-1.91473,-2.47548,-3.23753,-3.69378,-4.37009],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (106.106,'kcal/mol','+|-',13.2557),
-        S298 = (2.94391,'cal/mol/K','+|-',3.99226),
+        Cpdata = ([-0.315355,-1.20382,-1.94353,-2.50413,-3.28146,-3.74889,-4.42381],'cal/mol/K','+|-',[2.69747,2.67007,2.60649,2.51174,2.4575,2.41956,2.35705]),
+        H298 = (107.207,'kcal/mol','+|-',14.1472),
+        S298 = (2.82216,'cal/mol/K','+|-',4.7385),
     ),
-    shortDesc = """Radical correction fitted to 36 radicals""",
+    shortDesc = """Radical correction fitted to 37 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -33077,9 +33077,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.850889,-1.43124,-1.91186,-2.40582,-3.00697,-3.44984,-4.55636],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (103.873,'kcal/mol','+|-',5.2),
-        S298 = (3.43547,'cal/mol/K','+|-',3),
+        Cpdata = ([-0.850889,-1.43124,-1.91186,-2.40582,-3.00697,-3.44984,-4.55636],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (103.873,'kcal/mol','+|-',4.17612),
+        S298 = (3.43547,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -33879,9 +33879,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.485435,-1.24415,-1.96243,-2.52559,-3.28331,-3.85303,-4.73873],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (108.734,'kcal/mol','+|-',5.2),
-        S298 = (1.68792,'cal/mol/K','+|-',3),
+        Cpdata = ([-0.463312,-1.20607,-1.92079,-2.4887,-3.25472,-3.83079,-4.72524],'cal/mol/K','+|-',[2.65073,3.31731,3.49015,3.26117,2.8952,2.65499,2.39881]),
+        H298 = (108.835,'kcal/mol','+|-',5.93424),
+        S298 = (1.64972,'cal/mol/K','+|-',3.32312),
     ),
     shortDesc = """Radical correction fitted to 2 radicals""",
     longDesc = 
@@ -34502,9 +34502,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.523862,-1.15155,-1.72882,-2.20193,-2.89306,-3.39976,-4.25247],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (111.97,'kcal/mol','+|-',5.2),
-        S298 = (4.32698,'cal/mol/K','+|-',19.3555),
+        Cpdata = ([-0.534087,-1.1515,-1.72496,-2.19969,-2.90062,-3.41687,-4.27971],'cal/mol/K','+|-',[2.34341,2.24423,2.25741,2.24467,2.29431,2.5106,2.87758]),
+        H298 = (111.871,'kcal/mol','+|-',5.58316),
+        S298 = (4.04609,'cal/mol/K','+|-',18.7851),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
@@ -34937,11 +34937,17 @@ entry(
 4   Cd u0 {2,D} {5,S}
 5   Cd u0 {3,D} {4,S}
 """,
-    thermo = None,
-    shortDesc = """Radical correction fitted to 0 radicals""",
+    thermo = ThermoData(
+        Tdata = ([300,400,500,600,800,1000,1500],'K'),
+        Cpdata = ([-0.22592,-1.01545,-1.86894,-2.34513,-2.90523,-3.46327,-4.58598],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (115.958,'kcal/mol','+|-',1.69706),
+        S298 = (1.37972,'cal/mol/K','+|-',1.41421),
+    ),
+    shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
+[C]1=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -34958,9 +34964,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.497322,-0.814218,-1.16504,-1.52881,-2.22402,-2.78274,-3.6233],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (100.075,'kcal/mol','+|-',2.4),
-        S298 = (-0.146653,'cal/mol/K','+|-',2),
+        Cpdata = ([-0.497322,-0.814218,-1.16504,-1.52881,-2.22402,-2.78274,-3.6233],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (100.075,'kcal/mol','+|-',1.69706),
+        S298 = (-0.146653,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -38582,11 +38588,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.428095,-1.66918,-2.56564,-3.14625,-3.86625,-4.32645,-5.07275],'cal/mol/K','+|-',[3,3.31508,3.78158,3.64087,3.23373,3.00017,3]),
-        H298 = (113.132,'kcal/mol','+|-',14.5839),
-        S298 = (2.97569,'cal/mol/K','+|-',5.06286),
+        Cpdata = ([-0.435687,-1.63769,-2.51905,-3.08918,-3.81097,-4.27514,-5.03167],'cal/mol/K','+|-',[3.29327,3.89769,4.25929,4.15516,3.86027,3.70014,3.26917]),
+        H298 = (113.048,'kcal/mol','+|-',14.8335),
+        S298 = (2.87719,'cal/mol/K','+|-',5.51431),
     ),
-    shortDesc = """Radical correction fitted to 21 radicals""",
+    shortDesc = """Radical correction fitted to 22 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -39192,9 +39198,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.09874,-1.83586,-2.30721,-2.66789,-3.23289,-3.65346,-4.37157],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (131.476,'kcal/mol','+|-',7.95498),
-        S298 = (3.19675,'cal/mol/K','+|-',4.22283),
+        Cpdata = ([-1.09874,-1.83586,-2.30721,-2.66789,-3.23289,-3.65346,-4.37157],'cal/mol/K','+|-',[2.07266,1.89691,1.68862,1.59215,1.53466,1.51476,1.44971]),
+        H298 = (131.476,'kcal/mol','+|-',8.13398),
+        S298 = (3.19675,'cal/mol/K','+|-',4.45334),
     ),
     shortDesc = """Radical correction fitted to 5 radicals""",
     longDesc = 
@@ -39214,15 +39220,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.0485541,-0.927117,-1.76461,-2.39068,-3.27805,-3.84763,-4.5331],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (133.206,'kcal/mol','+|-',2.4),
-        S298 = (2.23702,'cal/mol/K','+|-',2),
+        Cpdata = ([0.0485541,-0.927117,-1.76461,-2.39068,-3.27805,-3.84763,-4.5331],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (133.206,'kcal/mol','+|-',1.69706),
+        S298 = (2.23702,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[C]#C - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[C]#C - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -39353,11 +39359,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.87784,-3.02401,-3.66363,-3.89933,-3.91309,-4.01981,-4.39697],'cal/mol/K','+|-',[4.35978,5.22265,5.60324,5.63243,5.38202,5.14315,4.99152]),
-        H298 = (91.7628,'kcal/mol','+|-',25.8272),
-        S298 = (-0.600887,'cal/mol/K','+|-',10.7534),
+        Cpdata = ([-1.91077,-3.03716,-3.6633,-3.90138,-3.92664,-4.03625,-4.39828],'cal/mol/K','+|-',[4.92657,5.68472,6.02341,6.04683,5.81673,5.59865,5.42106]),
+        H298 = (91.8492,'kcal/mol','+|-',26.1011),
+        S298 = (-0.527493,'cal/mol/K','+|-',10.8776),
     ),
-    shortDesc = """Radical correction fitted to 895 radicals""",
+    shortDesc = """Radical correction fitted to 907 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -39374,15 +39380,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.06595,-1.20635,-1.39167,-1.60823,-2.06631,-2.46765,-3.26354],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (119.081,'kcal/mol','+|-',2.4),
-        S298 = (-3.89116,'cal/mol/K','+|-',2),
+        Cpdata = ([-1.06595,-1.20635,-1.39167,-1.60823,-2.06631,-2.46765,-3.26354],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (119.081,'kcal/mol','+|-',1.69706),
+        S298 = (-3.89116,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[OH] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[OH] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -39396,11 +39402,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.86628,-2.97573,-3.49862,-3.5862,-3.45766,-3.42489,-3.78904],'cal/mol/K','+|-',[4.51777,5.55429,5.68789,5.31912,4.48326,4.00341,3.98338]),
-        H298 = (94.4405,'kcal/mol','+|-',33.3664),
-        S298 = (0.176482,'cal/mol/K','+|-',10.0221),
+        Cpdata = ([-1.90183,-2.98451,-3.49988,-3.59761,-3.48926,-3.46467,-3.81829],'cal/mol/K','+|-',[5.12742,6.02231,6.13658,5.81024,5.08191,4.66435,4.59473]),
+        H298 = (94.5495,'kcal/mol','+|-',33.3616),
+        S298 = (0.256822,'cal/mol/K','+|-',10.1452),
     ),
-    shortDesc = """Radical correction fitted to 402 radicals""",
+    shortDesc = """Radical correction fitted to 405 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -39418,11 +39424,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.47746,-2.39887,-2.93754,-3.08576,-3.11858,-3.24627,-3.81309],'cal/mol/K','+|-',[4.23931,5.27859,5.50516,5.28629,4.65332,4.13893,3.86262]),
-        H298 = (99.7024,'kcal/mol','+|-',25.5656),
-        S298 = (-0.566883,'cal/mol/K','+|-',10.2125),
+        Cpdata = ([-1.54414,-2.44461,-2.97385,-3.13222,-3.18472,-3.31569,-3.86559],'cal/mol/K','+|-',[5.00495,5.86272,6.03897,5.84149,5.28713,4.83977,4.54779]),
+        H298 = (99.1632,'kcal/mol','+|-',26.3106),
+        S298 = (-0.396276,'cal/mol/K','+|-',10.3057),
     ),
-    shortDesc = """Radical correction fitted to 251 radicals""",
+    shortDesc = """Radical correction fitted to 256 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -39441,9 +39447,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.523634,-1.55703,-2.36583,-2.86825,-3.51784,-3.97531,-4.49075],'cal/mol/K','+|-',[3,3,3.38174,3.92316,4.28129,4.05111,3.28878]),
-        H298 = (102.265,'kcal/mol','+|-',23.2204),
-        S298 = (0.0576675,'cal/mol/K','+|-',8.88611),
+        Cpdata = ([-0.539123,-1.57989,-2.39273,-2.9051,-3.57085,-4.03274,-4.53921],'cal/mol/K','+|-',[3.28669,3.48639,3.99417,4.45127,4.7675,4.57362,3.94108]),
+        H298 = (102.024,'kcal/mol','+|-',23.9423),
+        S298 = (0.22478,'cal/mol/K','+|-',9.01165),
     ),
     shortDesc = """Radical correction fitted to 29 radicals""",
     longDesc = 
@@ -39487,9 +39493,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.05641,-1.50571,-1.82275,-2.01501,-2.11358,-2.29941,-3.32409],'cal/mol/K','+|-',[3.83563,4.10567,4.71685,4.93252,4.61502,4.20352,3]),
-        H298 = (107.607,'kcal/mol','+|-',5.2),
-        S298 = (-3.30498,'cal/mol/K','+|-',8.04726),
+        Cpdata = ([-1.05641,-1.50571,-1.82275,-2.01501,-2.11358,-2.29941,-3.32409],'cal/mol/K','+|-',[4.43982,4.67509,5.22002,5.4157,5.12819,4.76126,3.56681]),
+        H298 = (107.607,'kcal/mol','+|-',6.04929),
+        S298 = (-3.30498,'cal/mol/K','+|-',8.35215),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
@@ -39515,15 +39521,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.21493,-1.90164,-2.54207,-3.14536,-4.22539,-5.11849,-6.48121],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (114.443,'kcal/mol','+|-',2.4),
-        S298 = (2.66946,'cal/mol/K','+|-',2),
+        Cpdata = ([-1.21493,-1.90164,-2.54207,-3.14536,-4.22539,-5.11849,-6.48121],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (114.443,'kcal/mol','+|-',1.69706),
+        S298 = (2.66946,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-CC(=O)C([O])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)C([O])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -39639,11 +39645,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-0.882167,-1.90997,-2.68315,-2.97403,-3.04458,-3.09571,-4.08162],'cal/mol/K','+|-',[3.13093,3.96378,4.73651,4.92587,4.10735,3.44671,4.48772]),
-        H298 = (105.76,'kcal/mol','+|-',9.74991),
-        S298 = (0.272184,'cal/mol/K','+|-',13.0958),
+        Cpdata = ([-0.95228,-1.91912,-2.65106,-2.94945,-3.03994,-3.10678,-4.06113],'cal/mol/K','+|-',[3.91139,4.50422,5.13961,5.31073,4.58324,4.01777,4.82746]),
+        H298 = (105.819,'kcal/mol','+|-',10.6444),
+        S298 = (0.289671,'cal/mol/K','+|-',12.7554),
     ),
-    shortDesc = """Radical correction fitted to 42 radicals""",
+    shortDesc = """Radical correction fitted to 44 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -39663,9 +39669,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.50237,-2.28774,-2.79437,-2.97263,-3.0022,-3.18572,-4.11152],'cal/mol/K','+|-',[3,3.83437,3.82792,3.53732,3,3,3]),
-        H298 = (107.036,'kcal/mol','+|-',5.2),
-        S298 = (-2.1828,'cal/mol/K','+|-',7.94836),
+        Cpdata = ([-1.53684,-2.30381,-2.79106,-2.96357,-3.00789,-3.20039,-4.10753],'cal/mol/K','+|-',[3.70728,4.39292,4.3852,4.14368,3.61525,3.50372,2.98274]),
+        H298 = (107.018,'kcal/mol','+|-',6.09238),
+        S298 = (-2.09131,'cal/mol/K','+|-',8.22313),
     ),
     shortDesc = """Radical correction fitted to 11 radicals""",
     longDesc = 
@@ -39688,18 +39694,18 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.8633,-2.28271,-2.46887,-2.49093,-2.69496,-2.91225,-3.65486],'cal/mol/K','+|-',[4.54932,5.80313,5.37277,4.59312,3.22263,3,3]),
-        H298 = (107.533,'kcal/mol','+|-',5.2),
-        S298 = (-2.35141,'cal/mol/K','+|-',11.2749),
+        Cpdata = ([-1.90647,-2.31521,-2.48551,-2.50723,-2.7283,-2.96112,-3.6795],'cal/mol/K','+|-',[4.97044,6.06462,5.6767,4.99338,3.85435,3.4733,2.66692]),
+        H298 = (107.41,'kcal/mol','+|-',6.351),
+        S298 = (-2.15639,'cal/mol/K','+|-',11.3251),
     ),
     shortDesc = """Radical correction fitted to 4 radicals""",
     longDesc = 
 """
 Derived using the following species:
 CC(C)([O])C=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C(C=O)C(C)(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C(C=O)C(C)(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(COO)C(C)(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C(C)C(C)(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C(C)C(C)(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -39716,11 +39722,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.86034,-3.93388,-5.57151,-6.16885,-5.64576,-5.0373,-7.06756],'cal/mol/K','+|-',[3,3.55408,4.45913,4.58309,3.3258,3,4.45023]),
-        H298 = (103.426,'kcal/mol','+|-',10.0031),
-        S298 = (4.82479,'cal/mol/K','+|-',8.29818),
+        Cpdata = ([-1.96979,-3.93296,-5.48506,-6.08197,-5.56635,-4.97169,-6.82977],'cal/mol/K','+|-',[3.72045,4.12983,4.90429,5.02138,3.95885,3.16474,5.00862]),
+        H298 = (103.121,'kcal/mol','+|-',10.6756),
+        S298 = (4.80069,'cal/mol/K','+|-',8.26327),
     ),
-    shortDesc = """Radical correction fitted to 10 radicals""",
+    shortDesc = """Radical correction fitted to 11 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -39741,9 +39747,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-3.30861,-5.79583,-7.48231,-7.94722,-7.05701,-6.14225,-5.42964],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (105.373,'kcal/mol','+|-',5.2),
-        S298 = (4.56765,'cal/mol/K','+|-',3),
+        Cpdata = ([-3.30861,-5.79583,-7.48231,-7.94722,-7.05701,-6.14225,-5.42964],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (105.373,'kcal/mol','+|-',4.17612),
+        S298 = (4.56765,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -39936,11 +39942,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.65691,-4.19448,-4.59651,-4.37716,-3.76912,-3.41685,-3.39322],'cal/mol/K','+|-',[4.70744,5.76706,5.98766,5.58838,4.86563,4.52311,4.47479]),
-        H298 = (82.4692,'kcal/mol','+|-',17.4524),
-        S298 = (1.14713,'cal/mol/K','+|-',10.0525),
+        Cpdata = ([-2.74165,-4.18023,-4.57364,-4.39651,-3.87148,-3.56277,-3.56656],'cal/mol/K','+|-',[5.8008,6.64421,6.78282,6.42669,5.819,5.52191,5.38028]),
+        H298 = (81.9927,'kcal/mol','+|-',17.2508),
+        S298 = (1.31197,'cal/mol/K','+|-',10.1222),
     ),
-    shortDesc = """Radical correction fitted to 77 radicals""",
+    shortDesc = """Radical correction fitted to 81 radicals""",
     longDesc = 
 """
 Derived using the following species:
@@ -39966,7 +39972,7 @@ C=C([O])C=COC(C)=O - Radical thermo from dong_pio_liang.py and closed shell ther
 CC([O])=C1COOCO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)=C([O])CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CCC([O])=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC([O])=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC([O])=CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC=C([O])CO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)CC=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([O])CCC(C)=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -39982,45 +39988,49 @@ C=C([O])C(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo f
 C=C([O])COC(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1=C([O])COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [O]C1=CCC=C1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC([O])=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC([O])=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(C)=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [O]C1=CC=CC1O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC1=COC=C1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC1=COC=C1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1OOC=C1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C([O])COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-CC=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C([O])COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+CC=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(C)C(OO)C(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([O])C1(C=O)OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [O]C1=CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]C1=COC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]C1=COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-C=C([O])CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]C1=COC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]C1=COC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C1=COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+C=C([O])CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C1=COC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC([O])=C1CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC(OO)C(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC([O])=C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1=CC(OO)C=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([O])C=C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C1OOC=C1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C([O])C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C([O])C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CC([O])=CC1CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)CC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC1=C([O])CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC1=C([O])CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CC([O])=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC([O])=C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C([O])C=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]C1=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C(C)C(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C1=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C=COC=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC1=C([O])C2OC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C1=CCC=C1 - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC1OOC=C=C1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC([O])=C1CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C1C=CC=C1[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=CC([O])=C=CC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C=C(C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 [O]C1=CC2OC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C#CC([O])=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]C1=C=COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+[O]C1=CC2CC12 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C#CC([O])=CC - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C=C([O])C=C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C#CC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C#CC(=C)[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -40433,11 +40443,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.76322,-4.21378,-4.66604,-4.56659,-4.0336,-3.64821,-3.64073],'cal/mol/K','+|-',[4.55959,5.65238,5.75826,5.213,4.17504,3.91806,4.46387]),
-        H298 = (80.6543,'kcal/mol','+|-',32.7969),
-        S298 = (1.66263,'cal/mol/K','+|-',9.87144),
+        Cpdata = ([-2.78209,-4.21485,-4.66071,-4.56515,-4.03504,-3.64977,-3.62338],'cal/mol/K','+|-',[5.00589,6.00848,6.12641,5.64299,4.73786,4.50542,4.94276]),
+        H298 = (81.054,'kcal/mol','+|-',33.9251),
+        S298 = (1.65192,'cal/mol/K','+|-',10.1577),
     ),
-    shortDesc = """Radical correction fitted to 128 radicals""",
+    shortDesc = """Radical correction fitted to 126 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -40454,11 +40464,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.85374,-4.3756,-4.82496,-4.67809,-4.0266,-3.55818,-3.50203],'cal/mol/K','+|-',[4.69722,5.79072,5.91671,5.38034,4.32641,4.02423,4.60037]),
-        H298 = (75.8203,'kcal/mol','+|-',22.9946),
-        S298 = (1.72724,'cal/mol/K','+|-',10.2992),
+        Cpdata = ([-2.88012,-4.38862,-4.83104,-4.68433,-4.02538,-3.54964,-3.46898],'cal/mol/K','+|-',[5.13946,6.14849,6.28823,5.81253,4.88628,4.60598,5.06788]),
+        H298 = (75.5425,'kcal/mol','+|-',23.0351),
+        S298 = (1.71715,'cal/mol/K','+|-',10.6205),
     ),
-    shortDesc = """Radical correction fitted to 120 radicals""",
+    shortDesc = """Radical correction fitted to 118 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -40476,11 +40486,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.85374,-4.3756,-4.82496,-4.67809,-4.0266,-3.55818,-3.50203],'cal/mol/K','+|-',[4.69722,5.79072,5.91671,5.38034,4.32641,4.02423,4.60037]),
-        H298 = (75.8203,'kcal/mol','+|-',22.9946),
-        S298 = (1.72724,'cal/mol/K','+|-',10.2992),
+        Cpdata = ([-2.88012,-4.38862,-4.83104,-4.68433,-4.02538,-3.54964,-3.46898],'cal/mol/K','+|-',[5.13946,6.14849,6.28823,5.81253,4.88628,4.60598,5.06788]),
+        H298 = (75.5425,'kcal/mol','+|-',23.0351),
+        S298 = (1.71715,'cal/mol/K','+|-',10.6205),
     ),
-    shortDesc = """Radical correction fitted to 120 radicals""",
+    shortDesc = """Radical correction fitted to 118 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -40551,9 +40561,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.93236,-2.72848,-3.20726,-3.54311,-4.09788,-4.47459,-4.91391],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (112.025,'kcal/mol','+|-',5.36467),
-        S298 = (1.06964,'cal/mol/K','+|-',4.42762),
+        Cpdata = ([-1.95817,-2.75423,-3.229,-3.56336,-4.11623,-4.49136,-4.92116],'cal/mol/K','+|-',[3.39175,3.65205,3.53133,3.46156,3.35774,3.17835,2.56718]),
+        H298 = (112.098,'kcal/mol','+|-',6.54294),
+        S298 = (1.10363,'cal/mol/K','+|-',4.88375),
     ),
     shortDesc = """Radical correction fitted to 8 radicals""",
     longDesc = 
@@ -40574,21 +40584,21 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-2.06874,-2.89219,-3.34587,-3.63933,-4.12831,-4.4599,-4.84474],'cal/mol/K','+|-',[3,3.073,3,3,3,3,3]),
-        H298 = (111.951,'kcal/mol','+|-',5.83643),
-        S298 = (1.36918,'cal/mol/K','+|-',4.47443),
+        Cpdata = ([-2.09953,-2.92311,-3.37197,-3.66341,-4.14974,-4.47919,-4.85266],'cal/mol/K','+|-',[3.4638,3.72417,3.62284,3.59322,3.519,3.32119,2.59189]),
+        H298 = (112.035,'kcal/mol','+|-',6.89571),
+        S298 = (1.41056,'cal/mol/K','+|-',4.90084),
     ),
     shortDesc = """Radical correction fitted to 7 radicals""",
     longDesc = 
 """
 Derived using the following species:
 [O]C(=O)OC(O)(O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]C(=O)OCO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]C(=O)OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]C(=O)OOC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-COOC([O])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]C(=O)OCO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C(=O)OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C(=O)OOC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+COOC([O])=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -40603,9 +40613,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.3482,-2.67375,-3.41246,-3.73606,-3.9587,-4.05018,-4.21673],'cal/mol/K','+|-',[4.89889,4.08139,3.84334,3.69146,3.13417,3,3]),
-        H298 = (109.035,'kcal/mol','+|-',12.4931),
-        S298 = (0.263799,'cal/mol/K','+|-',5.56963),
+        Cpdata = ([-1.40359,-2.69173,-3.41401,-3.73133,-3.95035,-4.04011,-4.19742],'cal/mol/K','+|-',[5.31228,4.61886,4.42767,4.29952,3.8281,3.55817,3.42035]),
+        H298 = (108.825,'kcal/mol','+|-',12.2749),
+        S298 = (0.291171,'cal/mol/K','+|-',5.93501),
     ),
     shortDesc = """Radical correction fitted to 20 radicals""",
     longDesc = 
@@ -40768,11 +40778,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.87514,-3.05816,-3.808,-4.17952,-4.32223,-4.55646,-4.94866],'cal/mol/K','+|-',[4.19904,4.89453,5.51189,5.85131,5.97413,5.79709,5.54658]),
-        H298 = (89.0583,'kcal/mol','+|-',12.4059),
-        S298 = (-1.31524,'cal/mol/K','+|-',11.2091),
+        Cpdata = ([-1.90531,-3.07517,-3.80687,-4.17462,-4.3218,-4.55497,-4.92796],'cal/mol/K','+|-',[4.72494,5.35027,5.9058,6.20978,6.31893,6.16187,5.89895]),
+        H298 = (89.0448,'kcal/mol','+|-',12.8828),
+        S298 = (-1.25251,'cal/mol/K','+|-',11.3352),
     ),
-    shortDesc = """Radical correction fitted to 491 radicals""",
+    shortDesc = """Radical correction fitted to 500 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -40790,11 +40800,11 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.87611,-3.06228,-3.81377,-4.18567,-4.32723,-4.56087,-4.95213],'cal/mol/K','+|-',[4.20674,4.90178,5.5189,5.85873,5.98302,5.80609,5.55575]),
-        H298 = (89.0658,'kcal/mol','+|-',12.4389),
-        S298 = (-1.31563,'cal/mol/K','+|-',11.23),
+        Cpdata = ([-1.90646,-3.07958,-3.81295,-4.18108,-4.32706,-4.55961,-4.93153],'cal/mol/K','+|-',[4.732,5.35707,5.91253,6.21695,6.32754,6.17059,5.90775]),
+        H298 = (89.053,'kcal/mol','+|-',12.9166),
+        S298 = (-1.25268,'cal/mol/K','+|-',11.3566),
     ),
-    shortDesc = """Radical correction fitted to 490 radicals""",
+    shortDesc = """Radical correction fitted to 499 radicals""",
     longDesc = 
 """
 Averaged from children nodes
@@ -40813,9 +40823,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.67326,-1.42736,-1.32042,-1.27881,-1.22824,-1.38608,-2.28483],'cal/mol/K','+|-',[4.55408,4.35301,4.5814,5.095,6.29628,7.10517,7.43464]),
-        H298 = (93.6655,'kcal/mol','+|-',13.9683),
-        S298 = (-3.51714,'cal/mol/K','+|-',9.48629),
+        Cpdata = ([-1.65378,-1.43764,-1.35634,-1.34076,-1.33408,-1.51314,-2.40339],'cal/mol/K','+|-',[5.0081,4.85054,5.05929,5.51456,6.61041,7.36221,7.64796]),
+        H298 = (94.1284,'kcal/mol','+|-',13.665),
+        S298 = (-3.35412,'cal/mol/K','+|-',9.63431),
     ),
     shortDesc = """Radical correction fitted to 24 radicals""",
     longDesc = 
@@ -40824,23 +40834,23 @@ Derived using the following species:
 CC(OO)C(O)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [O]OC(=O)C(CCO)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 [O]OC(=O)OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]OC(=O)C(O)COO - Radical thermo from johnson_g4.py and closed shell thermo from Thermo library: ../data/johnson_g4.py
-[O]OC(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]OC(=O)C(O)COO - Radical thermo from johnson_g4.py and closed shell thermo from data/johnson_g4.py
+[O]OC(=O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(C(=O)O[O])C(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]OC(=O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]OC(=O)CO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(C(=O)O[O])C(C)(C)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(O)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]OC(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]OC(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
-[O]OC(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]OC(=O)COO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]OC(=O)OO - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
+[O]OC(=O)C=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CCC(=O)O[O] - Radical thermo from johnson_g4.py and closed shell thermo from GAV
-CC(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=CC(O)C=CC(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(COO)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C=O)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)=C(C)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)CCC(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-[O]OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]OC=O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC=CC(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)C(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C#CC(=O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -40862,18 +40872,18 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.34275,-3.44014,-4.76245,-5.47051,-5.71817,-6.0226,-6.89188],'cal/mol/K','+|-',[3.37417,4.0271,4.46989,4.72337,4.69769,4.54607,4.37736]),
-        H298 = (87.8356,'kcal/mol','+|-',9.42849),
-        S298 = (-1.30702,'cal/mol/K','+|-',9.37625),
+        Cpdata = ([-1.38563,-3.47566,-4.79479,-5.50273,-5.76349,-6.0681,-6.92738],'cal/mol/K','+|-',[3.92007,4.48656,4.87775,5.11353,5.12394,4.97889,4.80279]),
+        H298 = (87.8638,'kcal/mol','+|-',10.0614),
+        S298 = (-1.57052,'cal/mol/K','+|-',8.87332),
     ),
-    shortDesc = """Radical correction fitted to 55 radicals""",
+    shortDesc = """Radical correction fitted to 56 radicals""",
     longDesc = 
 """
 Derived using the following species:
 CC(=O)OC(=O)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)(COOCC(=O)O)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(C)(O[O])C1OOCC(=O)O1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-CC(=O)OCC(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+CC(=O)OCC(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 CC(C)(O[O])C(O)O - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=O)OCC1(O[O])COOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CCC(CO)(CO)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -40903,7 +40913,7 @@ CC1(C)OOCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell ther
 CC(C)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1(O[O])CCOOC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CCC(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C(C=O)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=C(C=O)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C1CC(C)(O[O])CO1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC(=C=O)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(COO)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -40913,10 +40923,12 @@ CC(C)(O[O])C1OO1 - Radical thermo from dong_pio_liang.py and closed shell thermo
 C=C(C)C(C)(CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC(C)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CCC(C)(CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C1COOCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+C=CC(C)(O[O])C(C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=C1COOCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 C=C(C)C(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC(C)(CC)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1(C)CC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
+C=CC(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1(O[O])CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=CC(C)(O[O])C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 CC1(O[O])C=CC=CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
@@ -40924,7 +40936,6 @@ C=C1CCC1(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo 
 C=CC(C)(C=C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C=C(C)C1(O[O])CC1 - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 C#CC(C)(C)O[O] - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
-C=C=CCC(C)(O[O])C(=C)C - Radical thermo from dong_pio_liang.py and closed shell thermo from GAV
 """,
 )
 
@@ -40956,15 +40967,15 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.61234,-1.95225,-2.25812,-2.52856,-2.98211,-3.3736,-4.01783],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (87.7137,'kcal/mol','+|-',2.4),
-        S298 = (-1.21017,'cal/mol/K','+|-',2),
+        Cpdata = ([-1.61234,-1.95225,-2.25812,-2.52856,-2.98211,-3.3736,-4.01783],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (87.7137,'kcal/mol','+|-',1.69706),
+        S298 = (-1.21017,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
 """
 Derived using the following species:
-[O]O - Radical thermo from dong_pio_liang.py and closed shell thermo from Thermo library: ../data/dong_pio_liang.py
+[O]O - Radical thermo from dong_pio_liang.py and closed shell thermo from data/dong_pio_liang.py
 """,
 )
 
@@ -41114,9 +41125,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-6.24206,-7.43574,-7.35078,-7.20201,-6.79242,-6.32507,-5.41051],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (74.0317,'kcal/mol','+|-',2.4),
-        S298 = (5.23772,'cal/mol/K','+|-',2),
+        Cpdata = ([-6.24206,-7.43574,-7.35078,-7.20201,-6.79242,-6.32507,-5.41051],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (74.0317,'kcal/mol','+|-',1.69706),
+        S298 = (5.23772,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -41135,9 +41146,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-6.24206,-7.43574,-7.35078,-7.20201,-6.79242,-6.32507,-5.41051],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (74.0317,'kcal/mol','+|-',2.4),
-        S298 = (5.23772,'cal/mol/K','+|-',2),
+        Cpdata = ([-6.24206,-7.43574,-7.35078,-7.20201,-6.79242,-6.32507,-5.41051],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (74.0317,'kcal/mol','+|-',1.69706),
+        S298 = (5.23772,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -41157,9 +41168,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-6.24206,-7.43574,-7.35078,-7.20201,-6.79242,-6.32507,-5.41051],'cal/mol/K','+|-',[2,2,2,2,2,2,2]),
-        H298 = (74.0317,'kcal/mol','+|-',2.4),
-        S298 = (5.23772,'cal/mol/K','+|-',2),
+        Cpdata = ([-6.24206,-7.43574,-7.35078,-7.20201,-6.79242,-6.32507,-5.41051],'cal/mol/K','+|-',[1.41421,1.41421,1.41421,1.41421,1.41421,1.41421,1.41421]),
+        H298 = (74.0317,'kcal/mol','+|-',1.69706),
+        S298 = (5.23772,'cal/mol/K','+|-',1.41421),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -41846,9 +41857,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-1.95741,-3.37504,-4.0883,-4.5751,-4.9807,-5.16676,-5.39953],'cal/mol/K','+|-',[6.14439,6.15001,5.03959,4.09022,3.28255,3,3]),
-        H298 = (73.98,'kcal/mol','+|-',58.0032),
-        S298 = (1.21114,'cal/mol/K','+|-',3),
+        Cpdata = ([-1.95741,-3.37504,-4.0883,-4.5751,-4.9807,-5.16676,-5.39953],'cal/mol/K','+|-',[6.53862,6.5439,5.51339,4.66154,3.97179,3.48463,3.2851]),
+        H298 = (73.98,'kcal/mol','+|-',58.1533),
+        S298 = (1.21114,'cal/mol/K','+|-',2.83197),
     ),
     shortDesc = """Radical correction fitted to 2 radicals""",
     longDesc = 
@@ -41995,9 +42006,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([-4.12978,-5.5494,-5.87006,-6.02122,-6.14125,-6.11166,-6.2504],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (53.4728,'kcal/mol','+|-',5.2),
-        S298 = (1.82555,'cal/mol/K','+|-',3),
+        Cpdata = ([-4.12978,-5.5494,-5.87006,-6.02122,-6.14125,-6.11166,-6.2504],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (53.4728,'kcal/mol','+|-',4.17612),
+        S298 = (1.82555,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -42169,9 +42180,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.21496,-1.20068,-2.30653,-3.12899,-3.82014,-4.22186,-4.54865],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (94.4872,'kcal/mol','+|-',5.2),
-        S298 = (0.596722,'cal/mol/K','+|-',3),
+        Cpdata = ([0.21496,-1.20068,-2.30653,-3.12899,-3.82014,-4.22186,-4.54865],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (94.4872,'kcal/mol','+|-',4.17612),
+        S298 = (0.596722,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
@@ -42362,9 +42373,9 @@ entry(
 """,
     thermo = ThermoData(
         Tdata = ([300,400,500,600,800,1000,1500],'K'),
-        Cpdata = ([0.21496,-1.20068,-2.30653,-3.12899,-3.82014,-4.22186,-4.54865],'cal/mol/K','+|-',[3,3,3,3,3,3,3]),
-        H298 = (94.4872,'kcal/mol','+|-',5.2),
-        S298 = (0.596722,'cal/mol/K','+|-',3),
+        Cpdata = ([0.21496,-1.20068,-2.30653,-3.12899,-3.82014,-4.22186,-4.54865],'cal/mol/K','+|-',[2.23607,2.23607,2.23607,2.23607,2.23607,2.23607,2.23607]),
+        H298 = (94.4872,'kcal/mol','+|-',4.17612),
+        S298 = (0.596722,'cal/mol/K','+|-',2.23607),
     ),
     shortDesc = """Radical correction fitted to 1 radicals""",
     longDesc = 
