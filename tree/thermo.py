@@ -498,7 +498,7 @@ class ThermoGroups(Database):
             if (parent_ob - min_val) / parent_ob < model_variance_prepruning_threshold:
                 logging.info(f"Parent objective function value: {parent_ob}")
                 logging.info(f"New split objective function value: {min_val}")
-                logging.info(f"Prepruning {name} due to small information gain quantified by model variance {(parent_ob - min_val) / parent_ob:.2e} < {model_variance_prepruning_threshold}")
+                logging.info(f"Prepruning {name} due to insufficient reduction in model variance {(parent_ob - min_val) / parent_ob:.2e} < {model_variance_prepruning_threshold}")
                 return (False, None)
 
         extname = ext[2]
