@@ -80,7 +80,7 @@ def average_thermo_data(thermo_data_list=None, weighted=False, bounded=False):
                 averaged_thermo_data.H298.uncertainty_si = 2 * h_std
                 if bounded:
                     max_h_unc = max(thermo_data.H298.uncertainty_si for thermo_data in thermo_data_list)
-                    averaged_thermo_data.H298.uncertainty_si = np.sqrt(averaged_thermo_data.H298.uncertainty_si**2 + max_h_unc**2)
+                    averaged_thermo_data.H298.uncertainty_si = np.sqrt(h_std**2 + max_h_unc**2)
 
                 s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
                 s_weights = [1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list]
@@ -90,7 +90,7 @@ def average_thermo_data(thermo_data_list=None, weighted=False, bounded=False):
                 averaged_thermo_data.S298.uncertainty_si = 2 * s_std
                 if bounded:
                     max_s_unc = max(thermo_data.S298.uncertainty_si for thermo_data in thermo_data_list)
-                    averaged_thermo_data.S298.uncertainty_si = np.sqrt(averaged_thermo_data.S298.uncertainty_si**2 + max_s_unc**2)
+                    averaged_thermo_data.S298.uncertainty_si = np.sqrt(s_std**2 + max_s_unc**2)
 
                 for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
                     cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
@@ -101,7 +101,7 @@ def average_thermo_data(thermo_data_list=None, weighted=False, bounded=False):
                     averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
                     if bounded:
                         max_cp_unc = max(thermo_data.Cpdata.uncertainty_si[i] for thermo_data in thermo_data_list)
-                        averaged_thermo_data.Cpdata.uncertainty_si[i] = np.sqrt(averaged_thermo_data.Cpdata.uncertainty_si[i]**2 + max_cp_unc**2)
+                        averaged_thermo_data.Cpdata.uncertainty_si[i] = np.sqrt(cp_std**2 + max_cp_unc**2)
 
                 return averaged_thermo_data
 
