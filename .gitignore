@@ -13,3 +13,4 @@ predict.log
 
 # Test results
 models/test-*/
+frac-/

@@ -1,18 +1,16 @@
 #!/bin/bash -l
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --array=0-3
+#SBATCH --array=0-13
 
 conda activate rmg_rdmc_env_20230623_v2
 
-# lambdas=(0.0005 0.001 0.002 0.005 0.01 0.02 0.05)
-# lambdas=(0.00005 0.0001 0.0002)
-lambdas=(0.0006 0.0007 0.0008 0.0009)
+lambdas=(0.00005 0.0001 0.0002 0.0005 0.0006 0.0007 0.0008 0.0009 0.001 0.002 0.005 0.01 0.02 0.05)
 lambda=${lambdas[$SLURM_ARRAY_TASK_ID]}
 
 split=random_val
 
-save_dir=models/split-${split}_run-model_variance_prepruning_hyperparam_opt-upper_bound/lambda-$lambda
+save_dir=models/split-${split}_run-model-variance-prepruning-bounded_hyperparam-opt/lambda-$lambda
 mkdir -p $save_dir
 
 data_path=data/hbi_unc.csv
@@ -23,7 +21,7 @@ python train.py \
 --save_dir $save_dir \
 --data_path $data_path \
 --split_path $split_path \
---use_upper_bound_uncertainty \
+--use_bounded_uncertainty \
 --use_model_variance_prepruning \
 --model_variance_prepruning_threshold $lambda
 end_time=$(date +%s)
