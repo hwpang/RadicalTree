@@ -67,41 +67,43 @@ def average_thermo_data(thermo_data_list=None, weighted=False, bounded=False):
             averaged_thermo_data = deepcopy(thermo_data_list[0])
             
             if num_values == 1:
-                averaged_thermo_data.H298.uncertainty
                 return averaged_thermo_data
 
             else:
             
                 h_data = [thermo_data.H298.value_si for thermo_data in thermo_data_list]
-                h_weights = [1/(thermo_data.H298.uncertainty_si)**2 for thermo_data in thermo_data_list]
+                h_weights = np.array([1/(thermo_data.H298.uncertainty_si)**2 for thermo_data in thermo_data_list])
                 h_avg = np.average(h_data, weights=h_weights)
                 h_std = np.sqrt(np.cov(h_data, aweights=h_weights, ddof=1))
                 averaged_thermo_data.H298.value_si = h_avg
                 averaged_thermo_data.H298.uncertainty_si = 2 * h_std
                 if bounded:
-                    max_h_unc = max(thermo_data.H298.uncertainty_si for thermo_data in thermo_data_list)
-                    averaged_thermo_data.H298.uncertainty_si = 2 * np.sqrt(h_std**2 + max_h_unc**2)
+                    h_unc = np.array([thermo_data.H298.uncertainty_si for thermo_data in thermo_data_list])
+                    h_unc_propagation = sum((h_weights / sum(h_weights))**2 * h_unc**2)
+                    averaged_thermo_data.H298.uncertainty_si = 2 * np.sqrt(h_std**2 + h_unc_propagation)
 
                 s_data = [thermo_data.S298.value_si for thermo_data in thermo_data_list]
-                s_weights = [1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list]
+                s_weights = np.array([1/(thermo_data.S298.uncertainty_si)**2 for thermo_data in thermo_data_list])
                 s_avg = np.average(s_data, weights=s_weights)
                 s_std = np.sqrt(np.cov(s_data, aweights=s_weights, ddof=1))
                 averaged_thermo_data.S298.value_si = s_avg
                 averaged_thermo_data.S298.uncertainty_si = 2 * s_std
                 if bounded:
-                    max_s_unc = max(thermo_data.S298.uncertainty_si for thermo_data in thermo_data_list)
-                    averaged_thermo_data.S298.uncertainty_si = 2 * np.sqrt(s_std**2 + max_s_unc**2)
+                    s_unc = np.array([thermo_data.S298.uncertainty_si for thermo_data in thermo_data_list])
+                    s_unc_propagation = sum((s_weights / sum(s_weights))**2 * s_unc**2)
+                    averaged_thermo_data.S298.uncertainty_si = 2 * np.sqrt(s_std**2 + s_unc_propagation)
 
                 for i in range(averaged_thermo_data.Tdata.value_si.shape[0]):
                     cp_data = [thermo_data.Cpdata.value_si[i] for thermo_data in thermo_data_list]
-                    cp_weights = [1/(thermo_data.Cpdata.uncertainty_si[i])**2 for thermo_data in thermo_data_list]
+                    cp_weights = np.array([1/(thermo_data.Cpdata.uncertainty_si[i])**2 for thermo_data in thermo_data_list])
                     cp_avg = np.average(cp_data, weights=cp_weights)
                     cp_std = np.sqrt(np.cov(cp_data, aweights=cp_weights, ddof=1))
                     averaged_thermo_data.Cpdata.value_si[i] = cp_avg
                     averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * cp_std
                     if bounded:
-                        max_cp_unc = max(thermo_data.Cpdata.uncertainty_si[i] for thermo_data in thermo_data_list)
-                        averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * np.sqrt(cp_std**2 + max_cp_unc**2)
+                        cp_unc = np.array([thermo_data.Cpdata.uncertainty_si[i] for thermo_data in thermo_data_list])
+                        cp_unc_propagation = sum((cp_weights / sum(cp_weights))**2 * cp_unc**2)
+                        averaged_thermo_data.Cpdata.uncertainty_si[i] = 2 * np.sqrt(cp_std**2 + cp_unc_propagation)
 
                 return averaged_thermo_data
 
