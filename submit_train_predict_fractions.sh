@@ -6,19 +6,18 @@
 conda activate rmg_rdmc_env_20230623_v2
 
 fractions=(0.001 0.01 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0)
-# fractions=(0.9)
 
 frac=${fractions[$SLURM_ARRAY_TASK_ID]}
 
 split_type=random
-model_variance_prepruning_threshold=0.001
+model_variance_prepruning_threshold=0.0005
 
 split_path=data/splits/$split_type.json
 
 # save_dir=models/split-${split_type}_run-basecase/frac-$frac
 # save_dir=models/split-${split_type}_run-basecase-bounded/frac-$frac
 # save_dir=models/split-${split_type}_run-aleatoric-prepruning-bounded/frac-$frac
-# save_dir=models/split-${split_type}_run-model-variance-prepruning-${model_variance_prepruning_threshold}-bounded/frac-$frac
+save_dir=models/split-${split_type}_run-model-variance-prepruning-${model_variance_prepruning_threshold}-bounded/frac-$frac
 
 mkdir -p $save_dir
 
@@ -33,7 +32,8 @@ python train.py \
 --use_bounded_uncertainty \
 --use_model_variance_prepruning \
 --model_variance_prepruning_threshold $model_variance_prepruning_threshold
-# --use_aleatoric_prepruning
+
+# --use_aleatoric_prepruning \
 end_time=$(date +%s)
 echo "Training time: $((end_time - start_time)) seconds"
 
